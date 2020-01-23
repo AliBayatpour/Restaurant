@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- SIDEBAR  -->
+    <div class="sideBar">
+      <div class="sideBar__logo">
+        <img src="./images/logo.png" alt="Restaurant Logo" />
+      </div>
+      <div class="sideMenue">
+        <div class="sideMenue__element">
+          <span
+            class="sideMenue__border sideMenue__border--topSide sideMenue__border--menueTopSide"
+          ></span>
+          <span
+            class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--menueBottomSide"
+          ></span>
+          <span
+            onmouseenter="menueBorderShow('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 59)"
+            onmouseleave="menueBorderHide('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 59)"
+            >MENUS</span
+          >
+        </div>
+        <div class="sideMenue__element">
+          <span
+            class="sideMenue__border sideMenue__border--topSide sideMenue__border--aboutTopSide"
+          ></span>
+          <span
+            class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--aboutBottomSide"
+          ></span>
+          <span
+            onmouseenter="menueBorderShow('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 84)"
+            onmouseleave="menueBorderHide('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 84)"
+            >ABOUT US</span
+          >
+        </div>
+        <div class="sideMenue__element">
+          <span
+            class="sideMenue__border sideMenue__border--topSide sideMenue__border--gallaryTopSide"
+          ></span>
+          <span
+            class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--gallaryBottomSide"
+          ></span>
+          <span
+            onmouseenter="menueBorderShow('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 76)"
+            onmouseleave="menueBorderHide('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 76)"
+            >GALLARY</span
+          >
+        </div>
+        <div class="sideMenue__element">
+          <span
+            class="sideMenue__border sideMenue__border--topSide sideMenue__border--contactTopSide"
+          ></span>
+          <span
+            class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--contactBottomSide"
+          ></span>
+          <span
+            onmouseenter="menueBorderShow('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 79)"
+            onmouseleave="menueBorderHide('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 79)"
+            >CONTACT</span
+          >
+        </div>
+      </div>
+      <div class="sideAdd">
+        <div class="sideAdd__media">
+          <i class='fab fa-facebook-f' style="color: #C8A378; font-size: 20px;"></i>
+          <i class='fab fa-instagram' style="color: #C8A378; font-size: 20px;"></i>
+        </div>
+        <div class="sideAdd__address">
+          <p>425, rue McGill, Vieux-Montréal,
+            Québec, H2Y 2H1</p><br />
+            <p>514.842.2905</p>
+        </div>
+      </div>
+      <!-- <svg width="300" height="100">
+        <rect x="0" y="0" width="300" height="100"></rect>
+      </svg> -->
+      <div class="sideBookBut">
+        <div class="sideBookBut__text">
+          <span class="sideBookBut__border sideBookBut__border--left"></span>
+          <span class="sideBookBut__border sideBookBut__border--top"></span>
+          <span class="sideBookBut__border sideBookBut__border--right"></span>
+          <span class="sideBookBut__border sideBookBut__border--bottom"></span>
+          <span>BOOK A TABLE</span>
+        </div>
+
+      </div>
+    </div>
+    <!-- IMAGE SLIDER  -->
+    <div class="imageSlider">
+      <div class="imageSlider__ImagesContainer">
+        <div class="imageSlider__image imageSlider__image--img1">
+          <div class="imageSlider__textBox">
+            <p class="imageSlider__text imageSlider__text--1">
+              EVERYDAY FROM 4PM - 7PM
+            </p>
+            <p class="imageSlider__text imageSlider__text--1">
+              A choice of 3 appetizers for 33$
+            </p>
+          </div>
+        </div>
+        <div class="imageSlider__image imageSlider__image--img2">
+          <div class="imageSlider__textBox">
+            <p class="imageSlider__text imageSlider__text--2">
+              A taste of local ingredients
+            </p>
+            <p class="imageSlider__text imageSlider__text--2">
+              & seasonal flavours
+            </p>
+          </div>
+        </div>
+        <div class="imageSlider__image imageSlider__image--img3">
+          <div class="imageSlider__textBox">
+            <p class="imageSlider__text imageSlider__text--3">"Fresh" salad</p>
+            <p class="imageSlider__text imageSlider__text--3">
+              or "Copious" meal
+            </p>
+          </div>
+        </div>
+        <div class="imageSlider__image imageSlider__image--img4">
+          <div class="imageSlider__textBox">
+            <p class="imageSlider__text imageSlider__text--4">
+              Step into Vallier
+            </p>
+            <p class="imageSlider__text imageSlider__text--4">
+              and feel at home
+            </p>
+          </div>
+        </div>
+        <div class="imageSlider__image imageSlider__image--img5">
+          <div class="imageSlider__textBox">
+            <p class="imageSlider__text imageSlider__text--5">
+              The best selection
+            </p>
+            <p class="imageSlider__text imageSlider__text--5">
+              of wine and beer
+            </p>
+          </div>
+        </div>
+        <div class="imageSlider__image imageSlider__image--img6">
+          <div class="imageSlider__textBox">
+            <p class="imageSlider__text imageSlider__text--6">Happy hour</p>
+            <p class="imageSlider__text imageSlider__text--6">
+              deals on weekdays
+            </p>
+          </div>
+        </div>
+        <div class="imageSlider__image imageSlider__image--img7"></div>
+      </div>
+    </div>
+    <div class="menueContainer">
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+      lsdfksl <br />
+    </div>
+    <script type="text/javascript" src="skrollr.min.js"></script>
+    <script type="text/javascript">
+      var s = skrollr.init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/ScrollToPlugin.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
