@@ -6,18 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/main.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
       rel="stylesheet"
     />
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Document</title>
   </head>
 
@@ -36,8 +33,8 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--menueBottomSide"
           ></span>
           <span
-            onmouseenter="menueBorderShow('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 59)"
-            onmouseleave="menueBorderHide('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 59)"
+            onmouseenter="menueBorderShow('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 58)"
+            onmouseleave="menueBorderHide('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 58)"
             >MENUS</span
           >
         </div>
@@ -49,8 +46,8 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--aboutBottomSide"
           ></span>
           <span
-            onmouseenter="menueBorderShow('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 84)"
-            onmouseleave="menueBorderHide('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 84)"
+            onmouseenter="menueBorderShow('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 83)"
+            onmouseleave="menueBorderHide('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 83)"
             >ABOUT US</span
           >
         </div>
@@ -62,8 +59,8 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--gallaryBottomSide"
           ></span>
           <span
-            onmouseenter="menueBorderShow('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 76)"
-            onmouseleave="menueBorderHide('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 76)"
+            onmouseenter="menueBorderShow('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 75)"
+            onmouseleave="menueBorderHide('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 75)"
             >GALLARY</span
           >
         </div>
@@ -75,26 +72,28 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--contactBottomSide"
           ></span>
           <span
-            onmouseenter="menueBorderShow('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 79)"
-            onmouseleave="menueBorderHide('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 79)"
+            onmouseenter="menueBorderShow('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 77)"
+            onmouseleave="menueBorderHide('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 77)"
             >CONTACT</span
           >
         </div>
       </div>
       <div class="sideAdd">
         <div class="sideAdd__media">
-          <i class='fab fa-facebook-f' style="color: #C8A378; font-size: 20px;"></i>
-          <i class='fab fa-instagram' style="color: #C8A378; font-size: 20px;"></i>
+          <i
+            class="fab fa-facebook-f"
+            style="color: #C8A378; font-size: 25px;"
+          ></i>
+          <i
+            class="fab fa-instagram"
+            style="color: #C8A378; font-size: 25px;"
+          ></i>
         </div>
         <div class="sideAdd__address">
-          <p>425, rue McGill, Vieux-Montréal,
-            Québec, H2Y 2H1</p><br />
-            <p>514.842.2905</p>
+          <p>425, rue McGill, Vieux-Montréal, Québec, H2Y 2H1</p>
+          <p>514.842.2905</p>
         </div>
       </div>
-      <!-- <svg width="300" height="100">
-        <rect x="0" y="0" width="300" height="100"></rect>
-      </svg> -->
       <div class="sideBookBut">
         <div class="sideBookBut__text">
           <span class="sideBookBut__border sideBookBut__border--left"></span>
@@ -103,14 +102,17 @@
           <span class="sideBookBut__border sideBookBut__border--bottom"></span>
           <span>BOOK A TABLE</span>
         </div>
-
       </div>
     </div>
     <!-- IMAGE SLIDER  -->
     <div class="imageSlider">
       <div class="imageSlider__ImagesContainer">
         <div class="imageSlider__image imageSlider__image--img1">
-          <div class="imageSlider__textBox">
+          <div
+            class="imageSlider__textBox"
+            data-100-top="opacity: 1"
+            data--100-top="opacity: 0"
+          >
             <p class="imageSlider__text imageSlider__text--1">
               EVERYDAY FROM 4PM - 7PM
             </p>
@@ -120,7 +122,11 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img2">
-          <div class="imageSlider__textBox">
+          <div
+            class="imageSlider__textBox"
+            data-100-top="opacity: 1"
+            data--100-top="opacity: 0"
+          >
             <p class="imageSlider__text imageSlider__text--2">
               A taste of local ingredients
             </p>
@@ -130,7 +136,11 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img3">
-          <div class="imageSlider__textBox">
+          <div
+            class="imageSlider__textBox"
+            data-100-top="opacity: 1"
+            data--100-top="opacity: 0"
+          >
             <p class="imageSlider__text imageSlider__text--3">"Fresh" salad</p>
             <p class="imageSlider__text imageSlider__text--3">
               or "Copious" meal
@@ -138,7 +148,11 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img4">
-          <div class="imageSlider__textBox">
+          <div
+            class="imageSlider__textBox"
+            data-100-top="opacity: 1"
+            data--100-top="opacity: 0"
+          >
             <p class="imageSlider__text imageSlider__text--4">
               Step into Vallier
             </p>
@@ -148,7 +162,11 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img5">
-          <div class="imageSlider__textBox">
+          <div
+            class="imageSlider__textBox"
+            data-100-top="opacity: 1"
+            data--100-top="opacity: 0"
+          >
             <p class="imageSlider__text imageSlider__text--5">
               The best selection
             </p>
@@ -158,7 +176,11 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img6">
-          <div class="imageSlider__textBox">
+          <div
+            class="imageSlider__textBox"
+            data-100-top="opacity: 1"
+            data--100-top="opacity: 0"
+          >
             <p class="imageSlider__text imageSlider__text--6">Happy hour</p>
             <p class="imageSlider__text imageSlider__text--6">
               deals on weekdays
@@ -168,39 +190,574 @@
         <div class="imageSlider__image imageSlider__image--img7"></div>
       </div>
     </div>
-    <div class="menueContainer">
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
-      lsdfksl <br />
+    <!-- MENUE -->
+    <div class="menuContainer">
+      <div class="menuHeaderContainer">
+        <h2 class="menuHeaderContainer__header">
+          Also available everyday : Table d'hôte
+        </h2>
+        <i class="menuHeaderContainer__subtitle"
+          >See our dishes of the moment in restaurant</i
+        >
+        <div class="menuHeaderContainer__rightBox">
+          <p>Draft beer (pint) & 5 to 7 at $ 7</p>
+          <p>Lunch wine & 5 to 7 at $ 7</p>
+        </div>
+      </div>
+      <div class="table table--table1">
+        <div class="tableHeader">
+          <p class="tableHeader__text tableAnimate1">APPETIZERS</p>
+          <span class="tableHeader__line tableHeader__line1"></span>
+        </div>
+        <div class="tableBody">
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">SMALL SALAD</h4>
+              <span class="tableBody__price">$ 8.25</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Lettuce mix, grilled corn & edamame</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">SMALL CAESER</h4>
+              <span class="tableBody__price">$ 10.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Lettuce, capers, parmesan, croutons & bacon</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">FRENCH ONION SOUP</h4>
+              <span class="tableBody__price">$ 13.25</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Chicken stock, red beer, thyme, swiss and mozarella cheese</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">FRIED CHICKEN & HONEY</h4>
+              <span class="tableBody__price">$ 11.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Buttermilk chicken, thyme honey glaze, chipotle mayo</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">GENERAL TAO TOFU</h4>
+              <span class="tableBody__price">$ 14.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Crispy tofu bites and house General Tao sauce, house pickled
+              vegetables</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">NATURAL SALMON TARTAR</h4>
+              <span class="tableBody__price">$ 14.25</span>
+            </div>
+            <i class="tableBody__ingredients">Citrus and herb</i>
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CLASSIC BEEF</h4>
+              <span class="tableBody__price">$ 14.25</span>
+            </div>
+            <i class="tableBody__ingredients">Capers, shallot, fresh herbs</i>
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">FRIED CALAMARI BOWL</h4>
+              <span class="tableBody__price">$ 15.25</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Artichoke, jalapeno, chorizo, horseradish mayo and spicy mayo</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate1">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">DUCK CONFIT POUTINE</h4>
+              <span class="tableBody__price">$ 14.25</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Fries, chees curds, duck confit, red cabbage, caramelized onions
+              & green peas</i
+            >
+          </div>
+        </div>
+      </div>
+      <div class="table table--table2">
+        <div class="tableHeader">
+          <p class="tableHeader__text tableAnimate2">MAIN COURSE</p>
+          <span class="tableHeader__line tableHeader__line2"></span>
+        </div>
+        <div class="tableBody">
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CAESAR SALAD WITH CHICKEN</h4>
+              <span class="tableBody__price">$ 23.00</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Lettuce, capers, parmesan, croutons & bacon</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">DUCK CONFIT POUTINE</h4>
+              <span class="tableBody__price">$ 19.25</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Pickled red cabbage, green peas, caramelized onions, duck confit,
+              gravy</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">MAC 'N' CHEESE</h4>
+              <span class="tableBody__price">$ 17.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Cheddar and mozzarella sauce, chili parmesan crumble</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">HALLOUMI</h4>
+              <span class="tableBody__price">$ 18.50</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Roasted vegetables, celeriac purée, sunflower seeds, black olive
+              crumble, pesto</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">GOAT CHEESE SALAD</h4>
+              <span class="tableBody__price">$ 19.25</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Mixed greens, beets, sunflower seeds, dried cranberries, candied
+              walnuts, maple dressing</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">VALLIER'S SALAD</h4>
+              <span class="tableBody__price">21,75 $</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Romaine lettuce, coriander, kale, Soba noodles, carrot, red
+              cabbage, pumpkin seeds, grapes, marinated tofu and sweet & salty
+              dressing</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">FISH & CHIPS</h4>
+              <span class="tableBody__price">22,25 $</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Crispy cod, coleslaw, tartar sauce and fries
+            </i>
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">DUCK CONFIT SHEPHERD'S PIE</h4>
+              <span class="tableBody__price">$ 24.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Braised cabbage, corn and fruit ketchup</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">BACON & CHEDDAR CHEESEBURGER</h4>
+              <span class="tableBody__price">$ 19.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Sriracha fried onions and horseradish mayonnaise</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">NATURAL SALMON TARTAR</h4>
+              <span class="tableBody__price">$ 24.50</span>
+            </div>
+            <i class="tableBody__ingredients">Citrus and herb </i>
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CLASSIC BEEF</h4>
+              <span class="tableBody__price">$ 24.50</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Capers, shallot, fresh herbs, fries or salad</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">DUCK CONFIT SHEPERD’S PIE</h4>
+              <span class="tableBody__price">24.75 $</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Braised cabbage and corn, house made fruit ketchup</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">SALMON</h4>
+              <span class="tableBody__price">$ 27.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Seared salmon, vegetables, celeriac purée and salsa verde</i
+            >
+          </div>
+          <div class="tableBody__cell tableAnimate2">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">GRILLED BEEF STEAK</h4>
+              <span class="tableBody__price">$ 28.75</span>
+            </div>
+            <i class="tableBody__ingredients"
+              >Grilled beef Black Angus AA, fries and sautéed vegetables</i
+            >
+          </div>
+        </div>
+      </div>
+      <div class="table table--table3">
+        <div class="tableHeader">
+          <p class="tableHeader__text tableAnimate3">DESSERTS</p>
+          <span class="tableHeader__line tableHeader__line3"></span>
+        </div>
+        <div class="tableBody">
+          <div class="tableBody__cell tableAnimate3">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">POUDING CHÔMEUR</h4>
+              <span class="tableBody__price">$ 8.25</span>
+            </div>
+            <i class="tableBody__ingredients">With maple English cream</i>
+          </div>
+          <div class="tableBody__cell tableAnimate3">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CRÈME BRÛLÉE OF THE MOMENT</h4>
+              <span class="tableBody__price">$ 8.25</span>
+            </div>
+            <i class="tableBody__ingredients">Maple</i>
+          </div>
+          <div class="tableBody__cell tableAnimate3">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CARROTS CAKE</h4>
+              <span class="tableBody__price">$ 8.25</span>
+            </div>
+            <i class="tableBody__ingredients">With cheese icing</i>
+          </div>
+          <div class="tableBody__cell tableAnimate3">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CHEESECAKE</h4>
+              <span class="tableBody__price">$ 9.50</span>
+            </div>
+            <i class="tableBody__ingredients">With berry coulis</i>
+          </div>
+          <div class="tableBody__cell tableAnimate3">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CHOCOLATE FONDANT</h4>
+              <span class="tableBody__price">$ 8.75</span>
+            </div>
+            <i class="tableBody__ingredients">With english cream</i>
+          </div>
+        </div>
+      </div>
+      <div class="table table--table4">
+        <div class="tableHeader">
+          <p class="tableHeader__text tableAnimate4">COFFEES</p>
+          <span class="tableHeader__line tableHeader__line4"></span>
+        </div>
+        <div class="tableBody">
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">ESPRESSO / DOUBLE</h4>
+              <span class="tableBody__price">$ 3.75 / $ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">AMERICANO</h4>
+              <span class="tableBody__price">$ 3.25</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">LUNGO</h4>
+              <span class="tableBody__price">$ 3.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">MACCHIATO</h4>
+              <span class="tableBody__price">$ 3.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CAPPUCCINO</h4>
+              <span class="tableBody__price">$ 3.95</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CAFÉ LATTE / BOWL</h4>
+              <span class="tableBody__price">$ 3.95 / $ 4.95</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate4">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">ICED COFFEE</h4>
+              <span class="tableBody__price">$ 4.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table table--table5">
+        <div class="tableHeader">
+          <p class="tableHeader__text tableAnimate5">
+            TEAS (CHOICE OF TEA POT)
+          </p>
+          <span class="tableHeader__line tableHeader__line5"></span>
+        </div>
+        <div class="tableBody">
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">GREEN TEA TROPICAL</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">JASMINE GREEN TEA</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">BOMBAI CHAÏ</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">ENGLISH BREAKFAST</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">CHAMOMILE & CITRUS</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">ORGANIC VERBANA MINT</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+          <div class="tableBody__cell tableAnimate5">
+            <div class="tableBody__mainInfo">
+              <h4 class="tableBody__foodName">EARL GREY</h4>
+              <span class="tableBody__price">$ 4.75</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script type="text/javascript" src="skrollr.min.js"></script>
-    <script type="text/javascript">
-      var s = skrollr.init();
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/ScrollToPlugin.min.js"></script>
-    <script src="./main.js"></script>
+    <div class="animationContainer">
+      <div class="firstRow">
+        <div
+          class="firstRowGallary"
+          data--500-top="height: 400px"
+          data--1500-bottom="height: 300px"
+        >
+          <div
+            class="firstRowGallary__image1"
+            data--400-bottom="background-position: 50% 100%"
+            data--1000-bottom="background-position: 50% 0%"
+          ></div>
+        </div>
+        <div
+          class="firstRow__text"
+          data--400-bottom="margin-top: 0px"
+          data--1000-top="margin-top: 90px"
+        >
+          <p>
+            Whether you’re in the mood for a ‘small’ poutine or a ‘big’ salad,
+            ‘just one’ beer or a double shot espresso, when it satisfies your
+            tastebuds, it’s all good.
+          </p>
+        </div>
+        <img class="firstRow__leaf" src="./images/leaf.png" alt="Small leaf" />
+      </div>
+      <div class="secondRow">
+        <div
+          class="secondRow__bone"
+          data-top-top="margin-top: 0px"
+          data--1500-top="margin-top: 700px"
+        >
+          <img src="./images/bone.png" alt="Bone" />
+        </div>
+        <div class="secondRow__secondCol">
+          <div
+            class="secondRowGallary"
+            data--500-top="height: 350px"
+            data--1500-bottom="height: 270px"
+          >
+            <div
+              class="secondRowGallary__image1"
+              data--350-bottom="background-position: 50% 100%"
+              data--1000-bottom="background-position: 50% 0%"
+            ></div>
+          </div>
+          <div class="secondRow__text">
+            <p>
+              Whether you’re in the mood for a ‘small’ poutine or a ‘big’ salad,
+              ‘just one’ beer or a double shot espresso, when it satisfies your
+              tastebuds, it’s all good.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="thirdRow">
+        <div class="thirdRow__gallaryContainer">
+          <div
+            class="thirdRowGallary"
+            data--800-top="height: 580px"
+            data--1550-bottom="height: 420px"
+          >
+            <div
+              class="thirdRowGallary__image1"
+              data--380-bottom="background-position: 60% 100%"
+              data--1200-bottom="background-position: 60% 0%"
+            ></div>
+          </div>
+          <div class="thirdRow__underGallaryContainer">
+            <div class="thirdRow__text">
+              <p>
+                “Vallier? Like that restaurant on McGill?” If only Vallier
+                Dufour had a dollar... Fun fact: the bistro draws its name from
+                the Montreal restauranteur who, along with his partners,
+                imagined a vibrant and welcoming space where everyone would feel
+                at home.
+              </p>
+            </div>
+            <img class="thirdRow__leaf" src="./images/leaf.png" alt="" />
+          </div>
+        </div>
+        <div class="thirdRow__animateBackgroundContainer"></div>
+      </div>
+      <div class="fourthRow">
+        <div class="fourthRowGallary">
+          <div class="fourthRowGallary__image1"></div>
+        </div>
+        <div
+          class="fourthRow__movingHamburger"
+          data--700-top="transform: translateY(0px); opacity: 0.9"
+          data--2000-top="transform: translateY(1060px); opacity: 0.8"
+        >
+          <img
+            src="./images/topBread.png"
+            alt=" Bread"
+            data--600-top="margin: 0px auto"
+            data--1200-top="margin: -30px auto"
+            style="z-index: 6;"
+          />
+          <img
+            src="./images/tomato.png"
+            alt="Tomato"
+            data--600-top="margin: 0px auto"
+            data--1200-top="margin: -30px auto"
+            style="z-index: 5;"
+          />
+          <img
+            src="./images/ham.png"
+            alt="Ham"
+            data--600-top="margin: 0px auto"
+            data--1200-top="margin: -30px auto"
+            style="z-index: 4;"
+          />
+          <img
+            src="./images/meat.png"
+            alt="Meat"
+            data--600-top="margin: 0px auto"
+            data--1200-top="margin: -30px auto"
+            style="z-index: 3;"
+          />
+          <img
+            src="./images/celery.png"
+            alt="Celery"
+            data--600-top="margin: 0px auto"
+            data--1200-top="margin: -30px auto"
+            style="z-index: 2;"
+          />
+          <img
+            src="./images/bottomBread.png"
+            alt="Bread"
+            data--600-top="margin: 0px auto"
+            data--1200-top="margin: -30px auto"
+          />
+        </div>
+        <div class="fifthRow">
+          <div class="fifthRow__text">
+            <p>
+              Just like its surroundings, Vallier has a French soul, but also
+              the warmth of a British pub and the vibrancy of Brooklyn. Truly
+              and uniquely a part of Montreal.
+            </p>
+          </div>
+          <div class="fifthRow__secondCol">
+            <div
+              class="fifthRowGallary"
+              data--500-top="height: 350px"
+              data--1500-bottom="height: 270px"
+            >
+              <div
+                class="fifthRowGallary__image1"
+                data--350-bottom="background-position: 50% 100%"
+                data--1000-bottom="background-position: 50% 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="addContainer">
+      <div class="addInfoContainer">
+        <div class="addInfoContainer__address">
+          <h3>FIND US</h3>
+          <p class="addInfoContainer__addrssText">
+            425, rue McGill, Vieux-Montréal, Québec, H2Y 2H1
+          </p>
+          <div class="openInMap">
+            <p>OPEN IN GOOGLE MAP</p>
+            <img src="./images/blackLeaf.png" alt="small Logo">
+            <span class="openInMap__border openInMap__border--left"></span>
+            <span class="openInMap__border openInMap__border--topRight"></span>
+            <span class="openInMap__border openInMap__border--topLeft"></span>
+            <span class="openInMap__border openInMap__border--right"></span>
+            <span class="openInMap__border openInMap__border--bottom"></span>
+          </div>
+        </div>
+      </div>
+      <div class="mapContainer"></div>
+    </div>
   </body>
+  <script type="text/javascript" src="skrollr.min.js"></script>
+  <script type="text/javascript">
+    var s = skrollr.init();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/ScrollToPlugin.min.js"></script>
+  <script src="./main.js"></script>
 </html>

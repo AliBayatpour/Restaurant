@@ -3,6 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+::selection {
+  background: #d0b18c; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: #d0b18c; /* Gecko Browsers */
+  color: #fff;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -17,6 +26,7 @@ body {
 
 @mixin flex($justifyContent, $alignItems, $flexDirection) {
   display: flex;
+  flex-wrap: wrap;
   justify-content: $justifyContent;
   align-items: $alignItems;
   flex-direction: $flexDirection;
@@ -27,32 +37,34 @@ $montserrat: "Montserrat", sans-serif;
 $roboto: "Roboto", sans-serif;
 $openSans: "Open Sans", sans-serif;
 
-@mixin font($family, $size, $weight, $color) {
+@mixin font($family, $size, $weight, $style, $color) {
   font-family: $family;
   font-size: $size;
   font-weight: $weight;
   color: $color;
+  font-style: $style;
 }
 
 // SIDE BAR
 .sideBar {
   @include box(300px, 100vh, rgb(48, 48, 48), null, null);
   @include flex(space-between, center, column);
+  flex-wrap: nowrap;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
   &__logo {
     @include box(200px, 200px, null, null, null);
-    margin: 50px 0 60px 0;
+    margin: 25px 0 30px 0;
   }
   .sideMenue {
     @include box(100%, null, null, null, null);
     @include flex(null, center, column);
     &__element {
-      @include font($roboto, 13px, null, rgb(227, 221, 205));
+      @include font($roboto, 12px, null, null, rgb(227, 221, 205));
       letter-spacing: 3px;
-      margin: 0 0 20px 0;
+      margin: 0 0 15px 0;
       cursor: pointer;
       padding: 6px 0;
       position: relative;
@@ -95,18 +107,35 @@ $openSans: "Open Sans", sans-serif;
     @include box(100%, null, null, null, null);
     &__media {
       @include box(100%, null, null, null, null);
-      @include flex(center, null, null);
+      @include flex(center, center, null);
+      padding: 10px 0;
+      i {
+        margin: 0 10px;
+      }
     }
-    &__address{
+    &__address {
       @include box(100%, null, null, null, null);
-      @include flex(center, null, null);
-      color: #F1EBDA;
+      @include flex(center, center, column);
+      @include font($roboto, 13px, null, null, null);
+      text-align: center;
+      padding: 10px 15px;
+      p {
+        width: 80%;
+        margin: 10px 0;
+      }
+      :nth-child(1) {
+        color: #f1ebda;
+      }
+      :nth-child(2) {
+        color: #c8a374;
+      }
     }
   }
   // BOOK A TABLE BUTTON
   .sideBookBut {
     @include box(100%, 100px, #f1ebda, null, null);
     @include flex(center, center, null);
+    bottom: 0;
     &__text {
       @include flex(center, center, null);
       @include box(92.5%, 80%, #f1ebda, null, thin #bfbaae solid);
@@ -158,11 +187,12 @@ $openSans: "Open Sans", sans-serif;
     @include box(100%, 100%, null, null, null);
     position: absolute;
     @include flex(null, null, row);
+    flex-wrap: nowrap;
   }
   &__text {
     @include box(null, null, null, null, null);
     white-space: nowrap;
-    @include font($openSans, 50px, 800, #fff);
+    @include font($openSans, 50px, 800, null, #fff);
     &--1 {
       background-color: rgba($color: #411524, $alpha: 0.6);
     }
@@ -186,7 +216,7 @@ $openSans: "Open Sans", sans-serif;
   &__textBox {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
   }
 
@@ -223,6 +253,354 @@ $openSans: "Open Sans", sans-serif;
     }
     &--img7 {
       background-image: url("../images/img1.jpg");
+    }
+  }
+}
+// MENU CONTAINER
+.menuContainer {
+  @include box(100%, null, #f1ebda, null, null);
+  padding: 85px 85px 85px 385px;
+  @include font($roboto, null, null, null, null);
+  overflow: hidden;
+  .table {
+    @include box(100%, null, null, null, null);
+  }
+  .menuHeaderContainer {
+    @include box(100%, null, null, null, null);
+    @include flex(null, null, null);
+    &__header {
+      @include box(100%, null, null, null, null);
+      @include font($roboto, 30px, null, null, rgb(51, 51, 51));
+      letter-spacing: 3px;
+      padding: 0 15px;
+      margin: 0 0 60px 0;
+    }
+    &__subtitle {
+      @include box(40%, null, null, null, null);
+      @include font($roboto, 15px, 200, italic, #666460);
+      letter-spacing: 1px;
+      padding: 0 15px;
+    }
+    &__rightBox {
+      @include box(50%, null, null, null, null);
+      line-height: 1.4;
+      p {
+        @include box(100%, null, null, null, null);
+        @include font($roboto, 16px, 800, null, rgb(61, 61, 61));
+      }
+    }
+  }
+  .tableHeader {
+    @include box(100%, 144px, null, null, null);
+    position: relative;
+    overflow: hidden;
+    &__text {
+      @include box(100%, null, null, null, null);
+      position: absolute;
+      bottom: 15px;
+      @include font($roboto, 17px, 500, null, null);
+      letter-spacing: 1px;
+    }
+    &__line {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include box(0px, 2px, rgb(48, 48, 48), null, null);
+    }
+  }
+  .tableBody {
+    @include box(100%, null, null, null, null);
+    @include flex(null, null, null);
+    &__cell {
+      padding: 0 15px;
+      margin: 40px 0 0 0;
+      @include box(33.33%, null, null, null, null);
+    }
+    &__mainInfo {
+      @include box(100%, null, null, null, null);
+      @include flex(space-between, null, null);
+      margin: 0 0 25px 0;
+      flex-wrap: nowrap;
+    }
+    &__foodName {
+      letter-spacing: 2px;
+      @include font($roboto, 14px, null, null, rgb(48, 48, 48));
+    }
+    &__price {
+      @include font($roboto, 14px, 600, null, rgb(48, 48, 48));
+      white-space: nowrap;
+      margin: 0 25px 0 0;
+    }
+    &__ingredients {
+      @include box(100%, null, null, null, null);
+      @include font($roboto, 14px, thin, italic, #666460);
+      margin: 0 10px 0 0;
+    }
+  }
+}
+
+// BELOW THE MENUE CONTAINER
+.animationContainer {
+  @include box(100%, null, null, null, null);
+  padding: 0 0 0 300px;
+  .firstRow {
+    @include box(100%, null, #fff, null, null);
+    padding: 15px 85px 15px 85px;
+    margin: 250px 0 150px 0;
+    @include flex(null, null, null);
+    position: relative;
+    .firstRowGallary {
+      @include box(57%, 400px, null, null, null);
+      padding: 0 15px;
+      &__image1 {
+        @include box(100%, 100%, null, null, null);
+        background-image: url("../images/firstRowImg1.jpg");
+        background-repeat: no-repeat;
+        background-size: 130%;
+        background-position: 50% 100%;
+        // background-attachment: fixed;
+      }
+    }
+    &__text {
+      @include box(335px, 350px, null, null, null);
+      letter-spacing: 1px;
+      line-height: 30px;
+      @include font($roboto, 18px, 200, null, #303030);
+      margin: 0 0 10px 0;
+      padding: 0 15px;
+    }
+    &__leaf {
+      @include box(50px, 50px, null, null, null);
+      position: absolute;
+      bottom: 0;
+      right: 30%;
+    }
+  }
+  .secondRow {
+    @include box(100%, null, #fff, null, null);
+    padding: 15px 85px 15px 85px;
+    margin: 150px 0 200px 0;
+    @include flex(null, null, null);
+    &__bone {
+      @include box(40%, null, null, null, null);
+      @include flex(center, null, null);
+      img {
+        @include box(125px, 200px, null, null, null);
+      }
+    }
+    &__secondCol {
+      @include box(60%, null, null, null, null);
+      padding: 200px 0 0 0;
+      .secondRowGallary {
+        @include box(100%, 350px, null, null, null);
+        padding: 0 15px;
+        &__image1 {
+          @include box(100%, 100%, null, null, null);
+          background-image: url("../images/secondRowImg1.jpg");
+          background-repeat: no-repeat;
+          background-size: 120%;
+          background-position: 50% 100%;
+        }
+      }
+    }
+    &__text {
+      @include box(100%, null, null, null, null);
+      letter-spacing: 1px;
+      line-height: 30px;
+      @include font($roboto, 18px, 200, null, #303030);
+      margin: 50px 0 10px 0;
+      padding: 0 15px;
+    }
+  }
+  .thirdRow {
+    @include box(100%, null, #fff, null, null);
+    padding: 15px 0 250px 0;
+    margin: 150px 0 0 0;
+    @include flex(null, null, null);
+    position: relative;
+    &__gallaryContainer {
+      @include box(75%, 580px, null, null, null);
+      z-index: 2;
+      .thirdRowGallary {
+        @include box(100%, 100%, null, null, null);
+        padding: 0 15px 0 15px;
+        margin: 200px 0 0 0;
+        &__image1 {
+          @include box(100%, 100%, null, null, null);
+          background-image: url("../images/thirdRowImg1.jpg");
+          background-repeat: no-repeat;
+          background-size: 125%;
+          background-position: 60% 100%;
+        }
+      }
+    }
+    &__text {
+      @include box(90%, null, null, null, null);
+      line-height: 30px;
+      @include font($roboto, 18px, 200, null, #303030);
+      padding: 0 15px;
+    }
+    &__leaf {
+      @include box(50px, 50px, null, null, null);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &__animateBackgroundContainer {
+      @include box(600px, 600px, null, null, null);
+      background-image: url("../images/movingBackground1.jpg");
+      background-size: 100%;
+      position: absolute;
+      background-position: 49% 50%;
+      background-attachment: fixed;
+      top: 0;
+      right: 0;
+    }
+    &__underGallaryContainer {
+      @include box(100%, null, null, null, null);
+      padding: 0 0 0 70px;
+      margin: 50px 0 10px 0;
+      position: relative;
+
+      @include flex(null, null, null);
+    }
+  }
+  .fourthRow {
+    @include box(100%, null, #fff, null, null);
+    padding: 0 0 15px 0;
+    margin: 100px 0 250px 0;
+    @include flex(null, null, null);
+    .fourthRowGallary {
+      @include box(40%, 630px, null, null, null);
+      padding: 0 15px 0 15px;
+      margin: 300px 0 0 0;
+      &__image1 {
+        @include box(100%, 100%, null, null, null);
+        background-image: url("../images/fourthRowImg1.jpg");
+        background-repeat: no-repeat;
+        background-size: 125%;
+        background-position: 60% 100%;
+      }
+    }
+    &__movingHamburger {
+      @include box(50%, 50%, null, null, null);
+      @include flex(null, null, column);
+      img {
+        @include box(180px, null, null, null, null);
+        margin: 0 0;
+        opacity: 0.9;
+      }
+    }
+  }
+  .fifthRow {
+    @include box(100%, null, #fff, null, null);
+    padding: 15px 85px 15px 85px;
+    margin: 150px 0 0 0;
+    @include flex(null, null, null);
+    &__text {
+      @include box(50%, null, null, null, null);
+      letter-spacing: 1px;
+      line-height: 30px;
+      @include font($roboto, 18px, 200, null, #303030);
+      margin: 50px 0 10px 0;
+      padding: 0 15px;
+    }
+    &__secondCol {
+      z-index: 7;
+      @include box(50%, null, null, null, null);
+      .fifthRowGallary {
+        @include box(100%, 350px, null, null, null);
+        padding: 0 15px;
+        &__image1 {
+          @include box(100%, 100%, null, null, null);
+          background-image: url("../images/fifthRowImg1.jpg");
+          background-repeat: no-repeat;
+          background-size: 120%;
+          background-position: 50% 20%;
+        }
+      }
+    }
+  }
+}
+.addContainer {
+  @include box(100%, 100vh, #f5f4ed, null, null);
+  @include flex(null, null, null);
+  padding: 250px 85px 200px 385px;
+  .addInfoContainer {
+    @include box(50%, null, null, null, null);
+    @include flex(null, null, column);
+    &__address {
+      @include box(305px, 247px, null, null, null);
+      padding: 0 15px;
+      h3 {
+        @include box(100%, null, null, null, null);
+        @include font($roboto, 14px, 600, null, #333333);
+        margin: 0 0 35px 0;
+        letter-spacing: 2px;
+      }
+    }
+    &__addrssText {
+      @include box(100%, null, null, null, null);
+      @include font($roboto, 18px, 200, null, #303030);
+      line-height: 40px;
+      margin: 0 0 20px 0;
+    }
+  }
+  &__mapContainer {
+    @include box(50%, null, null, null, null);
+  }
+}
+.openInMap {
+  @include box(238px, 57px, null, null, null);
+  position: relative;
+  @include flex(center, center, null);
+  p {
+    @include font($roboto, 13px, 200, null, #333333);
+    letter-spacing: 2px;
+  }
+  img {
+    position: absolute;
+    top: -20px;
+    left: 105px;
+    @include box(30px, 30px, null, null, null);
+
+  }
+  &__border {
+    position: absolute;
+    background: none transparent;
+    width: 0px;
+    height: 0px;
+    &--left {
+      left: 0;
+      bottom: 0;
+      height: 57px;
+      width: 1px;
+    }
+
+    &--topRight {
+      top: 0;
+      right: 0;
+      width: 95px;
+      height: 1px;
+    }
+    &--topLeft {
+      top: 0;
+      left: 0;
+      width: 95px;
+      height: 1px;
+    }
+    &--right {
+      right: 0;
+      top: 0;
+      height: 57px;
+      width: 1px;
+    }
+
+    &--bottom {
+      bottom: 0;
+      right: 0;
+      width: 238px;
+      height: 1px;
     }
   }
 }

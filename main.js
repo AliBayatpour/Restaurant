@@ -1,8 +1,8 @@
+// IMAGE SLIDER ANIMATION
 let tl = gsap.timeline({ repeat: -1 });
 tl.from(".imageSlider__text--1", 2, {
   y: "-50px",
   opacity: 0,
-  stagger: 1,
   ease: "expo.inOut"
 })
   .to(".imageSlider__image--img1", 6, {
@@ -16,7 +16,6 @@ tl.from(".imageSlider__text--1", 2, {
   .from(".imageSlider__text--2", 2, {
     y: "-50px",
     opacity: 0,
-    stagger: 1,
     ease: "expo.inOut"
   })
   .to(".imageSlider__image--img2", 6, {
@@ -30,7 +29,6 @@ tl.from(".imageSlider__text--1", 2, {
   .from(".imageSlider__text--3", 2, {
     y: "-50px",
     opacity: 0,
-    stagger: 1,
     ease: "expo.inOut"
   })
   .to(".imageSlider__image--img3", 6, {
@@ -44,7 +42,6 @@ tl.from(".imageSlider__text--1", 2, {
   .from(".imageSlider__text--4", 2, {
     y: "-50px",
     opacity: 0,
-    stagger: 1,
     ease: "expo.inOut"
   })
   .to(".imageSlider__image--img4", 6, {
@@ -58,7 +55,6 @@ tl.from(".imageSlider__text--1", 2, {
   .from(".imageSlider__text--5", 2, {
     y: "-50px",
     opacity: 0,
-    stagger: 1,
     ease: "expo.inOut"
   })
   .to(".imageSlider__image--img5", 6, {
@@ -72,7 +68,6 @@ tl.from(".imageSlider__text--1", 2, {
   .from(".imageSlider__text--6", 2, {
     y: "-50px",
     opacity: 0,
-    stagger: 1,
     ease: "expo.inOut"
   })
   .to(".imageSlider__image--img6", 6, {
@@ -224,13 +219,13 @@ bookTableBorder.fromTo(
   },
   "-=1"
 );
-// // LEFT EMPTY
+// LEFT EMPTY
 bookTableBorder.to(".sideBookBut__border--left", 1, {
   height: 0,
   background: "rgb(48, 48, 48)"
 });
 
-// // BOTTOM EMPTY
+// BOTTOM EMPTY
 bookTableBorder.to(".sideBookBut__border--bottom", 1, {
   width: 0,
   background: "rgb(48, 48, 48)"
@@ -246,4 +241,150 @@ bookTableBorder.to(".sideBookBut__border--right", 1, {
 bookTableBorder.to(".sideBookBut__border--top", 1, {
   width: 0,
   background: "rgb(48, 48, 48)"
+});
+
+// SHOW MENU
+showMenuAnimation = (tableName, lineName) => {
+  gsap.fromTo(
+    tableName,
+    1,
+    {
+      y: 300,
+      opacity: 0
+    },
+    {
+      opacity: 1,
+      stagger: 0.1,
+      y: 0
+    }
+  );
+  gsap.fromTo(
+    lineName,
+    1,
+    {
+      width: 0
+    },
+    {
+      width: "100%"
+    }
+  );
+};
+
+// SHOW OPEN IN GOOGLE MAP BORDER ANIMATION
+mapButBorderShow = () => {
+  // gsap.fromTo(
+  //   ".openInMap__border--topLeft",
+  //   1,
+  //   {
+  //     width: 0,
+  //     immediateRender: false,
+  //     autoRound: false
+  //   },
+  //   {
+  //     width: 95,
+  //     background: "rgb(48, 48, 48)"
+  //   }
+  // );
+  // gsap.fromTo(
+  //   ".openInMap__border--topRight",
+  //   1,
+  //   {
+  //     width: 0,
+  //     immediateRender: false,
+  //     autoRound: false
+  //   },
+  //   {
+  //     width: 95,
+  //     background: "rgb(48, 48, 48)"
+  //   }
+  // );
+  gsap.fromTo(
+    ".openInMap__border--right",
+    1,
+    {
+      heigth: 0,
+      immediateRender: false,
+      autoRound: false,
+      background: "rgb(48, 48, 48)"
+    },
+    {
+      height: 57,
+      background: "rgb(48, 48, 48)"
+    }
+  );
+  gsap.fromTo(
+    ".openInMap__border--left",
+    1,
+    {
+      heigth: 0,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: 57,
+      background: "rgb(48, 48, 48)"
+    }
+  );
+  // gsap.fromTo(
+  //   ".openInMap__border--bottom",
+  //   1,
+  //   {
+  //     width: 0,
+  //     immediateRender: false,
+  //     autoRound: false
+  //   },
+  //   {
+  //     width: 238,
+  //     background: "rgb(48, 48, 48)"
+  //   }
+  // );
+};
+mapButBorderShow();
+//HIDE MENU
+hideMenuAnimation = (tableName, lineName) => {
+  gsap.to(tableName, 1, {
+    opacity: 0
+  });
+  gsap.to(lineName, 1, {
+    width: 0
+  });
+};
+
+let isVisible = [false, false, false, false, false];
+let tables = document.querySelectorAll(".table");
+let mapBorderIsVisible = false;
+tables.forEach((_, index) => {
+  hideMenuAnimation(
+    `.tableAnimate${index + 1}`,
+    `.tableHeader__line${index + 1}`
+  );
+});
+
+// SCROLL TRIGGER ANIMATIONS
+window.addEventListener("scroll", function(e) {
+  // SHOW AND HIDING MENU FOODS
+  tables.forEach((element, index) => {
+    let bounding = element.getBoundingClientRect();
+    if (window.innerHeight - bounding.top > 210 && !isVisible[index]) {
+      isVisible[index] = true;
+      showMenuAnimation(
+        `.tableAnimate${index + 1}`,
+        `.tableHeader__line${index + 1}`
+      );
+    } else if (window.innerHeight - bounding.top < 100 && isVisible[index]) {
+      isVisible[index] = false;
+      hideMenuAnimation(
+        `.tableAnimate${index + 1}`,
+        `.tableHeader__line${index + 1}`
+      );
+    }
+  });
+  let mapBound = document.querySelector(".openInMap").getBoundingClientRect();
+  if (window.innerHeight - mapBound.top > 210 && !mapBorderIsVisible) {
+    mapBorderIsVisible = true;
+    mapButBorderShow();
+  } else if (window.innerHeight - mapBound.top < 100 && mapBorderIsVisible) {
+    mapBorderIsVisible = false;
+    mapButBorderHide();
+  }
 });
