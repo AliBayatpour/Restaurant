@@ -534,7 +534,7 @@ body {
   background-color: #fff;
   border:;
   padding: 15px 85px 15px 85px;
-  margin: 250px 0 150px 0;
+  margin: 250px 0 250px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -587,8 +587,8 @@ body {
   width: 100%;
   background-color: #fff;
   border:;
-  padding: 15px 85px 15px 85px;
-  margin: 150px 0 200px 0;
+  padding: 15px 85px 0px 85px;
+  margin: 250px 0 250px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -598,6 +598,7 @@ body {
 
 .animationContainer .secondRow__bone {
   width: 40%;
+  height: 230px;
   border:;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -607,12 +608,28 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+}
+
+.animationContainer .secondRow__bone p {
+  text-align: center;
+  width: 240px;
+  border:;
+  font-family: "Merriweather", serif;
+  font-size: 12px;
+  color: #303030;
+  font-style: italic;
+  position: absolute;
+  top: 250px;
+  opacity: 0;
 }
 
 .animationContainer .secondRow__bone img {
   width: 125px;
   height: 200px;
   border:;
+  opacity: 0.85;
+  position: absolute;
 }
 
 .animationContainer .secondRow__secondCol {
@@ -655,8 +672,8 @@ body {
   width: 100%;
   background-color: #fff;
   border:;
-  padding: 15px 0 250px 0;
-  margin: 150px 0 0 0;
+  padding: 0px 0 0 0;
+  margin: 350px 0 250px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -769,7 +786,6 @@ body {
 
 .animationContainer .fourthRow__movingHamburger {
   width: 50%;
-  height: 50%;
   border:;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -780,6 +796,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .animationContainer .fourthRow__movingHamburger img {
@@ -787,6 +804,23 @@ body {
   border:;
   margin: 0 0;
   opacity: 0.9;
+}
+
+.animationContainer .fourthRow__movingHamburger .hamburgerText {
+  text-align: center;
+  width: 180px;
+  border:;
+  font-family: "Merriweather", serif;
+  font-size: 12px;
+  color: #303030;
+  font-style: italic;
+  position: absolute;
+  top: 160px;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 .animationContainer .fifthRow {
@@ -802,8 +836,19 @@ body {
       flex-wrap: wrap;
 }
 
-.animationContainer .fifthRow__text {
+.animationContainer .fifthRow__textContainer {
   width: 50%;
+  border:;
+}
+
+.animationContainer .fifthRow__textContainer img {
+  width: 50px;
+  height: 50px;
+  border:;
+}
+
+.animationContainer .fifthRow__text {
+  width: 100%;
   border:;
   letter-spacing: 1px;
   line-height: 30px;
@@ -819,6 +864,7 @@ body {
   z-index: 7;
   width: 50%;
   border:;
+  padding: 150px 0 0 0;
 }
 
 .animationContainer .fifthRow__secondCol .fifthRowGallary {
@@ -840,7 +886,6 @@ body {
 
 .addContainer {
   width: 100%;
-  height: 100vh;
   background-color: #f5f4ed;
   border:;
   display: -webkit-box;
@@ -852,7 +897,7 @@ body {
 }
 
 .addContainer .addInfoContainer {
-  width: 50%;
+  width: 40%;
   border:;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -863,12 +908,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 15px;
 }
 
 .addContainer .addInfoContainer__address {
   width: 305px;
   height: 247px;
   border:;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0 15px;
 }
 
@@ -879,7 +930,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: #333333;
-  margin: 0 0 35px 0;
+  margin: 0 0 25px 0;
   letter-spacing: 2px;
 }
 
@@ -894,9 +945,91 @@ body {
   margin: 0 0 20px 0;
 }
 
-.addContainer__mapContainer {
-  width: 50%;
+.addContainer .addInfoContainer__addrssText--smLineHeight {
+  line-height: 25px;
+}
+
+.addContainer .addInfoContainer__border {
+  background-color: #c8a374;
+  width: 100%;
+  height: 1px;
   border:;
+  margin: 50px 0 70px 0;
+}
+
+.addContainer .reservInfo {
+  height: 170px;
+  border:;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #303030;
+  padding: 0 15px;
+}
+
+.addContainer .reservInfo a {
+  font-family: "Roboto", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #303030;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.addContainer .reservInfo a:hover {
+  -webkit-text-decoration-color: #f5f4ed;
+          text-decoration-color: #f5f4ed;
+}
+
+.addContainer .reservInfo h3 {
+  width: 100%;
+  border:;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 25px 0;
+  letter-spacing: 2px;
+}
+
+.addContainer .mapContainer {
+  width: 60%;
+  border:;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px 0 100px;
+  position: relative;
+}
+
+.addContainer .mapContainer__mapImage {
+  position: absolute;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  border:;
+  -webkit-clip-path: polygon(0% 50%, 50% 0, 100% 50%, 50% 100%);
+          clip-path: polygon(0% 50%, 50% 0, 100% 50%, 50% 100%);
 }
 
 .openInMap {
@@ -915,6 +1048,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .openInMap p {
@@ -974,5 +1108,40 @@ body {
   right: 0;
   width: 238px;
   height: 1px;
+}
+
+.openInMap__border--boldLeft {
+  left: 0;
+  bottom: 0;
+  height: 57px;
+  width: 3px;
+}
+
+.openInMap__border--boldTopRight {
+  top: 0;
+  left: 143px;
+  width: 95px;
+  height: 3px;
+}
+
+.openInMap__border--boldTopLeft {
+  top: 0;
+  left: 0;
+  width: 95px;
+  height: 3px;
+}
+
+.openInMap__border--boldRight {
+  right: 0;
+  top: 0;
+  height: 57px;
+  width: 3px;
+}
+
+.openInMap__border--boldBottom {
+  bottom: 0;
+  right: 0;
+  width: 238px;
+  height: 3px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -36,6 +36,7 @@ body {
 $montserrat: "Montserrat", sans-serif;
 $roboto: "Roboto", sans-serif;
 $openSans: "Open Sans", sans-serif;
+$merry: "Merriweather", serif;
 
 @mixin font($family, $size, $weight, $style, $color) {
   font-family: $family;
@@ -346,7 +347,7 @@ $openSans: "Open Sans", sans-serif;
   .firstRow {
     @include box(100%, null, #fff, null, null);
     padding: 15px 85px 15px 85px;
-    margin: 250px 0 150px 0;
+    margin: 250px 0 250px 0;
     @include flex(null, null, null);
     position: relative;
     .firstRowGallary {
@@ -378,14 +379,25 @@ $openSans: "Open Sans", sans-serif;
   }
   .secondRow {
     @include box(100%, null, #fff, null, null);
-    padding: 15px 85px 15px 85px;
-    margin: 150px 0 200px 0;
+    padding: 15px 85px 0px 85px;
+    margin: 250px 0 250px 0;
     @include flex(null, null, null);
     &__bone {
-      @include box(40%, null, null, null, null);
+      @include box(40%, 230px, null, null, null);
       @include flex(center, null, null);
+      position: relative;
+      p {
+        text-align: center;
+        @include box(240px, null, null, null, null);
+        @include font($merry, 12px, null, italic, #303030);
+        position: absolute;
+        top: 250px;
+        opacity: 0;
+      }
       img {
         @include box(125px, 200px, null, null, null);
+        opacity: 0.85;
+        position: absolute;
       }
     }
     &__secondCol {
@@ -414,8 +426,8 @@ $openSans: "Open Sans", sans-serif;
   }
   .thirdRow {
     @include box(100%, null, #fff, null, null);
-    padding: 15px 0 250px 0;
-    margin: 150px 0 0 0;
+    padding: 0px 0 0 0;
+    margin: 350px 0 250px 0;
     @include flex(null, null, null);
     position: relative;
     &__gallaryContainer {
@@ -483,12 +495,25 @@ $openSans: "Open Sans", sans-serif;
       }
     }
     &__movingHamburger {
-      @include box(50%, 50%, null, null, null);
+      @include box(50%, null, null, null, null);
       @include flex(null, null, column);
+      position: relative;
       img {
         @include box(180px, null, null, null, null);
         margin: 0 0;
         opacity: 0.9;
+      }
+      .hamburgerText {
+        text-align: center;
+        @include box(180px, null, null, null, null);
+        @include font($merry, 12px, null, italic, #303030);
+        position: absolute;
+        top: 160px;
+        opacity: 0;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
       }
     }
   }
@@ -497,8 +522,14 @@ $openSans: "Open Sans", sans-serif;
     padding: 15px 85px 15px 85px;
     margin: 150px 0 0 0;
     @include flex(null, null, null);
-    &__text {
+    &__textContainer {
       @include box(50%, null, null, null, null);
+      img {
+        @include box(50px, 50px, null, null, null);
+      }
+    }
+    &__text {
+      @include box(100%, null, null, null, null);
       letter-spacing: 1px;
       line-height: 30px;
       @include font($roboto, 18px, 200, null, #303030);
@@ -508,6 +539,7 @@ $openSans: "Open Sans", sans-serif;
     &__secondCol {
       z-index: 7;
       @include box(50%, null, null, null, null);
+      padding: 150px 0 0 0;
       .fifthRowGallary {
         @include box(100%, 350px, null, null, null);
         padding: 0 15px;
@@ -523,19 +555,21 @@ $openSans: "Open Sans", sans-serif;
   }
 }
 .addContainer {
-  @include box(100%, 100vh, #f5f4ed, null, null);
+  @include box(100%, null, #f5f4ed, null, null);
   @include flex(null, null, null);
   padding: 250px 85px 200px 385px;
   .addInfoContainer {
-    @include box(50%, null, null, null, null);
+    @include box(40%, null, null, null, null);
     @include flex(null, null, column);
+    padding: 0 15px;
     &__address {
       @include box(305px, 247px, null, null, null);
+      @include flex(null, null, null);
       padding: 0 15px;
       h3 {
         @include box(100%, null, null, null, null);
         @include font($roboto, 14px, 600, null, #333333);
-        margin: 0 0 35px 0;
+        margin: 0 0 25px 0;
         letter-spacing: 2px;
       }
     }
@@ -544,16 +578,54 @@ $openSans: "Open Sans", sans-serif;
       @include font($roboto, 18px, 200, null, #303030);
       line-height: 40px;
       margin: 0 0 20px 0;
+      &--smLineHeight {
+        line-height: 25px;
+      }
+    }
+    &__border {
+      background-color: #c8a374;
+      @include box(100%, 1px, null, null, null);
+      margin: 50px 0 70px 0;
     }
   }
-  &__mapContainer {
-    @include box(50%, null, null, null, null);
+
+  .reservInfo {
+    @include box(null, 170px, null, null, null);
+    @include flex(space-between, null, column);
+    @include font($roboto, 18px, 200, null, #303030);
+    padding: 0 15px;
+    a {
+      @include font($roboto, 19px, 500, null, #303030);
+      transition: all 0.3s;
+      &:hover {
+        text-decoration-color: #f5f4ed;
+      }
+    }
+    h3 {
+      @include box(100%, null, null, null, null);
+      @include font($roboto, 14px, 600, null, #333333);
+      margin: 0 0 25px 0;
+      letter-spacing: 2px;
+    }
+  }
+  .mapContainer {
+    @include box(60%, null, null, null, null);
+    @include flex(center, center, null);
+    padding: 0 15px 0 100px;
+    position: relative;
+    &__mapImage {
+      position: absolute;
+      overflow: hidden;
+      @include box(500px, 500px, null, null, null);
+      clip-path: polygon(0% 50%, 50% 0, 100% 50%, 50% 100%);
+    }
   }
 }
 .openInMap {
   @include box(238px, 57px, null, null, null);
   position: relative;
   @include flex(center, center, null);
+  cursor: pointer;
   p {
     @include font($roboto, 13px, 200, null, #333333);
     letter-spacing: 2px;
@@ -563,7 +635,6 @@ $openSans: "Open Sans", sans-serif;
     top: -20px;
     left: 105px;
     @include box(30px, 30px, null, null, null);
-
   }
   &__border {
     position: absolute;
@@ -601,6 +672,38 @@ $openSans: "Open Sans", sans-serif;
       right: 0;
       width: 238px;
       height: 1px;
+    }
+    &--boldLeft {
+      left: 0;
+      bottom: 0;
+      height: 57px;
+      width: 3px;
+    }
+
+    &--boldTopRight {
+      top: 0;
+      left: 143px;
+      width: 95px;
+      height: 3px;
+    }
+    &--boldTopLeft {
+      top: 0;
+      left: 0;
+      width: 95px;
+      height: 3px;
+    }
+    &--boldRight {
+      right: 0;
+      top: 0;
+      height: 57px;
+      width: 3px;
+    }
+
+    &--boldBottom {
+      bottom: 0;
+      right: 0;
+      width: 238px;
+      height: 3px;
     }
   }
 }
