@@ -1,84 +1,403 @@
 // IMAGE SLIDER ANIMATION
 let tl = gsap.timeline({ repeat: -1 });
-tl.from(".imageSlider__text--1", 2, {
-  y: "-50px",
-  opacity: 0,
-  ease: "expo.inOut"
-})
-  .to(".imageSlider__image--img1", 6, {
-    backgroundSize: "100%",
-    ease: "sine.out"
-  })
+tl.fromTo(
+  ".sliderController__option--1",
+  0.1,
+  {
+    opacity: 0
+  },
+  {
+    opacity: 1
+  }
+)
+  .fromTo(
+    ".imageSlider__text--1",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img1",
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--1",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--2",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
   .to(".imageSlider__ImagesContainer", 2, {
     left: "-100%",
     ease: "power3.inOut"
   })
-  .from(".imageSlider__text--2", 2, {
-    y: "-50px",
-    opacity: 0,
-    ease: "expo.inOut"
-  })
-  .to(".imageSlider__image--img2", 6, {
-    backgroundSize: "100%",
-    ease: "sine.out"
-  })
+  .fromTo(
+    ".imageSlider__text--2",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img2",
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--2",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--3",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
   .to(".imageSlider__ImagesContainer", 2, {
     left: "-200%",
     ease: "power3.inOut"
   })
-  .from(".imageSlider__text--3", 2, {
-    y: "-50px",
-    opacity: 0,
-    ease: "expo.inOut"
-  })
-  .to(".imageSlider__image--img3", 6, {
-    backgroundSize: "100%",
-    ease: "sine.out"
-  })
+  .fromTo(
+    ".imageSlider__text--3",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img3",
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--3",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--4",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
   .to(".imageSlider__ImagesContainer", 2, {
     left: "-300%",
     ease: "power3.inOut"
   })
-  .from(".imageSlider__text--4", 2, {
-    y: "-50px",
-    opacity: 0,
-    ease: "expo.inOut"
-  })
-  .to(".imageSlider__image--img4", 6, {
-    backgroundSize: "100%",
-    ease: "sine.out"
-  })
+  .fromTo(
+    ".imageSlider__text--4",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img4",
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--4",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--5",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
   .to(".imageSlider__ImagesContainer", 2, {
     left: "-400%",
     ease: "power3.inOut"
   })
-  .from(".imageSlider__text--5", 2, {
-    y: "-50px",
-    opacity: 0,
-    ease: "expo.inOut"
-  })
-  .to(".imageSlider__image--img5", 6, {
-    backgroundSize: "100%",
-    ease: "sine.out"
-  })
+  .fromTo(
+    ".imageSlider__text--5",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img5",
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--5",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--6",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
   .to(".imageSlider__ImagesContainer", 2, {
     left: "-500%",
     ease: "power3.inOut"
   })
-  .from(".imageSlider__text--6", 2, {
-    y: "-50px",
-    opacity: 0,
-    ease: "expo.inOut"
-  })
-  .to(".imageSlider__image--img6", 6, {
-    backgroundSize: "100%",
-    ease: "sine.out"
-  })
+  .fromTo(
+    ".imageSlider__text--6",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img6",
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--6",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--1",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
   .to(".imageSlider__ImagesContainer", 2, {
     left: "-600%",
     ease: "power3.inOut"
   })
   .to(".imageSlider__ImagesContainer", 0, { left: "0%", ease: "sine.out" });
+// <----------------FINISH---------------->
+
+let imageOptions = document.querySelectorAll(".sliderController__option");
+let imageContainer = document.querySelector(".imageSlider__ImagesContainer");
+let referenceNode;
+let firstRun = true;
+changeSlider = (index, image, option) => {
+  let leftDistance =
+    Math.round(-1 * Number(imageContainer.style.left.replace("%", "") / 100)) *
+    100;
+  let newLeft = `${(leftDistance / 100 + 1) * -100}%`;
+  let newId = `${leftDistance / 100 + 1}`;
+  tl.kill();
+  if (firstRun) {
+    referenceNode = document.querySelector(
+      `.imageSlider__image--img${leftDistance / 100 + 1}`
+    );
+  }
+  let itm = document.querySelector(image);
+  let newNode = itm.cloneNode(true);
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  referenceNode = newNode;
+  referenceNode.children[0].children[0].classList.add(`textNum${newId}`);
+  referenceNode.children[0].children[1].classList.add(`textNum${newId}`);
+  imageOptions.forEach(element => {
+    element.style.opacity = 0;
+  });
+  let optionClass = option;
+  let imageClass = image;
+  let slideControlerTl = gsap.timeline({ repeat: 0 });
+  slideControlerTl.fromTo(
+    optionClass,
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    }
+  );
+  slideControlerTl.to(".imageSlider__ImagesContainer", 2, {
+    left: newLeft,
+    ease: "power3.inOut"
+  });
+  slideControlerTl.fromTo(
+    `.textNum${newId}`,
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.5,
+      ease: "expo.inOut"
+    }
+  );
+  slideControlerTl.fromTo(
+    imageClass,
+    6,
+    {
+      backgroundSize: "115%"
+    },
+    {
+      backgroundSize: "100%",
+      ease: "sine.out"
+    }
+  );
+  firstRun = false;
+};
 
 // SHOW BORDER ANIMATION
 menueBorderShow = (top, bottom, borderWidth) => {
@@ -114,6 +433,8 @@ menueBorderShow = (top, bottom, borderWidth) => {
     }
   );
 };
+// <----------------FINISH---------------->
+
 //HIDE BORDER ANIMATION
 menueBorderHide = (top, bottom, borderWidth) => {
   topName = top;
@@ -147,6 +468,7 @@ menueBorderHide = (top, bottom, borderWidth) => {
     }
   );
 };
+// <----------------FINISH---------------->
 
 // BOOK A TABLE BORDER ANIMATION
 let bookTableBorder = new TimelineMax({
@@ -242,6 +564,7 @@ bookTableBorder.to(".sideBookBut__border--top", 1, {
   width: 0,
   background: "rgb(48, 48, 48)"
 });
+// <----------------FINISH---------------->
 
 // SHOW MENU
 showMenuAnimation = (tableName, lineName) => {
@@ -269,6 +592,7 @@ showMenuAnimation = (tableName, lineName) => {
     }
   );
 };
+// <----------------FINISH---------------->
 
 // SHOW OPEN IN GOOGLE MAP BORDER ANIMATION
 mapButBorderShow = arr => {
@@ -354,6 +678,8 @@ mapButBorderShow = arr => {
     );
   }
 };
+// <----------------FINISH---------------->
+
 // HIDE OPEN IN GOOGLE MAP BORDER ANIMATION
 mapButBorderHide = arr => {
   gsap.fromTo(
@@ -433,6 +759,8 @@ mapButBorderHide = arr => {
     );
   }
 };
+// <----------------FINISH---------------->
+
 //HIDE MENU
 hideMenuAnimation = (tableName, lineName) => {
   gsap.to(tableName, 1, {
@@ -442,6 +770,7 @@ hideMenuAnimation = (tableName, lineName) => {
     width: 0
   });
 };
+// <----------------FINISH---------------->
 
 // SHOW ADDRESS SECTION BORDERS
 showAddBorders = borderName => {
@@ -458,6 +787,7 @@ showAddBorders = borderName => {
     }
   );
 };
+// <----------------FINISH---------------->
 
 // HIDE ADDRESS SECTION BORDERS
 hideAddBorders = borderName => {
@@ -474,6 +804,7 @@ hideAddBorders = borderName => {
     }
   );
 };
+// <----------------FINISH---------------->
 
 // SHOWING PARAGRAPH TEXTS ANIMATION
 showParaTextAnimation = (textName, hasLeaf = "") => {
@@ -504,6 +835,7 @@ showParaTextAnimation = (textName, hasLeaf = "") => {
     );
   }
 };
+// <----------------FINISH---------------->
 
 // HIDING PARAGRAPH TEXTS ANIMATION
 hideParaTextAnimation = (textName, hasLeaf = "") => {
@@ -534,6 +866,7 @@ hideParaTextAnimation = (textName, hasLeaf = "") => {
     );
   }
 };
+// <----------------FINISH---------------->
 
 breakBone = () => {
   gsap.to(".boneImg", 0.1, { x: "+=20", yoyo: true, repeat: 5 });
@@ -556,6 +889,7 @@ breakBone = () => {
     }
   );
 };
+// <----------------FINISH---------------->
 
 // SHOW HAMBURGER TEXT
 showHamburgerText = () => {
@@ -572,6 +906,7 @@ showHamburgerText = () => {
     }
   );
 };
+// <----------------FINISH---------------->
 
 hideHamburgerText = () => {
   gsap.fromTo(
@@ -587,7 +922,9 @@ hideHamburgerText = () => {
     }
   );
 };
+// <----------------FINISH---------------->
 
+// DEFINING SOME VARIABLES AND INITIALIZATION
 let isVisible = [false, false, false, false, false];
 let tables = document.querySelectorAll(".table");
 let addBorders = document.querySelectorAll(".addInfoContainer__border");
@@ -625,6 +962,7 @@ tables.forEach((_, index) => {
       break;
   }
 });
+
 let mapBorderIsVisible = false;
 let addBorderIsVisible = [false, false];
 tables.forEach((_, index) => {
@@ -652,6 +990,7 @@ let mainBorders = [
   ".openInMap__border--bottom",
   true
 ];
+// <----------------FINISH---------------->
 
 // SCROLL TRIGGER ANIMATIONS
 window.addEventListener("scroll", function(e) {
@@ -760,11 +1099,9 @@ window.addEventListener("scroll", function(e) {
           break;
       }
     }
-    let botBreadMargTop = document.querySelector(".bottomBread").style.marginTop;
-    if (
-      botBreadMargTop == "-30px" &&
-      hamburgerTextHidden
-    ) {
+    let botBreadMargTop = document.querySelector(".bottomBread").style
+      .marginTop;
+    if (botBreadMargTop == "-30px" && hamburgerTextHidden) {
       showHamburgerText();
       hamburgerTextHidden = false;
     } else if (botBreadMargTop != "-30px" && !hamburgerTextHidden) {
@@ -783,6 +1120,8 @@ window.addEventListener("scroll", function(e) {
     }
   }
 });
+// <----------------FINISH---------------->
+
 // OPEN IN MAP BUTTON HOVER SHOW ANIMATION
 let openInMapElem = document.querySelector(".openInMap");
 openInMapElem.addEventListener("mouseenter", () => {
@@ -791,6 +1130,7 @@ openInMapElem.addEventListener("mouseenter", () => {
 openInMapElem.addEventListener("mouseleave", () => {
   mapButBorderHide(boldBorders);
 });
+// <----------------FINISH---------------->
 
 // GOOGLE MAP
 let map;
@@ -807,3 +1147,23 @@ function initMap() {
     title: "Vallier Bistro"
   });
 }
+// <----------------FINISH---------------->
+
+// GSAP FOR MOVING ROW TEXTS WITH SCROLL
+const rowText = new TimelineLite();
+rowText.add(
+  gsap.to(".firstRow__text", {
+    duration: 1,
+    y: 400
+  })
+);
+
+//SCROLL MAGIC ANIMATIONS
+const controller = new ScrollMagic.Controller();
+const scene = new ScrollMagic.Scene({
+  triggerElement: ".animateParaText--1",
+  duration: 2000
+})
+  .setTween(rowText)
+  .addIndicators()
+  .addTo(controller);

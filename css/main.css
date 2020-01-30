@@ -25,11 +25,12 @@
 
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .sideBar {
   width: 300px;
-  height: 100vh;
+  height: 100%;
   background-color: #303030;
   border:;
   display: -webkit-box;
@@ -263,7 +264,7 @@ body {
 
 .imageSlider {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   border:;
   max-height: 100vh;
   position: relative;
@@ -322,10 +323,8 @@ body {
 
 .imageSlider__textBox {
   position: absolute;
-  left: 50%;
-  top: 60%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 350px;
+  top: 55%;
 }
 
 .imageSlider__image {
@@ -338,7 +337,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.25);
   background-blend-mode: overlay;
   position: relative;
 }
@@ -370,6 +369,55 @@ body {
 
 .imageSlider__image--img7 {
   background-image: url("../images/img1.jpg");
+}
+
+.imageSlider .sliderController {
+  position: absolute;
+  left: 25%;
+  top: 90%;
+}
+
+.imageSlider .sliderController__ul {
+  width: 250px;
+  background-color: transparent;
+  border:;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.imageSlider .sliderController__li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  border: solid white 1px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.imageSlider .sliderController__option {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border:;
+  opacity: 0;
 }
 
 .menuContainer {
@@ -558,6 +606,7 @@ body {
   background-repeat: no-repeat;
   background-size: 130%;
   background-position: 50% 100%;
+  background-attachment: fixed;
 }
 
 .animationContainer .firstRow__text {

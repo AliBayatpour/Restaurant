@@ -14,6 +14,7 @@
 
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 @mixin box($width, $height, $backgroundColor, $borderRadius, $border...) {
@@ -48,7 +49,7 @@ $merry: "Merriweather", serif;
 
 // SIDE BAR
 .sideBar {
-  @include box(300px, 100vh, rgb(48, 48, 48), null, null);
+  @include box(300px, 100%, rgb(48, 48, 48), null, null);
   @include flex(space-between, center, column);
   flex-wrap: nowrap;
   position: fixed;
@@ -180,7 +181,7 @@ $merry: "Merriweather", serif;
 
 // IMAGE SLIDER
 .imageSlider {
-  @include box(100%, 100%, null, null, null);
+  @include box(100%, 100vh, null, null, null);
   max-height: 100vh;
   position: relative;
 
@@ -216,9 +217,9 @@ $merry: "Merriweather", serif;
 
   &__textBox {
     position: absolute;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
+    left: 350px;
+    top: 55%;
+    // transform: translate(-40%, -50%);
   }
 
   &__image {
@@ -229,7 +230,7 @@ $merry: "Merriweather", serif;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: rgba($color: #000000, $alpha: 0.2);
+    background-color: rgba($color: #000000, $alpha: 0.25);
     background-blend-mode: overlay;
     position: relative;
 
@@ -254,6 +255,26 @@ $merry: "Merriweather", serif;
     }
     &--img7 {
       background-image: url("../images/img1.jpg");
+    }
+  }
+  .sliderController {
+    position: absolute;
+    left: 25%;
+    top: 90%;
+    &__ul {
+      @include box(250px, null, transparent, null, null);
+      @include flex(space-between, null, null);
+    }
+    &__li {
+      list-style: none;
+      @include box(10px, 10px, null, null, solid white 1px);
+      transform: rotate(45deg);
+      @include flex(center, center, null);
+      cursor: pointer;
+    }
+    &__option {
+      @include box(6px, 6px, #fff, null, null);
+      opacity: 0;
     }
   }
 }
@@ -359,7 +380,7 @@ $merry: "Merriweather", serif;
         background-repeat: no-repeat;
         background-size: 130%;
         background-position: 50% 100%;
-        // background-attachment: fixed;
+        background-attachment: fixed;
       }
     }
     &__text {

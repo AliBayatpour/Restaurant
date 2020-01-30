@@ -112,11 +112,7 @@
     <div class="imageSlider">
       <div class="imageSlider__ImagesContainer">
         <div class="imageSlider__image imageSlider__image--img1">
-          <div
-            class="imageSlider__textBox"
-            data-100-top="opacity: 1"
-            data--100-top="opacity: 0"
-          >
+          <div class="imageSlider__textBox">
             <p class="imageSlider__text imageSlider__text--1">
               EVERYDAY FROM 4PM - 7PM
             </p>
@@ -126,11 +122,7 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img2">
-          <div
-            class="imageSlider__textBox"
-            data-100-top="opacity: 1"
-            data--100-top="opacity: 0"
-          >
+          <div class="imageSlider__textBox">
             <p class="imageSlider__text imageSlider__text--2">
               A taste of local ingredients
             </p>
@@ -140,11 +132,7 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img3">
-          <div
-            class="imageSlider__textBox"
-            data-100-top="opacity: 1"
-            data--100-top="opacity: 0"
-          >
+          <div class="imageSlider__textBox">
             <p class="imageSlider__text imageSlider__text--3">"Fresh" salad</p>
             <p class="imageSlider__text imageSlider__text--3">
               or "Copious" meal
@@ -152,11 +140,7 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img4">
-          <div
-            class="imageSlider__textBox"
-            data-100-top="opacity: 1"
-            data--100-top="opacity: 0"
-          >
+          <div class="imageSlider__textBox">
             <p class="imageSlider__text imageSlider__text--4">
               Step into Vallier
             </p>
@@ -166,11 +150,7 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img5">
-          <div
-            class="imageSlider__textBox"
-            data-100-top="opacity: 1"
-            data--100-top="opacity: 0"
-          >
+          <div class="imageSlider__textBox">
             <p class="imageSlider__text imageSlider__text--5">
               The best selection
             </p>
@@ -180,11 +160,7 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img6">
-          <div
-            class="imageSlider__textBox"
-            data-100-top="opacity: 1"
-            data--100-top="opacity: 0"
-          >
+          <div class="imageSlider__textBox">
             <p class="imageSlider__text imageSlider__text--6">Happy hour</p>
             <p class="imageSlider__text imageSlider__text--6">
               deals on weekdays
@@ -192,6 +168,58 @@
           </div>
         </div>
         <div class="imageSlider__image imageSlider__image--img7"></div>
+      </div>
+      <div class="sliderController">
+        <ul class="sliderController__ul">
+          <li
+            class="sliderController__li"
+            onclick="changeSlider(1, '.imageSlider__image--img1', '.sliderController__option--1')"
+          >
+            <span
+              class="sliderController__option sliderController__option--1"
+            ></span>
+          </li>
+          <li
+            class="sliderController__li"
+            onclick="changeSlider(2, '.imageSlider__image--img2', '.sliderController__option--2')"
+          >
+            <span
+              class="sliderController__option sliderController__option--2"
+            ></span>
+          </li>
+          <li
+            class="sliderController__li"
+            onclick="changeSlider(3, '.imageSlider__image--img3', '.sliderController__option--3')"
+          >
+            <span
+              class="sliderController__option sliderController__option--3"
+            ></span>
+          </li>
+          <li
+            class="sliderController__li"
+            onclick="changeSlider(4, '.imageSlider__image--img4', '.sliderController__option--4')"
+          >
+            <span
+              class="sliderController__option sliderController__option--4"
+            ></span>
+          </li>
+          <li
+            class="sliderController__li"
+            onclick="changeSlider(5, '.imageSlider__image--img5', '.sliderController__option--5')"
+          >
+            <span
+              class="sliderController__option sliderController__option--5"
+            ></span>
+          </li>
+          <li
+            class="sliderController__li"
+            onclick="changeSlider(6, '.imageSlider__image--img6', '.sliderController__option--6')"
+          >
+            <span
+              class="sliderController__option sliderController__option--6"
+            ></span>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- MENUE -->
@@ -580,22 +608,10 @@
     </div>
     <div class="animationContainer">
       <div class="firstRow">
-        <div
-          class="firstRowGallary"
-          data--500-top="height: 400px"
-          data--1500-bottom="height: 300px"
-        >
-          <div
-            class="firstRowGallary__image1"
-            data--400-bottom="background-position: 50% 100%"
-            data--1000-bottom="background-position: 50% 0%"
-          ></div>
+        <div class="firstRowGallary">
+          <div class="firstRowGallary__image1"></div>
         </div>
-        <div
-          class="firstRow__text"
-          data--400-bottom="margin-top: 0px"
-          data--1000-top="margin-top: 90px"
-        >
+        <div class="firstRow__text">
           <p class="animateParaText animateParaText--1">
             Whether you’re in the mood for a ‘small’ poutine or a ‘big’ salad,
             ‘just one’ beer or a double shot espresso, when it satisfies your
@@ -605,11 +621,7 @@
         <img class="firstRow__leaf" src="./images/leaf.png" alt="Small leaf" />
       </div>
       <div class="secondRow">
-        <div
-          class="secondRow__bone"
-          data-top-top="transform: translateY(-150px);"
-          data--1700-top="transform: translateY(800px);"
-        >
+        <div class="secondRow__bone">
           <img class="boneImg" src="./images/bone.png" alt="Bone" />
           <p class="boneText">
             The best traditions bring good fortune, but also good times and good
@@ -617,37 +629,21 @@
           </p>
         </div>
         <div class="secondRow__secondCol">
-          <div
-            class="secondRowGallary"
-            data--500-top="height: 350px"
-            data--1500-bottom="height: 270px"
-          >
-            <div
-              class="secondRowGallary__image1"
-              data--350-bottom="background-position: 50% 100%"
-              data--1000-bottom="background-position: 50% 0%"
-            ></div>
+          <div class="secondRowGallary">
+            <div class="secondRowGallary__image1"></div>
           </div>
           <div class="secondRow__text">
             <p class="animateParaText animateParaText--2">
-              Whether you’re in the mood for a ‘small’ poutine or a ‘big’ salad,
-              ‘just one’ beer or a double shot espresso, when it satisfies your
-              tastebuds, it’s all good.
+              Inspired by local flavours and Montrealers’ favourite dishes,
+              Vallier cooks serve up comforting and seasonal dishes that evoke
+              and create the best memories.
             </p>
           </div>
         </div>
         <div class="thirdRow">
           <div class="thirdRow__gallaryContainer">
-            <div
-              class="thirdRowGallary"
-              data--800-top="height: 580px"
-              data--1550-bottom="height: 420px"
-            >
-              <div
-                class="thirdRowGallary__image1"
-                data--380-bottom="background-position: 60% 100%"
-                data--1200-bottom="background-position: 60% 0%"
-              ></div>
+            <div class="thirdRowGallary">
+              <div class="thirdRowGallary__image1"></div>
             </div>
             <div class="thirdRow__underGallaryContainer">
               <div class="thirdRow__text">
@@ -673,62 +669,18 @@
         <div class="fourthRowGallary">
           <div class="fourthRowGallary__image1"></div>
         </div>
-        <div
-          class="fourthRow__movingHamburger"
-          data--100-top="transform: translateY(0px); opacity: 0.9"
-          data--2200-top="transform: translateY(1200px); opacity: 0.8"
-        >
-          <img
-            src="./images/topBread.png"
-            alt=" Bread"
-            data--400-top="margin: 0px auto"
-            data--900-top="margin: -30px auto"
-            style="z-index: 6;"
-          />
-          <img
-            src="./images/tomato.png"
-            alt="Tomato"
-            data--400-top="margin: 0px auto"
-            data--900-top="margin: -30px auto"
-            style="z-index: 5;"
-          />
-          <img
-            src="./images/ham.png"
-            alt="Ham"
-            data--400-top="margin: 0px auto"
-            data--900-top="margin: -30px auto"
-            style="z-index: 4;"
-          />
-          <img
-            src="./images/meat.png"
-            alt="Meat"
-            data--400-top="margin: 0px auto"
-            data--900-top="margin: -30px auto"
-            style="z-index: 3;"
-          />
-          <img
-            src="./images/celery.png"
-            alt="Celery"
-            data--400-top="margin: 0px auto"
-            data--900-top="margin: -30px auto"
-            style="z-index: 2;"
-          />
-          <img
-            class="bottomBread"
-            src="./images/bottomBread.png"
-            alt="Bread"
-            data--400-top="margin: 0px auto"
-            data--900-top="margin: -30px auto"
-          />
+        <div class="fourthRow__movingHamburger">
+          <img src="./images/topBread.png" alt=" Bread" style="z-index: 6;" />
+          <img src="./images/tomato.png" alt="Tomato" style="z-index: 5;" />
+          <img src="./images/ham.png" alt="Ham" style="z-index: 4;" />
+          <img src="./images/meat.png" alt="Meat" style="z-index: 3;" />
+          <img src="./images/celery.png" alt="Celery" style="z-index: 2;" />
+          <img class="bottomBread" src="./images/bottomBread.png" alt="Bread" />
           <p class="hamburgerText">Great food. Great people. It all adds up.</p>
         </div>
         <div class="fifthRow">
           <div class="fifthRow__textContainer">
-            <div
-              class="fifthRow__text"
-              data--600-bottom="margin-top: 550px"
-              data--1200-top="margin-top: 0px"
-            >
+            <div class="fifthRow__text">
               <p class="animateParaText animateParaText--4">
                 Just like its surroundings, Vallier has a French soul, but also
                 the warmth of a British pub and the vibrancy of Brooklyn.
@@ -741,21 +693,9 @@
               alt="small Logo"
             />
           </div>
-          <div
-            class="fifthRow__secondCol"
-            data--600-bottom="padding-top: 150px"
-            data--1500-top="padding-top: 0px"
-          >
-            <div
-              class="fifthRowGallary"
-              data--500-top="height: 350px"
-              data--1500-bottom="height: 250px"
-            >
-              <div
-                class="fifthRowGallary__image1"
-                data--350-bottom="background-position: 50% 100%"
-                data--1000-bottom="background-position: 50% 0%"
-              ></div>
+          <div class="fifthRow__secondCol">
+            <div class="fifthRowGallary">
+              <div class="fifthRowGallary__image1"></div>
             </div>
           </div>
         </div>
@@ -836,17 +776,18 @@
         <div class="mapContainer__mapImage" id="map"></div>
       </div>
     </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9SJrJz2gP0QBjWUFgXWGISnJrCA8ko3c&callback=initMap"
+      async
+      defer
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <script src="./main.js"></script>
   </body>
-  <script type="text/javascript" src="skrollr.min.js"></script>
-  <script type="text/javascript">
-    var s = skrollr.init();
-  </script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9SJrJz2gP0QBjWUFgXWGISnJrCA8ko3c&callback=initMap"
-    async
-    defer
-  ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/ScrollToPlugin.min.js"></script>
-  <script src="./main.js"></script>
 </html>
