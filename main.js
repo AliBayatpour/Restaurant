@@ -1,3 +1,13 @@
+window.onload = function() {
+  lax.setup(); // init
+
+  const updateLax = () => {
+    lax.update(window.scrollY);
+    window.requestAnimationFrame(updateLax);
+  };
+
+  window.requestAnimationFrame(updateLax);
+};
 // IMAGE SLIDER ANIMATION
 let tl = gsap.timeline({ repeat: -1 });
 tl.fromTo(
@@ -924,6 +934,30 @@ hideHamburgerText = () => {
 };
 // <----------------FINISH---------------->
 
+// HAMBER MAKER TIMELINE
+let hamberMakrTl = gsap.timeline({ paused: true });
+hamberMakrTl
+  .fromTo(
+    ".fourthRowGallary__hamburgerItem",
+    2,
+    {
+      margin: "0px 0px"
+    },
+    {
+      margin: "-31px 0px"
+    }
+  )
+  .fromTo(
+    ".fourthRow__movingHamburger",
+    8,
+    {
+      y: 0
+    },
+    {
+      y: 1200
+    },
+    "-=2"
+  );
 // DEFINING SOME VARIABLES AND INITIALIZATION
 let isVisible = [false, false, false, false, false];
 let tables = document.querySelectorAll(".table");
@@ -931,8 +965,17 @@ let addBorders = document.querySelectorAll(".addInfoContainer__border");
 let animateParaText = document.querySelectorAll(".animateParaText");
 let animateParaTextIsVisible = [];
 let shouldBreakBone = true;
-// HAMBURGER TEXT FLAG
+let lastScrollTop = 0;
+// HAMBURGER & TEXT FLAG
+let hamburgerItems = document.querySelectorAll(
+  ".fourthRowGallary__hamburgerItem"
+);
+let hamberMakrTlProgress;
+// HAMBURGER BOTTOM BREAD
+let bottomBread = document.querySelector(".fourthRowGallary__breadBottom");
+let itemMargin = 0;
 let hamburgerTextHidden = true;
+let triggerPoint = 0;
 animateParaText.forEach((_, index) => {
   animateParaTextIsVisible[index] = false;
 });
@@ -1099,12 +1142,21 @@ window.addEventListener("scroll", function(e) {
           break;
       }
     }
-    let botBreadMargTop = document.querySelector(".bottomBread").style
-      .marginTop;
-    if (botBreadMargTop == "-30px" && hamburgerTextHidden) {
+    // console.log(window.pageYOffset);
+
+    hamberMakrTlProgress =
+      (window.innerHeight - bottomBread.getBoundingClientRect().top) /
+      window.innerHeight;
+    if (hamberMakrTlProgress >= 0 && hamberMakrTlProgress <= 1.3) {
+      hamberMakrTl.progress(hamberMakrTlProgress / 3);
+    }
+
+    let botBreadMargTop = Number(bottomBread.style.marginTop.replace("px", ""));
+
+    if (botBreadMargTop <= -30 && hamburgerTextHidden) {
       showHamburgerText();
       hamburgerTextHidden = false;
-    } else if (botBreadMargTop != "-30px" && !hamburgerTextHidden) {
+    } else if (botBreadMargTop > -28 && !hamburgerTextHidden) {
       hideHamburgerText();
       hamburgerTextHidden = true;
     }
@@ -1148,22 +1200,3 @@ function initMap() {
   });
 }
 // <----------------FINISH---------------->
-
-// GSAP FOR MOVING ROW TEXTS WITH SCROLL
-const rowText = new TimelineLite();
-rowText.add(
-  gsap.to(".firstRow__text", {
-    duration: 1,
-    y: 400
-  })
-);
-
-//SCROLL MAGIC ANIMATIONS
-const controller = new ScrollMagic.Controller();
-const scene = new ScrollMagic.Scene({
-  triggerElement: ".animateParaText--1",
-  duration: 2000
-})
-  .setTween(rowText)
-  .addIndicators()
-  .addTo(controller);

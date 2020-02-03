@@ -373,14 +373,17 @@ $merry: "Merriweather", serif;
     position: relative;
     .firstRowGallary {
       @include box(57%, 400px, null, null, null);
+      overflow: hidden;
+      position: relative;
       padding: 0 15px;
       &__image1 {
-        @include box(100%, 100%, null, null, null);
-        background-image: url("../images/firstRowImg1.jpg");
-        background-repeat: no-repeat;
-        background-size: 130%;
-        background-position: 50% 100%;
-        background-attachment: fixed;
+        position: absolute;
+        top: -90px;
+        @include box(120%, auto, null, null, null);
+        // background-image: url("../images/firstRowImg1.jpg");
+        // background-repeat: no-repeat;
+        // background-size: 100%;
+        // background-attachment: fixed;
       }
     }
     &__text {
@@ -395,7 +398,7 @@ $merry: "Merriweather", serif;
       @include box(50px, 50px, null, null, null);
       position: absolute;
       bottom: 0;
-      right: 30%;
+      right: 60%;
     }
   }
   .secondRow {
@@ -427,12 +430,16 @@ $merry: "Merriweather", serif;
       .secondRowGallary {
         @include box(100%, 350px, null, null, null);
         padding: 0 15px;
+        overflow: hidden;
+        position: relative;
         &__image1 {
-          @include box(100%, 100%, null, null, null);
-          background-image: url("../images/secondRowImg1.jpg");
-          background-repeat: no-repeat;
-          background-size: 120%;
-          background-position: 50% 100%;
+          @include box(120%, auto, null, null, null);
+          position: absolute;
+          top: -90px;
+          // background-image: url("../images/secondRowImg1.jpg");
+          // background-repeat: no-repeat;
+          // background-size: 120%;
+          // background-position: 50% 100%;
         }
       }
     }
@@ -458,12 +465,16 @@ $merry: "Merriweather", serif;
         @include box(100%, 100%, null, null, null);
         padding: 0 15px 0 15px;
         margin: 200px 0 0 0;
+        position: relative;
+        overflow: hidden;
         &__image1 {
-          @include box(100%, 100%, null, null, null);
-          background-image: url("../images/thirdRowImg1.jpg");
-          background-repeat: no-repeat;
-          background-size: 125%;
-          background-position: 60% 100%;
+          @include box(120%, auto, null, null, null);
+          position: absolute;
+          top: -110px;
+          // background-image: url("../images/thirdRowImg1.jpg");
+          // background-repeat: no-repeat;
+          // background-size: 125%;
+          // background-position: 60% 100%;
         }
       }
     }
@@ -503,26 +514,32 @@ $merry: "Merriweather", serif;
     padding: 0 0 15px 0;
     margin: 100px 0 250px 0;
     @include flex(null, null, null);
+    position: relative;
     .fourthRowGallary {
       @include box(40%, 630px, null, null, null);
       padding: 0 15px 0 15px;
       margin: 300px 0 0 0;
+      position: relative;
+      overflow: hidden;
       &__image1 {
-        @include box(100%, 100%, null, null, null);
-        background-image: url("../images/fourthRowImg1.jpg");
-        background-repeat: no-repeat;
-        background-size: 125%;
-        background-position: 60% 100%;
+        @include box(120%, auto, null, null, null);
+        position: absolute;
+        top: 0px; 
+        // background-image: url("../images/fourthRowImg1.jpg");
+        // background-repeat: no-repeat;
+        // background-size: 125%;
+        // background-position: 60% 100%;
       }
     }
     &__movingHamburger {
-      @include box(50%, null, null, null, null);
+      @include box(null, null, null, null, null);
       @include flex(null, null, column);
-      position: relative;
+      position: absolute;
+      right: 30%;
       img {
         @include box(180px, null, null, null, null);
-        margin: 0 0;
-        opacity: 0.9;
+        margin: 0px 0;
+        opacity: 0.85;
       }
       .hamburgerText {
         text-align: center;
@@ -547,6 +564,7 @@ $merry: "Merriweather", serif;
       @include box(50%, null, null, null, null);
       img {
         @include box(50px, 50px, null, null, null);
+        margin: 50px 0 0 0;
       }
     }
     &__text {
@@ -564,12 +582,16 @@ $merry: "Merriweather", serif;
       .fifthRowGallary {
         @include box(100%, 350px, null, null, null);
         padding: 0 15px;
+        overflow: hidden;
+        position: relative;
         &__image1 {
-          @include box(100%, 100%, null, null, null);
-          background-image: url("../images/fifthRowImg1.jpg");
-          background-repeat: no-repeat;
-          background-size: 120%;
-          background-position: 50% 20%;
+          @include box(120%, auto, null, null, null);
+          position: absolute;
+          top: -50px; 
+          // background-image: url("../images/fifthRowImg1.jpg");
+          // background-repeat: no-repeat;
+          // background-size: 120%;
+          // background-position: 50% 20%;
         }
       }
     }

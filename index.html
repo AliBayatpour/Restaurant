@@ -65,7 +65,7 @@
           <span
             onmouseenter="menueBorderShow('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 75)"
             onmouseleave="menueBorderHide('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 75)"
-            >GALLARY</span
+            >GALLERY</span
           >
         </div>
         <div class="sideMenue__element">
@@ -609,19 +609,23 @@
     <div class="animationContainer">
       <div class="firstRow">
         <div class="firstRowGallary">
-          <div class="firstRowGallary__image1"></div>
+          <img src="./images/firstRowImg1.jpg" class="firstRowGallary__image1 lax" 	data-lax-translate-y="-400 100, vh 0" data-lax-anchor="self"></img>
         </div>
-        <div class="firstRow__text">
+        <div class="firstRow__text lax" data-lax-translate-y="-600 300, vh -50" data-lax-anchor="self">
           <p class="animateParaText animateParaText--1">
             Whether you’re in the mood for a ‘small’ poutine or a ‘big’ salad,
             ‘just one’ beer or a double shot espresso, when it satisfies your
             tastebuds, it’s all good.
           </p>
+          <img
+            class="firstRow__leaf"
+            src="./images/leaf.png"
+            alt="Small leaf"
+          />
         </div>
-        <img class="firstRow__leaf" src="./images/leaf.png" alt="Small leaf" />
       </div>
       <div class="secondRow">
-        <div class="secondRow__bone">
+        <div class="secondRow__bone lax" data-lax-translate-y="-800 1100, elh 0" data-lax-anchor="self">
           <img class="boneImg" src="./images/bone.png" alt="Bone" />
           <p class="boneText">
             The best traditions bring good fortune, but also good times and good
@@ -630,7 +634,7 @@
         </div>
         <div class="secondRow__secondCol">
           <div class="secondRowGallary">
-            <div class="secondRowGallary__image1"></div>
+            <img src="/images/secondRowImg1.jpg" class="secondRowGallary__image1 lax"  data-lax-translate-y="-400 100, vh 0" data-lax-anchor="self"/>
           </div>
           <div class="secondRow__text">
             <p class="animateParaText animateParaText--2">
@@ -643,7 +647,7 @@
         <div class="thirdRow">
           <div class="thirdRow__gallaryContainer">
             <div class="thirdRowGallary">
-              <div class="thirdRowGallary__image1"></div>
+              <img src="./images/thirdRowImg1.jpg" class="thirdRowGallary__image1 lax" data-lax-translate-y="-650 250, vh 0" data-lax-anchor="self"/>
             </div>
             <div class="thirdRow__underGallaryContainer">
               <div class="thirdRow__text">
@@ -666,36 +670,65 @@
         </div>
       </div>
       <div class="fourthRow">
-        <div class="fourthRowGallary">
-          <div class="fourthRowGallary__image1"></div>
-        </div>
         <div class="fourthRow__movingHamburger">
-          <img src="./images/topBread.png" alt=" Bread" style="z-index: 6;" />
-          <img src="./images/tomato.png" alt="Tomato" style="z-index: 5;" />
-          <img src="./images/ham.png" alt="Ham" style="z-index: 4;" />
-          <img src="./images/meat.png" alt="Meat" style="z-index: 3;" />
-          <img src="./images/celery.png" alt="Celery" style="z-index: 2;" />
-          <img class="bottomBread" src="./images/bottomBread.png" alt="Bread" />
+          <img
+            src="./images/topBread.png"
+            class="fourthRowGallary__hamburgerItem fourthRowGallary__breadTop"
+            alt=" Bread"
+            style="z-index: 6;"
+          />
+          <img
+            src="./images/tomato.png"
+            class="fourthRowGallary__hamburgerItem fourthRowGallary__tomato"
+            alt="Tomato"
+            style="z-index: 5;"
+          />
+          <img
+            src="./images/ham.png"
+            class="fourthRowGallary__hamburgerItem fourthRowGallary__ham"
+            alt="Ham"
+            style="z-index: 4;"
+          />
+          <img
+            src="./images/meat.png"
+            class="fourthRowGallary__hamburgerItem fourthRowGallary__meat"
+            alt="Meat"
+            style="z-index: 3;"
+          />
+          <img
+            src="./images/celery.png"
+            class="fourthRowGallary__hamburgerItem fourthRowGallary__celery"
+            alt="Celery"
+            style="z-index: 2;"
+          />
+          <img
+            class="fourthRowGallary__hamburgerItem fourthRowGallary__breadBottom"
+            src="./images/bottomBread.png"
+            alt="Bread"
+          />
           <p class="hamburgerText">Great food. Great people. It all adds up.</p>
+        </div>
+        <div class="fourthRowGallary">
+          <img src="./images/fourthRowImg1.jpg" class="fourthRowGallary__image1 lax"  data-lax-translate-y="-650 -250, vh 0" data-lax-anchor="self"/>
         </div>
         <div class="fifthRow">
           <div class="fifthRow__textContainer">
-            <div class="fifthRow__text">
+            <div class="fifthRow__text lax" data-lax-translate-y="-700 -50, vh 300" data-lax-anchor="self">
               <p class="animateParaText animateParaText--4">
                 Just like its surroundings, Vallier has a French soul, but also
                 the warmth of a British pub and the vibrancy of Brooklyn.
                 <br />Truly and uniquely a part of Montreal.
               </p>
-            </div>
-            <img
+              <img
               class="fifthRow__leaf"
               src="./images/leaf.png"
               alt="small Logo"
             />
+            </div>
           </div>
           <div class="fifthRow__secondCol">
             <div class="fifthRowGallary">
-              <div class="fifthRowGallary__image1"></div>
+              <img src="./images/fifthRowImg1.jpg" class="fifthRowGallary__image1 lax" data-lax-translate-y="-650 150, vh 0" data-lax-anchor="self"/>
             </div>
           </div>
         </div>
@@ -782,12 +815,7 @@
       defer
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
     <script src="./main.js"></script>
   </body>
 </html>
