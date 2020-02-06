@@ -33,6 +33,7 @@ body {
   height: 100%;
   background-color: #303030;
   border:;
+  overflow: hidden !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,12 +49,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
+}
+
+@media (max-width: 1280px) {
+  .sideBar {
+    width: 220px;
+    border:;
+  }
 }
 
 .sideBar__logo {
@@ -237,28 +243,28 @@ body {
 .sideBar .sideBookBut__border--left {
   left: 0;
   bottom: 0;
-  height: 78px;
+  height: 100%;
   width: 1px;
 }
 
 .sideBar .sideBookBut__border--top {
   top: 0;
   left: 0;
-  width: 277px;
+  width: 100%;
   height: 1px;
 }
 
 .sideBar .sideBookBut__border--right {
   right: 0;
   top: 0;
-  height: 78px;
+  height: 100%;
   width: 1px;
 }
 
 .sideBar .sideBookBut__border--bottom {
   bottom: 0;
   right: 0;
-  width: 277px;
+  width: 100%;
   height: 1px;
 }
 
@@ -266,8 +272,8 @@ body {
   width: 100%;
   height: 100vh;
   border:;
-  max-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 .imageSlider__ImagesContainer {
@@ -280,6 +286,9 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -295,6 +304,12 @@ body {
   font-size: 50px;
   font-weight: 800;
   color: #fff;
+}
+
+@media (max-width: 1280px) {
+  .imageSlider__text {
+    font-size: 40px;
+  }
 }
 
 .imageSlider__text--1 {
@@ -327,19 +342,32 @@ body {
   top: 55%;
 }
 
+@media (max-width: 1280px) {
+  .imageSlider__textBox {
+    left: 250px;
+  }
+}
+
 .imageSlider__image {
   overflow: hidden;
   width: 100%;
   height: 100vh;
   border:;
   min-width: 100%;
-  background-size: 115%;
-  background-position: center;
+  background-size: 130% auto;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.25);
   background-blend-mode: overlay;
   position: relative;
+}
+
+@media (max-aspect-ratio: 31129 / 25000) {
+  .imageSlider__image {
+    background-position: 50% 50%;
+    background-size: "auto 130%";
+  }
 }
 
 .imageSlider__image--img1 {
@@ -375,6 +403,12 @@ body {
   position: absolute;
   left: 25%;
   top: 90%;
+}
+
+@media (max-width: 1280px) {
+  .imageSlider .sliderController {
+    left: 30%;
+  }
 }
 
 .imageSlider .sliderController__ul {
@@ -575,6 +609,12 @@ body {
   width: 100%;
   border:;
   padding: 0 0 0 300px;
+}
+
+@media (max-width: 1280px) {
+  .animationContainer {
+    padding: 0 0 0 200px;
+  }
 }
 
 .animationContainer .firstRow {

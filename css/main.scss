@@ -47,11 +47,40 @@ $merry: "Merriweather", serif;
   font-style: $style;
 }
 
+@mixin for-small-phone-only {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+@mixin for-phone-only {
+  @media (max-width: 641px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (max-width: 961px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (max-width: 1025px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
 // SIDE BAR
 .sideBar {
   @include box(300px, 100%, rgb(48, 48, 48), null, null);
+  @include for-desktop-up() {
+    @include box(220px, null, null, null, null);
+  }
+  overflow: hidden !important;
   @include flex(space-between, center, column);
-  flex-wrap: nowrap;
   position: fixed;
   top: 0;
   left: 0;
@@ -151,28 +180,28 @@ $merry: "Merriweather", serif;
       &--left {
         left: 0;
         bottom: 0;
-        height: 78px;
+        height: 100%;
         width: 1px;
       }
 
       &--top {
         top: 0;
         left: 0;
-        width: 277px;
+        width: 100%;
         height: 1px;
       }
 
       &--right {
         right: 0;
         top: 0;
-        height: 78px;
+        height: 100%;
         width: 1px;
       }
 
       &--bottom {
         bottom: 0;
         right: 0;
-        width: 277px;
+        width: 100%;
         height: 1px;
       }
     }
@@ -182,19 +211,22 @@ $merry: "Merriweather", serif;
 // IMAGE SLIDER
 .imageSlider {
   @include box(100%, 100vh, null, null, null);
-  max-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 
   &__ImagesContainer {
     @include box(100%, 100%, null, null, null);
     position: absolute;
-    @include flex(null, null, row);
+    @include flex(null, center, row);
     flex-wrap: nowrap;
   }
   &__text {
     @include box(null, null, null, null, null);
     white-space: nowrap;
     @include font($openSans, 50px, 800, null, #fff);
+    @include for-desktop-up() {
+      @include font(null, 40px, null, null, null);
+    }
     &--1 {
       background-color: rgba($color: #411524, $alpha: 0.6);
     }
@@ -219,20 +251,26 @@ $merry: "Merriweather", serif;
     position: absolute;
     left: 350px;
     top: 55%;
-    // transform: translate(-40%, -50%);
+    @include for-desktop-up() {
+      left: 250px;
+    }
   }
 
   &__image {
     overflow: hidden;
     @include box(100%, 100vh, null, null, null);
     min-width: 100%;
-    background-size: 115%;
-    background-position: center;
+    background-size: 130% auto;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: rgba($color: #000000, $alpha: 0.25);
     background-blend-mode: overlay;
     position: relative;
+    @media (max-aspect-ratio: 31129/25000) {
+      background-position: 50% 50%;
+      background-size: "auto 130%";
+    }
 
     &--img1 {
       background-image: url("../images/img1.jpg");
@@ -260,6 +298,9 @@ $merry: "Merriweather", serif;
   .sliderController {
     position: absolute;
     left: 25%;
+    @include for-desktop-up() {
+      left: 30%;
+    }
     top: 90%;
     &__ul {
       @include box(250px, null, transparent, null, null);
@@ -365,6 +406,9 @@ $merry: "Merriweather", serif;
 .animationContainer {
   @include box(100%, null, null, null, null);
   padding: 0 0 0 300px;
+  @include for-desktop-up() {
+    padding: 0 0 0 200px;
+  }
   .firstRow {
     @include box(100%, null, #fff, null, null);
     padding: 15px 85px 15px 85px;
@@ -524,7 +568,7 @@ $merry: "Merriweather", serif;
       &__image1 {
         @include box(120%, auto, null, null, null);
         position: absolute;
-        top: 0px; 
+        top: 0px;
         // background-image: url("../images/fourthRowImg1.jpg");
         // background-repeat: no-repeat;
         // background-size: 125%;
@@ -587,11 +631,7 @@ $merry: "Merriweather", serif;
         &__image1 {
           @include box(120%, auto, null, null, null);
           position: absolute;
-          top: -50px; 
-          // background-image: url("../images/fifthRowImg1.jpg");
-          // background-repeat: no-repeat;
-          // background-size: 120%;
-          // background-position: 50% 20%;
+          top: -50px;
         }
       }
     }

@@ -8,8 +8,23 @@ window.onload = function() {
 
   window.requestAnimationFrame(updateLax);
 };
+// INITIALIZE THE IMAGE SLIDER
+// if (window.innerWidth / window.innerHeight <= 1.24516) {
+//   backgroundSizeFrom = "auto 130%";
+//   backgroundSizeTo = "auto 120%";
+//   backGrounds.forEach(element => {
+//     element.style.backgroundSize = "auto 130%";
+//   });
+// } else {
+//   backgroundSizeFrom = "130% auto";
+//   backgroundSizeTo = "120% auto";
+//   backGrounds.forEach(element => {
+//     element.style.backgroundSize = "auto 130%";
+//   });
+// }
+
 // IMAGE SLIDER ANIMATION
-let tl = gsap.timeline({ repeat: -1 });
+let tl = gsap.timeline({ repeat: -1, paused: true });
 tl.fromTo(
   ".sliderController__option--1",
   0.1,
@@ -42,10 +57,10 @@ tl.fromTo(
     ".imageSlider__image--img1",
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: "130% auto"
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: "120% auto",
       ease: "sine.out"
     }
   )
@@ -94,10 +109,10 @@ tl.fromTo(
     ".imageSlider__image--img2",
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: "130% auto"
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: "120% auto",
       ease: "sine.out"
     }
   )
@@ -146,10 +161,10 @@ tl.fromTo(
     ".imageSlider__image--img3",
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: "130% auto"
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: "120% auto",
       ease: "sine.out"
     }
   )
@@ -198,10 +213,10 @@ tl.fromTo(
     ".imageSlider__image--img4",
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: "130% auto"
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: "120% auto",
       ease: "sine.out"
     }
   )
@@ -250,10 +265,10 @@ tl.fromTo(
     ".imageSlider__image--img5",
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: "130% auto"
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: "120% auto",
       ease: "sine.out"
     }
   )
@@ -302,10 +317,10 @@ tl.fromTo(
     ".imageSlider__image--img6",
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: "130% auto"
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: "120% auto",
       ease: "sine.out"
     }
   )
@@ -335,11 +350,370 @@ tl.fromTo(
   .to(".imageSlider__ImagesContainer", 0, { left: "0%", ease: "sine.out" });
 // <----------------FINISH---------------->
 
+// IMAGE SLIDER ANIMATION FOR PHONE
+let tlPhone = gsap.timeline({ repeat: -1, paused: true });
+tlPhone
+  .fromTo(
+    ".sliderController__option--1",
+    0.1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    }
+  )
+  .fromTo(
+    ".imageSlider__text--1",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img1",
+    6,
+    {
+      backgroundSize: "auto 130%"
+    },
+    {
+      backgroundSize: "auto 120%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--1",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--2",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
+  .to(".imageSlider__ImagesContainer", 2, {
+    left: "-100%",
+    ease: "power3.inOut"
+  })
+  .fromTo(
+    ".imageSlider__text--2",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img2",
+    6,
+    {
+      backgroundSize: "auto 130%"
+    },
+    {
+      backgroundSize: "auto 120%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--2",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--3",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
+  .to(".imageSlider__ImagesContainer", 2, {
+    left: "-200%",
+    ease: "power3.inOut"
+  })
+  .fromTo(
+    ".imageSlider__text--3",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img3",
+    6,
+    {
+      backgroundSize: "auto 130%"
+    },
+    {
+      backgroundSize: "auto 120%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--3",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--4",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
+  .to(".imageSlider__ImagesContainer", 2, {
+    left: "-300%",
+    ease: "power3.inOut"
+  })
+  .fromTo(
+    ".imageSlider__text--4",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img4",
+    6,
+    {
+      backgroundSize: "auto 130%"
+    },
+    {
+      backgroundSize: "auto 120%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--4",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--5",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
+  .to(".imageSlider__ImagesContainer", 2, {
+    left: "-400%",
+    ease: "power3.inOut"
+  })
+  .fromTo(
+    ".imageSlider__text--5",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img5",
+    6,
+    {
+      backgroundSize: "auto 130%"
+    },
+    {
+      backgroundSize: "auto 120%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--5",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--6",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
+  .to(".imageSlider__ImagesContainer", 2, {
+    left: "-500%",
+    ease: "power3.inOut"
+  })
+  .fromTo(
+    ".imageSlider__text--6",
+    3,
+    {
+      y: "-50px",
+      width: "0%",
+      height: "0%",
+      opacity: 0
+    },
+    {
+      y: "0px",
+      opacity: 1,
+      width: "100%",
+      height: "100%",
+      stagger: 0.8,
+      ease: "expo.inOut"
+    }
+  )
+  .fromTo(
+    ".imageSlider__image--img6",
+    6,
+    {
+      backgroundSize: "auto 130%"
+    },
+    {
+      backgroundSize: "auto 120%",
+      ease: "sine.out"
+    }
+  )
+  .to(
+    ".sliderController__option--6",
+    1,
+    {
+      opacity: 0
+    },
+    "-=1"
+  )
+  .fromTo(
+    ".sliderController__option--1",
+    1,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1
+    },
+    "-=1"
+  )
+  .to(".imageSlider__ImagesContainer", 2, {
+    left: "-600%",
+    ease: "power3.inOut"
+  })
+  .to(".imageSlider__ImagesContainer", 0, { left: "0%", ease: "sine.out" });
+// <----------------FINISH---------------->
+
+phoneTimelineActive = false;
+timelineActive = false;
+// START ONE OF THE TIMELINES BASED ON WINDOW SIZE
+let backGrounds = document.querySelectorAll(".imageSlider__image");
+if (window.matchMedia("(min-width: 480px)").matches) {
+  if (window.innerWidth / window.innerHeight <= 1.24516) {
+    phoneTimelineActive = true;
+    backGrounds.forEach(element => {
+      element.style.backgroundSize = "auto 130%";
+    });
+    tl.pause();
+    tlPhone.resume();
+  } else {
+    timelineActive = false;
+    backGrounds.forEach(element => {
+      element.style.backgroundSize = "130% auto";
+    });
+    tlPhone.pause();
+    tl.resume();
+  }
+}
+
 let imageOptions = document.querySelectorAll(".sliderController__option");
 let imageContainer = document.querySelector(".imageSlider__ImagesContainer");
 let referenceNode;
 let firstRun = true;
+let slideCntlrFrom;
+let slideCntrlTo;
 changeSlider = (index, image, option) => {
+  if (window.innerWidth / window.innerHeight <= 1.24516) {
+    slideCntlrFrom = "auto 130%";
+    slideCntrlTo = "auto 120%";
+  } else {
+    slideCntlrFrom = "130%";
+    slideCntrlTo = "120%";
+  }
   let leftDistance =
     Math.round(-1 * Number(imageContainer.style.left.replace("%", "") / 100)) *
     100;
@@ -399,10 +773,10 @@ changeSlider = (index, image, option) => {
     imageClass,
     6,
     {
-      backgroundSize: "115%"
+      backgroundSize: slideCntlrFrom
     },
     {
-      backgroundSize: "100%",
+      backgroundSize: slideCntrlTo,
       ease: "sine.out"
     }
   );
@@ -411,431 +785,437 @@ changeSlider = (index, image, option) => {
 
 // SHOW BORDER ANIMATION
 menueBorderShow = (top, bottom, borderWidth) => {
-  topName = top;
-  bottomName = bottom;
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    topName = top;
+    bottomName = bottom;
 
-  gsap.fromTo(
-    topName,
-    1,
-    {
-      width: 0,
-      background: "rgb(227, 221, 205)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: borderWidth,
-      background: "rgb(227, 221, 205)"
-    }
-  );
-  gsap.fromTo(
-    bottomName,
-    1,
-    {
-      width: 0,
-      background: "rgb(227, 221, 205)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: borderWidth,
-      background: "rgb(227, 221, 205)"
-    }
-  );
+    gsap.fromTo(
+      topName,
+      1,
+      {
+        width: 0,
+        background: "rgb(227, 221, 205)",
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: borderWidth,
+        background: "rgb(227, 221, 205)"
+      }
+    );
+    gsap.fromTo(
+      bottomName,
+      1,
+      {
+        width: 0,
+        background: "rgb(227, 221, 205)",
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: borderWidth,
+        background: "rgb(227, 221, 205)"
+      }
+    );
+  }
 };
 // <----------------FINISH---------------->
 
 //HIDE BORDER ANIMATION
 menueBorderHide = (top, bottom, borderWidth) => {
-  topName = top;
-  bottomName = bottom;
-  gsap.fromTo(
-    topName,
-    1,
-    {
-      width: borderWidth,
-      background: "rgb(227, 221, 205)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 0,
-      background: "rgb(227, 221, 205)"
-    }
-  );
-  gsap.fromTo(
-    bottomName,
-    1,
-    {
-      width: borderWidth,
-      background: "rgb(227, 221, 205)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 0,
-      background: "rgb(227, 221, 205)"
-    }
-  );
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    topName = top;
+    bottomName = bottom;
+    gsap.fromTo(
+      topName,
+      1,
+      {
+        width: borderWidth,
+        background: "rgb(227, 221, 205)",
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: 0,
+        background: "rgb(227, 221, 205)"
+      }
+    );
+    gsap.fromTo(
+      bottomName,
+      1,
+      {
+        width: borderWidth,
+        background: "rgb(227, 221, 205)",
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: 0,
+        background: "rgb(227, 221, 205)"
+      }
+    );
+  }
 };
 // <----------------FINISH---------------->
 
-// BOOK A TABLE BORDER ANIMATION
-let bookTableBorder = new TimelineMax({
-  repeat: -1,
-  yoyo: true
-});
+if (window.matchMedia("(min-width: 1000px)").matches) {
+  // BOOK A TABLE BORDER ANIMATION
+  let bookTableBorder = new TimelineMax({
+    repeat: -1,
+    yoyo: true
+  });
 
-// TOP FILL
-bookTableBorder.fromTo(
-  ".sideBookBut__border--top",
-  1,
-  {
-    width: 0,
-    background: "rgb(48, 48, 48)",
-    immediateRender: false,
-    autoRound: false
-  },
-  {
-    width: 277,
+  // TOP FILL
+  bookTableBorder.fromTo(
+    ".sideBookBut__border--top",
+    1,
+    {
+      width: "0%",
+      background: "rgb(48, 48, 48)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: "100%",
+      background: "rgb(48, 48, 48)"
+    }
+  );
+
+  // BOTTOM FILL
+  bookTableBorder.fromTo(
+    ".sideBookBut__border--bottom",
+    1,
+    {
+      width: "0%",
+      background: "rgb(48, 48, 48)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: "100%",
+      background: "rgb(48, 48, 48)"
+    },
+    "-=1"
+  );
+
+  // RIGHT FILL
+  bookTableBorder.fromTo(
+    ".sideBookBut__border--right",
+    1,
+    {
+      height: "0%",
+      background: "rgb(48, 48, 48)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: "100%",
+      background: "rgb(48, 48, 48)"
+    }
+  );
+
+  // LEFT FILL
+  bookTableBorder.fromTo(
+    ".sideBookBut__border--left",
+    1,
+    {
+      height: "0%",
+      background: "rgb(48, 48, 48)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: "100%",
+      background: "rgb(48, 48, 48)"
+    },
+    "-=1"
+  );
+  // LEFT EMPTY
+  bookTableBorder.to(".sideBookBut__border--left", 1, {
+    height: "0%",
     background: "rgb(48, 48, 48)"
-  }
-);
+  });
 
-// BOTTOM FILL
-bookTableBorder.fromTo(
-  ".sideBookBut__border--bottom",
-  1,
-  {
-    width: 0,
-    background: "rgb(48, 48, 48)",
-    immediateRender: false,
-    autoRound: false
-  },
-  {
-    width: 277,
+  // BOTTOM EMPTY
+  bookTableBorder.to(".sideBookBut__border--bottom", 1, {
+    width: "0%",
     background: "rgb(48, 48, 48)"
-  },
-  "-=1"
-);
+  });
 
-// RIGHT FILL
-bookTableBorder.fromTo(
-  ".sideBookBut__border--right",
-  1,
-  {
-    height: 0,
-    background: "rgb(48, 48, 48)",
-    immediateRender: false,
-    autoRound: false
-  },
-  {
-    height: 78,
+  // RIGHT EMPTY
+  bookTableBorder.to(".sideBookBut__border--right", 1, {
+    height: "0%",
     background: "rgb(48, 48, 48)"
-  }
-);
+  });
 
-// LEFT FILL
-bookTableBorder.fromTo(
-  ".sideBookBut__border--left",
-  1,
-  {
-    height: 0,
-    background: "rgb(48, 48, 48)",
-    immediateRender: false,
-    autoRound: false
-  },
-  {
-    height: 78,
+  // TOP EMPTY
+  bookTableBorder.to(".sideBookBut__border--top", 1, {
+    width: "0%",
     background: "rgb(48, 48, 48)"
-  },
-  "-=1"
-);
-// LEFT EMPTY
-bookTableBorder.to(".sideBookBut__border--left", 1, {
-  height: 0,
-  background: "rgb(48, 48, 48)"
-});
-
-// BOTTOM EMPTY
-bookTableBorder.to(".sideBookBut__border--bottom", 1, {
-  width: 0,
-  background: "rgb(48, 48, 48)"
-});
-
-// RIGHT EMPTY
-bookTableBorder.to(".sideBookBut__border--right", 1, {
-  height: 0,
-  background: "rgb(48, 48, 48)"
-});
-
-// TOP EMPTY
-bookTableBorder.to(".sideBookBut__border--top", 1, {
-  width: 0,
-  background: "rgb(48, 48, 48)"
-});
-// <----------------FINISH---------------->
+  });
+  // <----------------FINISH---------------->
+}
 
 // SHOW MENU
 showMenuAnimation = (tableName, lineName) => {
-  gsap.fromTo(
-    tableName,
-    1,
-    {
-      y: 300,
-      opacity: 0
-    },
-    {
-      opacity: 1,
-      stagger: 0.1,
-      y: 0
-    }
-  );
-  gsap.fromTo(
-    lineName,
-    1,
-    {
-      width: 0
-    },
-    {
-      width: "100%"
-    }
-  );
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.fromTo(
+      tableName,
+      1,
+      {
+        y: 300,
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        stagger: 0.1,
+        y: 0
+      }
+    );
+    gsap.fromTo(
+      lineName,
+      1,
+      {
+        width: 0
+      },
+      {
+        width: "100%"
+      }
+    );
+  }
 };
 // <----------------FINISH---------------->
 
 // SHOW OPEN IN GOOGLE MAP BORDER ANIMATION
 mapButBorderShow = arr => {
-  gsap.fromTo(
-    arr[0],
-    1,
-    {
-      width: 0,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 95,
-      background: "rgb(48, 48, 48)"
-    }
-  );
-  gsap.fromTo(
-    arr[1],
-    1,
-    {
-      width: 0,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 95,
-      background: "rgb(48, 48, 48)"
-    }
-  );
-  gsap.fromTo(
-    arr[2],
-    1,
-    {
-      height: 0,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      height: 57,
-      background: "rgb(48, 48, 48)"
-    }
-  );
-  gsap.fromTo(
-    arr[3],
-    1,
-    {
-      height: 0,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      height: 57,
-      background: "rgb(48, 48, 48)"
-    }
-  );
-  gsap.fromTo(
-    arr[4],
-    1,
-    {
-      width: 0,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 238,
-      background: "rgb(48, 48, 48)"
-    }
-  );
-  if (arr[5]) {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
     gsap.fromTo(
-      ".openInMap__blackLeaf",
-      2,
+      arr[0],
+      1,
       {
-        y: -20,
-        opacity: 0,
+        width: 0,
         immediateRender: false,
         autoRound: false
       },
       {
-        opacity: 1,
-        y: 0
+        width: 95,
+        background: "rgb(48, 48, 48)"
       }
     );
+    gsap.fromTo(
+      arr[1],
+      1,
+      {
+        width: 0,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: 95,
+        background: "rgb(48, 48, 48)"
+      }
+    );
+    gsap.fromTo(
+      arr[2],
+      1,
+      {
+        height: 0,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        height: 57,
+        background: "rgb(48, 48, 48)"
+      }
+    );
+    gsap.fromTo(
+      arr[3],
+      1,
+      {
+        height: 0,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        height: 57,
+        background: "rgb(48, 48, 48)"
+      }
+    );
+    gsap.fromTo(
+      arr[4],
+      1,
+      {
+        width: 0,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: 238,
+        background: "rgb(48, 48, 48)"
+      }
+    );
+    if (arr[5]) {
+      gsap.fromTo(
+        ".openInMap__blackLeaf",
+        2,
+        {
+          y: -20,
+          opacity: 0,
+          immediateRender: false,
+          autoRound: false
+        },
+        {
+          opacity: 1,
+          y: 0
+        }
+      );
+    }
   }
 };
 // <----------------FINISH---------------->
 
 // HIDE OPEN IN GOOGLE MAP BORDER ANIMATION
 mapButBorderHide = arr => {
-  gsap.fromTo(
-    arr[0],
-    1,
-    {
-      width: 95,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 0
-    }
-  );
-  gsap.fromTo(
-    arr[1],
-    1,
-    {
-      width: 95,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 0
-    }
-  );
-  gsap.fromTo(
-    arr[2],
-    1,
-    {
-      height: 57,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      height: 0
-    }
-  );
-  gsap.fromTo(
-    arr[3],
-    1,
-    {
-      height: 57,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      height: 0
-    }
-  );
-  gsap.fromTo(
-    arr[4],
-    1,
-    {
-      width: 238,
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: 0
-    }
-  );
-  if (arr[5]) {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
     gsap.fromTo(
-      ".openInMap__blackLeaf",
+      arr[0],
       1,
       {
-        y: 0,
-        opacity: 0,
+        width: 95,
         immediateRender: false,
         autoRound: false
       },
       {
-        opacity: 0,
-        y: -20
+        width: 0
       }
     );
+    gsap.fromTo(
+      arr[1],
+      1,
+      {
+        width: 95,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: 0
+      }
+    );
+    gsap.fromTo(
+      arr[2],
+      1,
+      {
+        height: 57,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        height: 0
+      }
+    );
+    gsap.fromTo(
+      arr[3],
+      1,
+      {
+        height: 57,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        height: 0
+      }
+    );
+    gsap.fromTo(
+      arr[4],
+      1,
+      {
+        width: 238,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: 0
+      }
+    );
+    if (arr[5]) {
+      gsap.fromTo(
+        ".openInMap__blackLeaf",
+        1,
+        {
+          y: 0,
+          opacity: 0,
+          immediateRender: false,
+          autoRound: false
+        },
+        {
+          opacity: 0,
+          y: -20
+        }
+      );
+    }
   }
 };
 // <----------------FINISH---------------->
 
 //HIDE MENU
 hideMenuAnimation = (tableName, lineName) => {
-  gsap.to(tableName, 1, {
-    opacity: 0
-  });
-  gsap.to(lineName, 1, {
-    width: 0
-  });
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.to(tableName, 1, {
+      opacity: 0
+    });
+    gsap.to(lineName, 1, {
+      width: 0
+    });
+  }
 };
 // <----------------FINISH---------------->
 
 // SHOW ADDRESS SECTION BORDERS
 showAddBorders = borderName => {
-  gsap.fromTo(
-    borderName,
-    1,
-    {
-      width: "0%",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: "100%"
-    }
-  );
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.fromTo(
+      borderName,
+      1,
+      {
+        width: "0%",
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: "100%"
+      }
+    );
+  }
 };
 // <----------------FINISH---------------->
 
 // HIDE ADDRESS SECTION BORDERS
 hideAddBorders = borderName => {
-  gsap.fromTo(
-    borderName,
-    1,
-    {
-      width: "100%",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: "0%"
-    }
-  );
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.fromTo(
+      borderName,
+      1,
+      {
+        width: "100%",
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        width: "0%"
+      }
+    );
+  }
 };
 // <----------------FINISH---------------->
 
 // SHOWING PARAGRAPH TEXTS ANIMATION
 showParaTextAnimation = (textName, hasLeaf = "") => {
-  gsap.fromTo(
-    textName,
-    1,
-    {
-      y: 200,
-      opacity: 0
-    },
-    {
-      y: 0,
-      opacity: 1
-    }
-  );
-  if (hasLeaf) {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
     gsap.fromTo(
-      hasLeaf,
+      textName,
       1,
       {
-        y: 100,
+        y: 200,
         opacity: 0
       },
       {
@@ -843,31 +1223,109 @@ showParaTextAnimation = (textName, hasLeaf = "") => {
         opacity: 1
       }
     );
+    if (hasLeaf) {
+      gsap.fromTo(
+        hasLeaf,
+        1,
+        {
+          y: 100,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1
+        }
+      );
+    }
   }
 };
 // <----------------FINISH---------------->
 
 // HIDING PARAGRAPH TEXTS ANIMATION
 hideParaTextAnimation = (textName, hasLeaf = "") => {
-  gsap.fromTo(
-    textName,
-    1,
-    {
-      y: 0,
-      opacity: 1
-    },
-    {
-      y: 200,
-      opacity: 0
-    }
-  );
-  if (hasLeaf) {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
     gsap.fromTo(
-      hasLeaf,
+      textName,
       1,
       {
         y: 0,
         opacity: 1
+      },
+      {
+        y: 200,
+        opacity: 0
+      }
+    );
+    if (hasLeaf) {
+      gsap.fromTo(
+        hasLeaf,
+        1,
+        {
+          y: 0,
+          opacity: 1
+        },
+        {
+          y: 100,
+          opacity: 0
+        }
+      );
+    }
+  }
+};
+// <----------------FINISH---------------->
+
+breakBone = () => {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.to(".boneImg", 0.1, { x: "+=20", yoyo: true, repeat: 5 });
+    gsap.to(".boneImg", 0.1, { x: "-=20", yoyo: true, repeat: 5 });
+    gsap.set(".boneImg", {
+      attr: { src: "./images/brokenBone.png" },
+      delay: 0.5
+    });
+    // boneText
+    gsap.fromTo(
+      ".boneText",
+      1,
+      {
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 0.85
+      }
+    );
+  }
+};
+// <----------------FINISH---------------->
+
+// SHOW HAMBURGER TEXT
+showHamburgerText = () => {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.fromTo(
+      ".hamburgerText",
+      1,
+      {
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 0.85
+      }
+    );
+  }
+};
+// <----------------FINISH---------------->
+
+hideHamburgerText = () => {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    gsap.fromTo(
+      ".hamburgerText",
+      1,
+      {
+        y: 0,
+        opacity: 0.85
       },
       {
         y: 100,
@@ -878,86 +1336,32 @@ hideParaTextAnimation = (textName, hasLeaf = "") => {
 };
 // <----------------FINISH---------------->
 
-breakBone = () => {
-  gsap.to(".boneImg", 0.1, { x: "+=20", yoyo: true, repeat: 5 });
-  gsap.to(".boneImg", 0.1, { x: "-=20", yoyo: true, repeat: 5 });
-  gsap.set(".boneImg", {
-    attr: { src: "./images/brokenBone.png" },
-    delay: 0.5
-  });
-  // boneText
-  gsap.fromTo(
-    ".boneText",
-    1,
-    {
-      y: 100,
-      opacity: 0
-    },
-    {
-      y: 0,
-      opacity: 0.85
-    }
-  );
-};
-// <----------------FINISH---------------->
-
-// SHOW HAMBURGER TEXT
-showHamburgerText = () => {
-  gsap.fromTo(
-    ".hamburgerText",
-    1,
-    {
-      y: 100,
-      opacity: 0
-    },
-    {
-      y: 0,
-      opacity: 0.85
-    }
-  );
-};
-// <----------------FINISH---------------->
-
-hideHamburgerText = () => {
-  gsap.fromTo(
-    ".hamburgerText",
-    1,
-    {
-      y: 0,
-      opacity: 0.85
-    },
-    {
-      y: 100,
-      opacity: 0
-    }
-  );
-};
-// <----------------FINISH---------------->
-
 // HAMBER MAKER TIMELINE
 let hamberMakrTl = gsap.timeline({ paused: true });
-hamberMakrTl
-  .fromTo(
-    ".fourthRowGallary__hamburgerItem",
-    2,
-    {
-      margin: "0px 0px"
-    },
-    {
-      margin: "-31px 0px"
-    }
-  )
-  .fromTo(
-    ".fourthRow__movingHamburger",
-    8,
-    {
-      y: 0
-    },
-    {
-      y: 1200
-    },
-    "-=2"
-  );
+if (window.matchMedia("(min-width: 1000px)").matches) {
+  hamberMakrTl
+    .fromTo(
+      ".fourthRowGallary__hamburgerItem",
+      2,
+      {
+        margin: "0px 0px"
+      },
+      {
+        margin: "-31px 0px"
+      }
+    )
+    .fromTo(
+      ".fourthRow__movingHamburger",
+      8,
+      {
+        y: 0
+      },
+      {
+        y: 1200
+      },
+      "-=2"
+    );
+}
 // DEFINING SOME VARIABLES AND INITIALIZATION
 let isVisible = [false, false, false, false, false];
 let tables = document.querySelectorAll(".table");
@@ -1142,8 +1546,8 @@ window.addEventListener("scroll", function(e) {
           break;
       }
     }
-    // console.log(window.pageYOffset);
-
+  });
+  if (window.matchMedia("(min-width: 1000px)").matches) {
     hamberMakrTlProgress =
       (window.innerHeight - bottomBread.getBoundingClientRect().top) /
       window.innerHeight;
@@ -1160,7 +1564,7 @@ window.addEventListener("scroll", function(e) {
       hideHamburgerText();
       hamburgerTextHidden = true;
     }
-  });
+  }
   // BREAK THE BONE
   let boneBound = document
     .querySelector(".secondRow__bone")
@@ -1200,3 +1604,42 @@ function initMap() {
   });
 }
 // <----------------FINISH---------------->
+// restarting Image slider
+restartSlider = () => {
+  if (window.matchMedia("(min-width: 480px)").matches) {
+    if (window.innerWidth / window.innerHeight <= 1.24516) {
+      backGrounds.forEach(element => {
+        element.style.backgroundSize = "auto 130%";
+      });
+      if (timelineActive) {
+        timelineActive = false;
+        phoneTimelineActive = true;
+        tl.pause();
+        tlPhone.progress(tl.time() / tl.duration());
+        tlPhone.resume();
+      }
+    } else {
+      backGrounds.forEach(element => {
+        element.style.backgroundSize = "130% auto";
+      });
+      if (phoneTimelineActive) {
+        tlPhone.pause();
+        timelineActive = true;
+        phoneTimelineActive = false;
+        tl.progress(tlPhone.time() / tlPhone.duration());
+        tl.resume();
+      }
+    }
+  }
+};
+
+window.addEventListener("resize", restartSlider);
+// if (window.matchMedia("(min-width: 599px)").matches) {
+//   if (window.innerWidth / window.innerHeight <= 1.24516) {
+//     backgroundSizeFrom = "auto 130%";
+//     backgroundSizeTo = "auto 120%";
+//   } else {
+//     backgroundSizeFrom = "130% auto";
+//     backgroundSizeTo = "120% auto";
+//   }
+// }
