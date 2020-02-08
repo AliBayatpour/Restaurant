@@ -1,5 +1,7 @@
 window.onload = function() {
-  lax.setup(); // init
+  lax.setup({
+    breakpoints: { large: 961 }
+  }); // init
 
   const updateLax = () => {
     lax.update(window.scrollY);
@@ -8,20 +10,6 @@ window.onload = function() {
 
   window.requestAnimationFrame(updateLax);
 };
-// INITIALIZE THE IMAGE SLIDER
-// if (window.innerWidth / window.innerHeight <= 1.24516) {
-//   backgroundSizeFrom = "auto 130%";
-//   backgroundSizeTo = "auto 120%";
-//   backGrounds.forEach(element => {
-//     element.style.backgroundSize = "auto 130%";
-//   });
-// } else {
-//   backgroundSizeFrom = "130% auto";
-//   backgroundSizeTo = "120% auto";
-//   backGrounds.forEach(element => {
-//     element.style.backgroundSize = "auto 130%";
-//   });
-// }
 
 // IMAGE SLIDER ANIMATION
 let tl = gsap.timeline({ repeat: -1, paused: true });
@@ -682,22 +670,20 @@ phoneTimelineActive = false;
 timelineActive = false;
 // START ONE OF THE TIMELINES BASED ON WINDOW SIZE
 let backGrounds = document.querySelectorAll(".imageSlider__image");
-if (window.matchMedia("(min-width: 480px)").matches) {
-  if (window.innerWidth / window.innerHeight <= 1.24516) {
-    phoneTimelineActive = true;
-    backGrounds.forEach(element => {
-      element.style.backgroundSize = "auto 130%";
-    });
-    tl.pause();
-    tlPhone.resume();
-  } else {
-    timelineActive = false;
-    backGrounds.forEach(element => {
-      element.style.backgroundSize = "130% auto";
-    });
-    tlPhone.pause();
-    tl.resume();
-  }
+if (window.innerWidth / window.innerHeight <= 1.24516) {
+  phoneTimelineActive = true;
+  backGrounds.forEach(element => {
+    element.style.backgroundSize = "auto 130%";
+  });
+  tl.pause();
+  tlPhone.resume();
+} else {
+  timelineActive = false;
+  backGrounds.forEach(element => {
+    element.style.backgroundSize = "130% auto";
+  });
+  tlPhone.pause();
+  tl.resume();
 }
 
 let imageOptions = document.querySelectorAll(".sliderController__option");
@@ -711,8 +697,8 @@ changeSlider = (index, image, option) => {
     slideCntlrFrom = "auto 130%";
     slideCntrlTo = "auto 120%";
   } else {
-    slideCntlrFrom = "130%";
-    slideCntrlTo = "120%";
+    slideCntlrFrom = "130% auto";
+    slideCntrlTo = "120% auto";
   }
   let leftDistance =
     Math.round(-1 * Number(imageContainer.style.left.replace("%", "") / 100)) *
@@ -720,6 +706,7 @@ changeSlider = (index, image, option) => {
   let newLeft = `${(leftDistance / 100 + 1) * -100}%`;
   let newId = `${leftDistance / 100 + 1}`;
   tl.kill();
+  tlPhone.kill();
   if (firstRun) {
     referenceNode = document.querySelector(
       `.imageSlider__image--img${leftDistance / 100 + 1}`
@@ -785,80 +772,76 @@ changeSlider = (index, image, option) => {
 
 // SHOW BORDER ANIMATION
 menueBorderShow = (top, bottom, borderWidth) => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    topName = top;
-    bottomName = bottom;
+  topName = top;
+  bottomName = bottom;
 
-    gsap.fromTo(
-      topName,
-      1,
-      {
-        width: 0,
-        background: "rgb(227, 221, 205)",
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: borderWidth,
-        background: "rgb(227, 221, 205)"
-      }
-    );
-    gsap.fromTo(
-      bottomName,
-      1,
-      {
-        width: 0,
-        background: "rgb(227, 221, 205)",
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: borderWidth,
-        background: "rgb(227, 221, 205)"
-      }
-    );
-  }
+  gsap.fromTo(
+    topName,
+    1,
+    {
+      width: 0,
+      background: "rgb(227, 221, 205)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: borderWidth,
+      background: "rgb(227, 221, 205)"
+    }
+  );
+  gsap.fromTo(
+    bottomName,
+    1,
+    {
+      width: 0,
+      background: "rgb(227, 221, 205)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: borderWidth,
+      background: "rgb(227, 221, 205)"
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 //HIDE BORDER ANIMATION
 menueBorderHide = (top, bottom, borderWidth) => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    topName = top;
-    bottomName = bottom;
-    gsap.fromTo(
-      topName,
-      1,
-      {
-        width: borderWidth,
-        background: "rgb(227, 221, 205)",
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 0,
-        background: "rgb(227, 221, 205)"
-      }
-    );
-    gsap.fromTo(
-      bottomName,
-      1,
-      {
-        width: borderWidth,
-        background: "rgb(227, 221, 205)",
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 0,
-        background: "rgb(227, 221, 205)"
-      }
-    );
-  }
+  topName = top;
+  bottomName = bottom;
+  gsap.fromTo(
+    topName,
+    1,
+    {
+      width: borderWidth,
+      background: "rgb(227, 221, 205)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 0,
+      background: "rgb(227, 221, 205)"
+    }
+  );
+  gsap.fromTo(
+    bottomName,
+    1,
+    {
+      width: borderWidth,
+      background: "rgb(227, 221, 205)",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 0,
+      background: "rgb(227, 221, 205)"
+    }
+  );
 };
 // <----------------FINISH---------------->
 
-if (window.matchMedia("(min-width: 1000px)").matches) {
+if (window.matchMedia("(min-width: 961px)").matches) {
   // BOOK A TABLE BORDER ANIMATION
   let bookTableBorder = new TimelineMax({
     repeat: -1,
@@ -958,264 +941,264 @@ if (window.matchMedia("(min-width: 1000px)").matches) {
 
 // SHOW MENU
 showMenuAnimation = (tableName, lineName) => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      tableName,
-      1,
-      {
-        y: 300,
-        opacity: 0
-      },
-      {
-        opacity: 1,
-        stagger: 0.1,
-        y: 0
-      }
-    );
-    gsap.fromTo(
-      lineName,
-      1,
-      {
-        width: 0
-      },
-      {
-        width: "100%"
-      }
-    );
-  }
+  gsap.fromTo(
+    tableName,
+    1,
+    {
+      y: 300,
+      opacity: 0
+    },
+    {
+      opacity: 1,
+      stagger: 0.1,
+      y: 0
+    }
+  );
+  gsap.fromTo(
+    lineName,
+    1,
+    {
+      width: 0
+    },
+    {
+      width: "100%"
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 // SHOW OPEN IN GOOGLE MAP BORDER ANIMATION
 mapButBorderShow = arr => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      arr[0],
-      1,
-      {
-        width: 0,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 95,
-        background: "rgb(48, 48, 48)"
-      }
-    );
-    gsap.fromTo(
-      arr[1],
-      1,
-      {
-        width: 0,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 95,
-        background: "rgb(48, 48, 48)"
-      }
-    );
-    gsap.fromTo(
-      arr[2],
-      1,
-      {
-        height: 0,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        height: 57,
-        background: "rgb(48, 48, 48)"
-      }
-    );
-    gsap.fromTo(
-      arr[3],
-      1,
-      {
-        height: 0,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        height: 57,
-        background: "rgb(48, 48, 48)"
-      }
-    );
-    gsap.fromTo(
-      arr[4],
-      1,
-      {
-        width: 0,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 238,
-        background: "rgb(48, 48, 48)"
-      }
-    );
-    if (arr[5]) {
-      gsap.fromTo(
-        ".openInMap__blackLeaf",
-        2,
-        {
-          y: -20,
-          opacity: 0,
-          immediateRender: false,
-          autoRound: false
-        },
-        {
-          opacity: 1,
-          y: 0
-        }
-      );
+  gsap.fromTo(
+    arr[0],
+    1,
+    {
+      width: 0,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 95,
+      background: "rgb(48, 48, 48)"
     }
+  );
+  gsap.fromTo(
+    arr[1],
+    1,
+    {
+      width: 0,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 95,
+      background: "rgb(48, 48, 48)"
+    }
+  );
+  gsap.fromTo(
+    arr[2],
+    1,
+    {
+      height: 0,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: 57,
+      background: "rgb(48, 48, 48)"
+    }
+  );
+  gsap.fromTo(
+    arr[3],
+    1,
+    {
+      height: 0,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: 57,
+      background: "rgb(48, 48, 48)"
+    }
+  );
+  gsap.fromTo(
+    arr[4],
+    1,
+    {
+      width: 0,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 238,
+      background: "rgb(48, 48, 48)"
+    }
+  );
+  if (arr[5]) {
+    gsap.fromTo(
+      ".openInMap__blackLeaf",
+      2,
+      {
+        y: -20,
+        opacity: 0,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        opacity: 1,
+        y: 0
+      }
+    );
   }
 };
 // <----------------FINISH---------------->
 
 // HIDE OPEN IN GOOGLE MAP BORDER ANIMATION
 mapButBorderHide = arr => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      arr[0],
-      1,
-      {
-        width: 95,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 0
-      }
-    );
-    gsap.fromTo(
-      arr[1],
-      1,
-      {
-        width: 95,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 0
-      }
-    );
-    gsap.fromTo(
-      arr[2],
-      1,
-      {
-        height: 57,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        height: 0
-      }
-    );
-    gsap.fromTo(
-      arr[3],
-      1,
-      {
-        height: 57,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        height: 0
-      }
-    );
-    gsap.fromTo(
-      arr[4],
-      1,
-      {
-        width: 238,
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: 0
-      }
-    );
-    if (arr[5]) {
-      gsap.fromTo(
-        ".openInMap__blackLeaf",
-        1,
-        {
-          y: 0,
-          opacity: 0,
-          immediateRender: false,
-          autoRound: false
-        },
-        {
-          opacity: 0,
-          y: -20
-        }
-      );
+  gsap.fromTo(
+    arr[0],
+    1,
+    {
+      width: 95,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 0
     }
+  );
+  gsap.fromTo(
+    arr[1],
+    1,
+    {
+      width: 95,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 0
+    }
+  );
+  gsap.fromTo(
+    arr[2],
+    1,
+    {
+      height: 57,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: 0
+    }
+  );
+  gsap.fromTo(
+    arr[3],
+    1,
+    {
+      height: 57,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      height: 0
+    }
+  );
+  gsap.fromTo(
+    arr[4],
+    1,
+    {
+      width: 238,
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: 0
+    }
+  );
+  if (arr[5]) {
+    gsap.fromTo(
+      ".openInMap__blackLeaf",
+      1,
+      {
+        y: 0,
+        opacity: 0,
+        immediateRender: false,
+        autoRound: false
+      },
+      {
+        opacity: 0,
+        y: -20
+      }
+    );
   }
 };
 // <----------------FINISH---------------->
 
 //HIDE MENU
 hideMenuAnimation = (tableName, lineName) => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.to(tableName, 1, {
-      opacity: 0
-    });
-    gsap.to(lineName, 1, {
-      width: 0
-    });
-  }
+  gsap.to(tableName, 1, {
+    opacity: 0
+  });
+  gsap.to(lineName, 1, {
+    width: 0
+  });
 };
 // <----------------FINISH---------------->
 
 // SHOW ADDRESS SECTION BORDERS
 showAddBorders = borderName => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      borderName,
-      1,
-      {
-        width: "0%",
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: "100%"
-      }
-    );
-  }
+  gsap.fromTo(
+    borderName,
+    1,
+    {
+      width: "0%",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: "100%"
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 // HIDE ADDRESS SECTION BORDERS
 hideAddBorders = borderName => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      borderName,
-      1,
-      {
-        width: "100%",
-        immediateRender: false,
-        autoRound: false
-      },
-      {
-        width: "0%"
-      }
-    );
-  }
+  gsap.fromTo(
+    borderName,
+    1,
+    {
+      width: "100%",
+      immediateRender: false,
+      autoRound: false
+    },
+    {
+      width: "0%"
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 // SHOWING PARAGRAPH TEXTS ANIMATION
 showParaTextAnimation = (textName, hasLeaf = "") => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
+  gsap.fromTo(
+    textName,
+    1,
+    {
+      y: 200,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 1
+    }
+  );
+  if (hasLeaf) {
     gsap.fromTo(
-      textName,
+      hasLeaf,
       1,
       {
-        y: 200,
+        y: 100,
         opacity: 0
       },
       {
@@ -1223,122 +1206,100 @@ showParaTextAnimation = (textName, hasLeaf = "") => {
         opacity: 1
       }
     );
-    if (hasLeaf) {
-      gsap.fromTo(
-        hasLeaf,
-        1,
-        {
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1
-        }
-      );
-    }
   }
 };
 // <----------------FINISH---------------->
 
 // HIDING PARAGRAPH TEXTS ANIMATION
 hideParaTextAnimation = (textName, hasLeaf = "") => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
+  gsap.fromTo(
+    textName,
+    1,
+    {
+      y: 0,
+      opacity: 1
+    },
+    {
+      y: 200,
+      opacity: 0
+    }
+  );
+  if (hasLeaf) {
     gsap.fromTo(
-      textName,
+      hasLeaf,
       1,
       {
         y: 0,
         opacity: 1
       },
       {
-        y: 200,
+        y: 100,
         opacity: 0
       }
     );
-    if (hasLeaf) {
-      gsap.fromTo(
-        hasLeaf,
-        1,
-        {
-          y: 0,
-          opacity: 1
-        },
-        {
-          y: 100,
-          opacity: 0
-        }
-      );
-    }
   }
 };
 // <----------------FINISH---------------->
 
 breakBone = () => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.to(".boneImg", 0.1, { x: "+=20", yoyo: true, repeat: 5 });
-    gsap.to(".boneImg", 0.1, { x: "-=20", yoyo: true, repeat: 5 });
-    gsap.set(".boneImg", {
-      attr: { src: "./images/brokenBone.png" },
-      delay: 0.5
-    });
-    // boneText
-    gsap.fromTo(
-      ".boneText",
-      1,
-      {
-        y: 100,
-        opacity: 0
-      },
-      {
-        y: 0,
-        opacity: 0.85
-      }
-    );
-  }
+  gsap.to(".boneImg", 0.1, { x: "+=20", yoyo: true, repeat: 5 });
+  gsap.to(".boneImg", 0.1, { x: "-=20", yoyo: true, repeat: 5 });
+  gsap.set(".boneImg", {
+    attr: { src: "./images/brokenBone.png" },
+    delay: 0.5
+  });
+  // boneText
+  gsap.fromTo(
+    ".boneText",
+    1,
+    {
+      y: 100,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 0.85
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 // SHOW HAMBURGER TEXT
 showHamburgerText = () => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      ".hamburgerText",
-      1,
-      {
-        y: 100,
-        opacity: 0
-      },
-      {
-        y: 0,
-        opacity: 0.85
-      }
-    );
-  }
+  gsap.fromTo(
+    ".hamburgerText",
+    1,
+    {
+      y: 100,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 0.85
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 hideHamburgerText = () => {
-  if (window.matchMedia("(min-width: 1000px)").matches) {
-    gsap.fromTo(
-      ".hamburgerText",
-      1,
-      {
-        y: 0,
-        opacity: 0.85
-      },
-      {
-        y: 100,
-        opacity: 0
-      }
-    );
-  }
+  gsap.fromTo(
+    ".hamburgerText",
+    1,
+    {
+      y: 0,
+      opacity: 0.85
+    },
+    {
+      y: 100,
+      opacity: 0
+    }
+  );
 };
 // <----------------FINISH---------------->
 
 // HAMBER MAKER TIMELINE
 let hamberMakrTl = gsap.timeline({ paused: true });
-if (window.matchMedia("(min-width: 1000px)").matches) {
+if (window.matchMedia("(min-width: 961px)").matches) {
   hamberMakrTl
     .fromTo(
       ".fourthRowGallary__hamburgerItem",
@@ -1383,41 +1344,44 @@ let triggerPoint = 0;
 animateParaText.forEach((_, index) => {
   animateParaTextIsVisible[index] = false;
 });
-tables.forEach((_, index) => {
-  switch (index + 1) {
-    case 1:
-      hideParaTextAnimation(
-        `.animateParaText--${index + 1}`,
-        ".firstRow__leaf"
-      );
-      break;
-    case 3:
-      hideParaTextAnimation(
-        `.animateParaText--${index + 1}`,
-        ".thirdRow__leaf"
-      );
-      break;
-    case 4:
-      hideParaTextAnimation(
-        `.animateParaText--${index + 1}`,
-        ".fifthRow__leaf"
-      );
-      break;
+if (window.matchMedia("(min-width: 961px)").matches) {
+  tables.forEach((_, index) => {
+    switch (index + 1) {
+      case 1:
+        hideParaTextAnimation(
+          `.animateParaText--${index + 1}`,
+          ".firstRow__leaf"
+        );
+        break;
+      case 3:
+        hideParaTextAnimation(
+          `.animateParaText--${index + 1}`,
+          ".thirdRow__leaf"
+        );
+        break;
+      case 4:
+        hideParaTextAnimation(
+          `.animateParaText--${index + 1}`,
+          ".fifthRow__leaf"
+        );
+        break;
 
-    default:
-      hideParaTextAnimation(`.animateParaText--${index + 1}`, "");
-      break;
-  }
-});
-
+      default:
+        hideParaTextAnimation(`.animateParaText--${index + 1}`, "");
+        break;
+    }
+  });
+}
 let mapBorderIsVisible = false;
 let addBorderIsVisible = [false, false];
-tables.forEach((_, index) => {
-  hideMenuAnimation(
-    `.tableAnimate${index + 1}`,
-    `.tableHeader__line${index + 1}`
-  );
-});
+if (window.matchMedia("(min-width: 961px)").matches) {
+  tables.forEach((_, index) => {
+    hideMenuAnimation(
+      `.tableAnimate${index + 1}`,
+      `.tableHeader__line${index + 1}`
+    );
+  });
+}
 
 // BOLD MAP TEXT BORDERS FOR HOVER
 let boldBorders = [
@@ -1442,112 +1406,112 @@ let mainBorders = [
 // SCROLL TRIGGER ANIMATIONS
 window.addEventListener("scroll", function(e) {
   // SHOW AND HIDING MENU FOODS
-  tables.forEach((element, index) => {
-    let bounding = element.getBoundingClientRect();
-    if (window.innerHeight - bounding.top > 210 && !isVisible[index]) {
-      isVisible[index] = true;
-      showMenuAnimation(
-        `.tableAnimate${index + 1}`,
-        `.tableHeader__line${index + 1}`
-      );
-    } else if (window.innerHeight - bounding.top < 100 && isVisible[index]) {
-      isVisible[index] = false;
-      hideMenuAnimation(
-        `.tableAnimate${index + 1}`,
-        `.tableHeader__line${index + 1}`
-      );
-    }
-  });
-  // OPEN IN MAP BUTTON SHOW ANIMATION
-  let mapBound = document.querySelector(".openInMap").getBoundingClientRect();
-  if (window.innerHeight - mapBound.top > 20 && !mapBorderIsVisible) {
-    mapBorderIsVisible = true;
-    mapButBorderShow(mainBorders);
-  } else if (window.innerHeight - mapBound.top < -100 && mapBorderIsVisible) {
-    mapBorderIsVisible = false;
-    mapButBorderHide(mainBorders);
-  }
-  // ADDRESS SECTION BORDERS
-  addBorders.forEach((elem, index) => {
-    let addBoundRects = elem.getBoundingClientRect();
-    if (
-      window.innerHeight - addBoundRects.top > 20 &&
-      !addBorderIsVisible[index]
-    ) {
-      addBorderIsVisible[index] = true;
-      showAddBorders(`.addInfoContainer__border--${index + 1}`);
-    } else if (
-      window.innerHeight - addBoundRects.top < -300 &&
-      addBorderIsVisible[index]
-    ) {
-      addBorderIsVisible[index] = false;
-      hideAddBorders(`.addInfoContainer__border--${index + 1}`);
-    }
-  });
-  // SHOWING AND HIDING PARATEXT
-  animateParaText.forEach((element, index) => {
-    let paraTextBounding = element.getBoundingClientRect();
-    if (
-      window.innerHeight - paraTextBounding.top > -100 &&
-      !animateParaTextIsVisible[index]
-    ) {
-      animateParaTextIsVisible[index] = true;
-      switch (index + 1) {
-        case 1:
-          showParaTextAnimation(
-            `.animateParaText--${index + 1}`,
-            ".firstRow__leaf"
-          );
-          break;
-        case 3:
-          showParaTextAnimation(
-            `.animateParaText--${index + 1}`,
-            ".thirdRow__leaf"
-          );
-          break;
-        case 4:
-          showParaTextAnimation(
-            `.animateParaText--${index + 1}`,
-            ".fifthRow__leaf"
-          );
-          break;
-
-        default:
-          showParaTextAnimation(`.animateParaText--${index + 1}`, "");
-          break;
+  if (window.matchMedia("(min-width: 961px)").matches) {
+    tables.forEach((element, index) => {
+      let bounding = element.getBoundingClientRect();
+      if (window.innerHeight - bounding.top > 210 && !isVisible[index]) {
+        isVisible[index] = true;
+        showMenuAnimation(
+          `.tableAnimate${index + 1}`,
+          `.tableHeader__line${index + 1}`
+        );
+      } else if (window.innerHeight - bounding.top < 100 && isVisible[index]) {
+        isVisible[index] = false;
+        hideMenuAnimation(
+          `.tableAnimate${index + 1}`,
+          `.tableHeader__line${index + 1}`
+        );
       }
-    } else if (
-      window.innerHeight - paraTextBounding.top < -300 &&
-      animateParaTextIsVisible[index]
-    ) {
-      animateParaTextIsVisible[index] = false;
-      switch (index + 1) {
-        case 1:
-          hideParaTextAnimation(
-            `.animateParaText--${index + 1}`,
-            ".firstRow__leaf"
-          );
-          break;
-        case 3:
-          hideParaTextAnimation(
-            `.animateParaText--${index + 1}`,
-            ".thirdRow__leaf"
-          );
-          break;
-        case 4:
-          hideParaTextAnimation(
-            `.animateParaText--${index + 1}`,
-            ".fifthRow__leaf"
-          );
-          break;
-
-        default:
-          hideParaTextAnimation(`.animateParaText--${index + 1}`, "");
-          break;
-      }
+    });
+    // OPEN IN MAP BUTTON SHOW ANIMATION
+    let mapBound = document.querySelector(".openInMap").getBoundingClientRect();
+    if (window.innerHeight - mapBound.top > 20 && !mapBorderIsVisible) {
+      mapBorderIsVisible = true;
+      mapButBorderShow(mainBorders);
+    } else if (window.innerHeight - mapBound.top < -100 && mapBorderIsVisible) {
+      mapBorderIsVisible = false;
+      mapButBorderHide(mainBorders);
     }
-  });
-  if (window.matchMedia("(min-width: 1000px)").matches) {
+    // ADDRESS SECTION BORDERS
+    addBorders.forEach((elem, index) => {
+      let addBoundRects = elem.getBoundingClientRect();
+      if (
+        window.innerHeight - addBoundRects.top > 20 &&
+        !addBorderIsVisible[index]
+      ) {
+        addBorderIsVisible[index] = true;
+        showAddBorders(`.addInfoContainer__border--${index + 1}`);
+      } else if (
+        window.innerHeight - addBoundRects.top < -300 &&
+        addBorderIsVisible[index]
+      ) {
+        addBorderIsVisible[index] = false;
+        hideAddBorders(`.addInfoContainer__border--${index + 1}`);
+      }
+    });
+    // SHOWING AND HIDING PARATEXT
+    animateParaText.forEach((element, index) => {
+      let paraTextBounding = element.getBoundingClientRect();
+      if (
+        window.innerHeight - paraTextBounding.top > -100 &&
+        !animateParaTextIsVisible[index]
+      ) {
+        animateParaTextIsVisible[index] = true;
+        switch (index + 1) {
+          case 1:
+            showParaTextAnimation(
+              `.animateParaText--${index + 1}`,
+              ".firstRow__leaf"
+            );
+            break;
+          case 3:
+            showParaTextAnimation(
+              `.animateParaText--${index + 1}`,
+              ".thirdRow__leaf"
+            );
+            break;
+          case 4:
+            showParaTextAnimation(
+              `.animateParaText--${index + 1}`,
+              ".fifthRow__leaf"
+            );
+            break;
+
+          default:
+            showParaTextAnimation(`.animateParaText--${index + 1}`, "");
+            break;
+        }
+      } else if (
+        window.innerHeight - paraTextBounding.top < -300 &&
+        animateParaTextIsVisible[index]
+      ) {
+        animateParaTextIsVisible[index] = false;
+        switch (index + 1) {
+          case 1:
+            hideParaTextAnimation(
+              `.animateParaText--${index + 1}`,
+              ".firstRow__leaf"
+            );
+            break;
+          case 3:
+            hideParaTextAnimation(
+              `.animateParaText--${index + 1}`,
+              ".thirdRow__leaf"
+            );
+            break;
+          case 4:
+            hideParaTextAnimation(
+              `.animateParaText--${index + 1}`,
+              ".fifthRow__leaf"
+            );
+            break;
+
+          default:
+            hideParaTextAnimation(`.animateParaText--${index + 1}`, "");
+            break;
+        }
+      }
+    });
     hamberMakrTlProgress =
       (window.innerHeight - bottomBread.getBoundingClientRect().top) /
       window.innerHeight;
@@ -1564,15 +1528,15 @@ window.addEventListener("scroll", function(e) {
       hideHamburgerText();
       hamburgerTextHidden = true;
     }
-  }
-  // BREAK THE BONE
-  let boneBound = document
-    .querySelector(".secondRow__bone")
-    .getBoundingClientRect();
-  if (shouldBreakBone) {
-    if (window.innerHeight - boneBound.top > 400) {
-      breakBone();
-      shouldBreakBone = false;
+    // BREAK THE BONE
+    let boneBound = document
+      .querySelector(".secondRow__bone")
+      .getBoundingClientRect();
+    if (shouldBreakBone) {
+      if (window.innerHeight - boneBound.top > 400) {
+        breakBone();
+        shouldBreakBone = false;
+      }
     }
   }
 });
@@ -1630,16 +1594,10 @@ restartSlider = () => {
         tl.resume();
       }
     }
+  } else {
+    tl.kill();
+    tlPhone.kill();
   }
 };
 
 window.addEventListener("resize", restartSlider);
-// if (window.matchMedia("(min-width: 599px)").matches) {
-//   if (window.innerWidth / window.innerHeight <= 1.24516) {
-//     backgroundSizeFrom = "auto 130%";
-//     backgroundSizeTo = "auto 120%";
-//   } else {
-//     backgroundSizeFrom = "130% auto";
-//     backgroundSizeTo = "120% auto";
-//   }
-// }
