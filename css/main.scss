@@ -94,13 +94,17 @@ $merry: "Merriweather", serif;
   }
   overflow: hidden !important;
   @include flex(space-between, center, column);
+  flex-wrap: nowrap;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   &__logo {
     @include box(200px, 200px, null, null, null);
-    margin: 25px 0 30px 0;
+    margin: 25px 0 0px 0;
+    @media (max-height: 624px) {
+      margin: 0;
+    }
   }
   .sideMenue {
     @include box(100%, null, null, null, null);
@@ -220,12 +224,53 @@ $merry: "Merriweather", serif;
     }
   }
 }
+// SUB NAVIGATION
+.subnav {
+  position: fixed;
+  left: 250px;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  @include box(50px, 100vh, #fff, null, null);
+  @include for-desktop-up() {
+    left: 170px;
+  }
+  @include for-tablet-portrait-up() {
+    display: none;
+  }
+  &__option {
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    @include flex(center, center, null);
+    @include box(100%, null, null, null, none);
+    white-space: nowrap;
+    padding: 20px 10px;
+    cursor: pointer;
+    @include font($montserrat, 12px, null, null, #303030);
+    letter-spacing: 3px;
+    &--evMenu {
+      margin-top: 100px;
+    }
+  }
+  &__border {
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #c7a277;
+    cursor: pointer;
+    &--drinks {
+      height: 0;
+    }
+  }
+}
 
 // IMAGE SLIDER
 .imageSlider {
   @include box(100%, 100vh, null, null, null);
   position: relative;
   overflow-x: hidden;
+  z-index: 2;
 
   &__ImagesContainer {
     @include box(100%, 100%, null, null, null);
@@ -482,8 +527,8 @@ $merry: "Merriweather", serif;
   }
   .firstRow {
     @include box(100%, null, #fff, null, null);
-    padding: 15px 85px 15px 85px;
-    margin: 250px 0 250px 0;
+    z-index: 2;
+    padding: 250px 85px 250px 85px;
     @include for-tablet-portrait-up() {
       padding: 15px 10px;
       margin: 100px 0 50px 0;
@@ -491,29 +536,26 @@ $merry: "Merriweather", serif;
     @include flex(null, null, null);
     position: relative;
     .firstRowGallary {
-      @include box(57%, 400px, null, null, null);
+      @include box(57%, auto, null, null, null);
+      overflow: hidden;
+      position: relative;
       @include for-tablet-portrait-up() {
         @include box(100%, auto, null, null, null);
       }
-      overflow: hidden;
-      position: relative;
-      padding: 0 15px;
-      @include for-phone-only() {
-        padding: 0;
-      }
       &__image1 {
+        @include box(100%, auto, null, null, null);
+      }
+      &__overlay {
+        @include box(100%, 100%, #f5f4ed, null, null);
         position: absolute;
-        top: -90px;
-        @include box(120%, auto, null, null, null);
-        @include for-tablet-portrait-up() {
-          top: 0;
-          @include box(100%, auto, null, null, null);
-          position: relative;
-        }
+        top: 100%;
       }
     }
     &__text {
-      @include box(335px, 350px, null, null, null);
+      @include box(30%, null, null, null, null);
+      @include for-desktop-up() {
+        @include box(40%, null, null, null, null);
+      }
       @include for-tablet-portrait-up() {
         padding: 25px 25px;
         text-align: center;
@@ -526,7 +568,7 @@ $merry: "Merriweather", serif;
       }
       letter-spacing: 1px;
       line-height: 30px;
-      @include font($roboto, 18px, 200, null, #303030);
+      @include font($roboto, 17px, 200, null, #303030);
       margin: 0 0 10px 0;
       padding: 0 15px;
       @include for-phone-only() {
@@ -536,12 +578,7 @@ $merry: "Merriweather", serif;
     }
     &__leaf {
       @include box(50px, 50px, null, null, null);
-      position: absolute;
-      @include for-tablet-portrait-up() {
-        margin-top: 50px;
-        position: static;
-      }
-      bottom: 0;
+      margin: 50px 0 0 0;
       right: 60%;
     }
   }
@@ -588,25 +625,18 @@ $merry: "Merriweather", serif;
         margin: 100px 0 0 0;
       }
       .secondRowGallary {
-        @include box(100%, 350px, null, null, null);
-        @include for-tablet-portrait-up() {
-          @include box(100%, auto, null, null, null);
-        }
-        padding: 0 15px;
+        @include box(100%, auto, null, null, null);
         overflow: hidden;
         position: relative;
-        @include for-phone-only() {
-          padding: 0;
+        @include for-tablet-portrait-up() {
         }
         &__image1 {
-          @include box(120%, auto, null, null, null);
+          @include box(100%, auto, null, null, null);
+        }
+        &__overlay {
+          @include box(100%, 100%, #f5f4ed, null, null);
           position: absolute;
-          top: -90px;
-          @include for-tablet-portrait-up() {
-            top: 0;
-            @include box(100%, auto, null, null, null);
-            position: relative;
-          }
+          top: 100%;
         }
       }
     }
@@ -614,7 +644,7 @@ $merry: "Merriweather", serif;
       @include box(100%, null, null, null, null);
       letter-spacing: 1px;
       line-height: 30px;
-      @include font($roboto, 18px, 200, null, #303030);
+      @include font($roboto, 17px, 200, null, #303030);
       margin: 50px 0 10px 0;
 
       padding: 0 15px;
@@ -646,32 +676,29 @@ $merry: "Merriweather", serif;
       }
       z-index: 2;
       .thirdRowGallary {
-        @include box(100%, 100%, null, null, null);
-        padding: 0 15px 0 15px;
+        @include box(100%, auto, null, null, null);
         margin: 200px 0 0 0;
         position: relative;
         overflow: hidden;
         @include for-tablet-portrait-up() {
           @include box(100%, auto, null, null, null);
           margin: 100px 0 0 0;
-          padding: 0;
         }
         &__image1 {
-          @include box(120%, auto, null, null, null);
+          @include box(100%, auto, null, null, null);
+        }
+        &__overlay {
+          @include box(100%, 100%, #f5f4ed, null, null);
           position: absolute;
-          top: -110px;
-          @include for-tablet-portrait-up() {
-            top: 0;
-            @include box(100%, auto, null, null, null);
-            position: static;
-          }
+          top: 100%;
+          z-index: 2;
         }
       }
     }
     &__text {
       @include box(90%, null, null, null, null);
       line-height: 30px;
-      @include font($roboto, 18px, 200, null, #303030);
+      @include font($roboto, 17px, 200, null, #303030);
       padding: 0 15px;
       @include for-tablet-portrait-up() {
         @include box(100%, null, null, null, null);
@@ -712,6 +739,9 @@ $merry: "Merriweather", serif;
       margin: 50px 0 10px 0;
       position: relative;
       @include flex(null, null, null);
+      @include for-desktop-up() {
+        padding: 0 0 0 15px;
+      }
       @include for-tablet-portrait-up() {
         padding: 0;
         @include flex(center, center, null);
@@ -733,17 +763,20 @@ $merry: "Merriweather", serif;
     }
     .fourthRowGallary {
       @include box(40%, 630px, null, null, null);
-      padding: 0 15px 0 15px;
       margin: 300px 0 0 0;
+      position: relative;
+      overflow: hidden;
       @include for-tablet-portrait-up() {
         display: none;
       }
-      position: relative;
-      overflow: hidden;
       &__image1 {
-        @include box(120%, auto, null, null, null);
+        @include box(100%, auto, null, null, null);
+      }
+      &__overlay {
+        @include box(100%, 100%, #f5f4ed, null, null);
         position: absolute;
-        top: 0px;
+        top: 100%;
+        z-index: 2;
       }
     }
     &__movingHamburger {
@@ -811,7 +844,7 @@ $merry: "Merriweather", serif;
       @include box(100%, null, null, null, null);
       letter-spacing: 1px;
       line-height: 30px;
-      @include font($roboto, 18px, 200, null, #303030);
+      @include font($roboto, 17px, 200, null, #303030);
       margin: 50px 0 10px 0;
       padding: 0 15px;
       @include for-tablet-portrait-up() {
@@ -834,22 +867,19 @@ $merry: "Merriweather", serif;
       }
       .fifthRowGallary {
         @include box(100%, 350px, null, null, null);
-        padding: 0 15px;
         overflow: hidden;
         position: relative;
         @include for-tablet-portrait-up() {
           @include box(100%, auto, null, null, null);
-          padding: 0;
         }
         &__image1 {
-          @include box(120%, auto, null, null, null);
+          @include box(100%, auto, null, null, null);
+        }
+        &__overlay {
+          @include box(100%, 100%, #f5f4ed, null, null);
           position: absolute;
-          top: -50px;
-          @include for-tablet-portrait-up() {
-            @include box(100%, auto, null, null, null);
-            position: static;
-            top: 0;
-          }
+          top: 100%;
+          z-index: 2;
         }
       }
     }
@@ -924,6 +954,7 @@ $merry: "Merriweather", serif;
     @include font($roboto, 18px, 200, null, #303030);
     padding: 0 15px;
     @include for-phone-only() {
+      @include font(null, 16px, null, null, null);
       padding: 0;
     }
     a {

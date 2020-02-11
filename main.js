@@ -1,15 +1,4 @@
-window.onload = function() {
-  lax.setup({
-    breakpoints: { large: 961 }
-  }); // init
-
-  const updateLax = () => {
-    lax.update(window.scrollY);
-    window.requestAnimationFrame(updateLax);
-  };
-
-  window.requestAnimationFrame(updateLax);
-};
+gsap.registerPlugin(ScrollToPlugin);
 
 // IMAGE SLIDER ANIMATION
 let tl = gsap.timeline({ repeat: -1, paused: true });
@@ -678,7 +667,7 @@ if (window.innerWidth / window.innerHeight <= 1.24516) {
   tl.pause();
   tlPhone.resume();
 } else {
-  timelineActive = false;
+  timelineActive = true;
   backGrounds.forEach(element => {
     element.style.backgroundSize = "130% auto";
   });
@@ -770,6 +759,34 @@ changeSlider = (index, image, option) => {
   firstRun = false;
 };
 
+// SCROLL TO MENUE
+menuScrollTo = (scrollEl, showEl) => {
+  sidenavMenueController = () => {
+    if (showEl !== 4) {
+      showMenuAnimation(
+        `.tableAnimate${showEl}`,
+        `.tableHeader__line${showEl}`
+      );
+    }
+  };
+  if (showEl !== 4) {
+    tables.forEach((_, index) => {
+      hideMenuAnimation(
+        `.tableAnimate${index + 1}`,
+        `.tableHeader__line${index + 1}`
+      );
+    });
+  }
+  gsap.to(window, {
+    duration: 2,
+    scrollTo: { y: scrollEl, offsetY: 50 },
+    ease: "power3.inOut",
+    onComplete: function() {
+      sidenavMenueController();
+    }
+  });
+};
+
 // SHOW BORDER ANIMATION
 menueBorderShow = (top, bottom, borderWidth) => {
   topName = top;
@@ -841,103 +858,101 @@ menueBorderHide = (top, bottom, borderWidth) => {
 };
 // <----------------FINISH---------------->
 
-if (window.matchMedia("(min-width: 961px)").matches) {
-  // BOOK A TABLE BORDER ANIMATION
-  let bookTableBorder = new TimelineMax({
-    repeat: -1,
-    yoyo: true
-  });
+// BOOK A TABLE BORDER ANIMATION
+let bookTableBorder = gsap.timeline({
+  repeat: -1,
+  yoyo: true
+});
 
-  // TOP FILL
-  bookTableBorder.fromTo(
-    ".sideBookBut__border--top",
-    1,
-    {
-      width: "0%",
-      background: "rgb(48, 48, 48)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: "100%",
-      background: "rgb(48, 48, 48)"
-    }
-  );
-
-  // BOTTOM FILL
-  bookTableBorder.fromTo(
-    ".sideBookBut__border--bottom",
-    1,
-    {
-      width: "0%",
-      background: "rgb(48, 48, 48)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      width: "100%",
-      background: "rgb(48, 48, 48)"
-    },
-    "-=1"
-  );
-
-  // RIGHT FILL
-  bookTableBorder.fromTo(
-    ".sideBookBut__border--right",
-    1,
-    {
-      height: "0%",
-      background: "rgb(48, 48, 48)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      height: "100%",
-      background: "rgb(48, 48, 48)"
-    }
-  );
-
-  // LEFT FILL
-  bookTableBorder.fromTo(
-    ".sideBookBut__border--left",
-    1,
-    {
-      height: "0%",
-      background: "rgb(48, 48, 48)",
-      immediateRender: false,
-      autoRound: false
-    },
-    {
-      height: "100%",
-      background: "rgb(48, 48, 48)"
-    },
-    "-=1"
-  );
-  // LEFT EMPTY
-  bookTableBorder.to(".sideBookBut__border--left", 1, {
-    height: "0%",
-    background: "rgb(48, 48, 48)"
-  });
-
-  // BOTTOM EMPTY
-  bookTableBorder.to(".sideBookBut__border--bottom", 1, {
+// TOP FILL
+bookTableBorder.fromTo(
+  ".sideBookBut__border--top",
+  1,
+  {
     width: "0%",
+    background: "rgb(48, 48, 48)",
+    immediateRender: false,
+    autoRound: false
+  },
+  {
+    width: "100%",
     background: "rgb(48, 48, 48)"
-  });
+  }
+);
 
-  // RIGHT EMPTY
-  bookTableBorder.to(".sideBookBut__border--right", 1, {
-    height: "0%",
-    background: "rgb(48, 48, 48)"
-  });
-
-  // TOP EMPTY
-  bookTableBorder.to(".sideBookBut__border--top", 1, {
+// BOTTOM FILL
+bookTableBorder.fromTo(
+  ".sideBookBut__border--bottom",
+  1,
+  {
     width: "0%",
+    background: "rgb(48, 48, 48)",
+    immediateRender: false,
+    autoRound: false
+  },
+  {
+    width: "100%",
     background: "rgb(48, 48, 48)"
-  });
-  // <----------------FINISH---------------->
-}
+  },
+  "-=1"
+);
+
+// RIGHT FILL
+bookTableBorder.fromTo(
+  ".sideBookBut__border--right",
+  1,
+  {
+    height: "0%",
+    background: "rgb(48, 48, 48)",
+    immediateRender: false,
+    autoRound: false
+  },
+  {
+    height: "100%",
+    background: "rgb(48, 48, 48)"
+  }
+);
+
+// LEFT FILL
+bookTableBorder.fromTo(
+  ".sideBookBut__border--left",
+  1,
+  {
+    height: "0%",
+    background: "rgb(48, 48, 48)",
+    immediateRender: false,
+    autoRound: false
+  },
+  {
+    height: "100%",
+    background: "rgb(48, 48, 48)"
+  },
+  "-=1"
+);
+// LEFT EMPTY
+bookTableBorder.to(".sideBookBut__border--left", 1, {
+  height: "0%",
+  background: "rgb(48, 48, 48)"
+});
+
+// BOTTOM EMPTY
+bookTableBorder.to(".sideBookBut__border--bottom", 1, {
+  width: "0%",
+  background: "rgb(48, 48, 48)"
+});
+
+// RIGHT EMPTY
+bookTableBorder.to(".sideBookBut__border--right", 1, {
+  height: "0%",
+  background: "rgb(48, 48, 48)"
+});
+
+// TOP EMPTY
+bookTableBorder.to(".sideBookBut__border--top", 1, {
+  width: "0%",
+  background: "rgb(48, 48, 48)"
+});
+// <----------------FINISH---------------->
 
 // SHOW MENU
 showMenuAnimation = (tableName, lineName) => {
@@ -1262,6 +1277,19 @@ breakBone = () => {
     }
   );
 };
+let boneMover = gsap.timeline({ paused: true });
+if (window.matchMedia("(min-width: 961px)").matches) {
+  boneMover.fromTo(
+    ".secondRow__bone",
+    8,
+    {
+      y: -300
+    },
+    {
+      y: 600
+    }
+  );
+}
 // <----------------FINISH---------------->
 
 // SHOW HAMBURGER TEXT
@@ -1323,19 +1351,74 @@ if (window.matchMedia("(min-width: 961px)").matches) {
       "-=2"
     );
 }
+
+// HIDING THE SUBNAV
+subnavHide = () => {
+  gsap.fromTo(".subnav", 1, { x: 50 }, { x: 0 });
+};
+// HIDING THE SUBNAV
+subnavShow = () => {
+  gsap.fromTo(".subnav", 1, { x: 0 }, { x: 50 });
+};
+
+// SHOW IMAGE BY REMOVING THE OVERLAY
+showImage = overlayClass => {
+  gsap.fromTo(overlayClass, 1, { y: "-100%" }, { y: "0%" });
+};
+// HIDE IMAGES BY AN OVERLAY
+hideImage = overlayClass => {
+  gsap.fromTo(overlayClass, 1, { y: "0%" }, { y: "-100%" });
+};
+
 // DEFINING SOME VARIABLES AND INITIALIZATION
 let isVisible = [false, false, false, false, false];
 let tables = document.querySelectorAll(".table");
 let addBorders = document.querySelectorAll(".addInfoContainer__border");
 let animateParaText = document.querySelectorAll(".animateParaText");
 let animateParaTextIsVisible = [];
+let overlay = document.querySelectorAll(".overlay");
+let overlayIsVisible = [];
 let shouldBreakBone = true;
 let lastScrollTop = 0;
+let menuContainer = document.querySelector(".menuContainer");
+let imageSlider = document.querySelector(".imageSlider");
+let showNavbar = false;
+let hambergurItems = document.querySelectorAll(
+  ".fourthRowGallary__hamburgerItem"
+);
+let hamburgerContainer = document.querySelector(".fourthRow__movingHamburger");
+let mapBorderIsVisible = false;
+let addBorderIsVisible = [false, false];
+// CHANGE TO PHONE OR DESKTOP FLAGS
+let phoneMode;
+let desktopMode;
+
+// BOLD MAP TEXT BORDERS FOR HOVER
+let boldBorders = [
+  ".openInMap__border--boldTopLeft",
+  ".openInMap__border--boldTopRight",
+  ".openInMap__border--boldRight",
+  ".openInMap__border--boldLeft",
+  ".openInMap__border--boldBottom",
+  false
+];
+// MAP TEXT BORDERS
+let mainBorders = [
+  ".openInMap__border--topLeft",
+  ".openInMap__border--topRight",
+  ".openInMap__border--right",
+  ".openInMap__border--left",
+  ".openInMap__border--bottom",
+  true
+];
+
 // HAMBURGER & TEXT FLAG
 let hamburgerItems = document.querySelectorAll(
   ".fourthRowGallary__hamburgerItem"
 );
 let hamberMakrTlProgress;
+let boneImg = document.querySelector(".secondRow__bone");
+let boneMoverProgress;
 // HAMBURGER BOTTOM BREAD
 let bottomBread = document.querySelector(".fourthRowGallary__breadBottom");
 let itemMargin = 0;
@@ -1344,8 +1427,39 @@ let triggerPoint = 0;
 animateParaText.forEach((_, index) => {
   animateParaTextIsVisible[index] = false;
 });
+overlay.forEach((_, index) => {
+  overlayIsVisible[index] = false;
+});
 if (window.matchMedia("(min-width: 961px)").matches) {
-  tables.forEach((_, index) => {
+  // SET MOBILE FLAG TO FALSE
+  desktopMode = true;
+  phoneMode = false;
+  // HIDE ALL THE IMAGES
+  overlay.forEach((_, index) => {
+    switch (index + 1) {
+      case 1:
+        hideImage(".firstRowGallary__overlay");
+        break;
+      case 2:
+        hideImage(".secondRowGallary__overlay");
+        break;
+      case 3:
+        hideImage(".thirdRowGallary__overlay");
+        break;
+      case 4:
+        hideImage(".fourthRowGallary__overlay");
+        break;
+      case 5:
+        hideImage(".fifthRowGallary__overlay");
+        break;
+
+      default:
+        console.log("An Error happend");
+        break;
+    }
+  });
+  // HIDE GALLARY TEXTS
+  animateParaText.forEach((_, index) => {
     switch (index + 1) {
       case 1:
         hideParaTextAnimation(
@@ -1371,10 +1485,7 @@ if (window.matchMedia("(min-width: 961px)").matches) {
         break;
     }
   });
-}
-let mapBorderIsVisible = false;
-let addBorderIsVisible = [false, false];
-if (window.matchMedia("(min-width: 961px)").matches) {
+  // HIDE ALL THE RESAURANT MENUE TEXTS
   tables.forEach((_, index) => {
     hideMenuAnimation(
       `.tableAnimate${index + 1}`,
@@ -1382,31 +1493,34 @@ if (window.matchMedia("(min-width: 961px)").matches) {
     );
   });
 }
-
-// BOLD MAP TEXT BORDERS FOR HOVER
-let boldBorders = [
-  ".openInMap__border--boldTopLeft",
-  ".openInMap__border--boldTopRight",
-  ".openInMap__border--boldRight",
-  ".openInMap__border--boldLeft",
-  ".openInMap__border--boldBottom",
-  false
-];
-// MAP TEXT BORDERS
-let mainBorders = [
-  ".openInMap__border--topLeft",
-  ".openInMap__border--topRight",
-  ".openInMap__border--right",
-  ".openInMap__border--left",
-  ".openInMap__border--bottom",
-  true
-];
 // <----------------FINISH---------------->
 
 // SCROLL TRIGGER ANIMATIONS
 window.addEventListener("scroll", function(e) {
   // SHOW AND HIDING MENU FOODS
   if (window.matchMedia("(min-width: 961px)").matches) {
+    desktopMode = true;
+    phoneMode = false;
+    // SHOW & HIDE SUBNAV AT SPECIFIC POINTS
+    if (
+      menuContainer.getBoundingClientRect().bottom >=
+        0.5 * window.innerHeight &&
+      menuContainer.getBoundingClientRect().top < 0.39 * window.innerHeight &&
+      !showNavbar
+    ) {
+      subnavShow();
+      showNavbar = true;
+    } else if (
+      (menuContainer.getBoundingClientRect().bottom <
+        0.5 * window.innerHeight &&
+        showNavbar) ||
+      (menuContainer.getBoundingClientRect().top > 0.4 * window.innerHeight &&
+        menuContainer.getBoundingClientRect().top >= 0 &&
+        showNavbar)
+    ) {
+      subnavHide();
+      showNavbar = false;
+    }
     tables.forEach((element, index) => {
       let bounding = element.getBoundingClientRect();
       if (window.innerHeight - bounding.top > 210 && !isVisible[index]) {
@@ -1512,6 +1626,65 @@ window.addEventListener("scroll", function(e) {
         }
       }
     });
+    // SHOWING AND HIDING IMAGES
+    overlay.forEach((element, index) => {
+      let overlayBounding = element.getBoundingClientRect();
+      if (
+        window.innerHeight - overlayBounding.top > -100 &&
+        !overlayIsVisible[index]
+      ) {
+        overlayIsVisible[index] = true;
+        switch (index + 1) {
+          case 1:
+            showImage(".firstRowGallary__overlay");
+            break;
+          case 2:
+            showImage(".secondRowGallary__overlay");
+            break;
+          case 3:
+            showImage(".thirdRowGallary__overlay");
+            break;
+          case 4:
+            showImage(".fourthRowGallary__overlay");
+            break;
+          case 5:
+            showImage(".fifthRowGallary__overlay");
+            break;
+
+          default:
+            console.log("An Error happend");
+            break;
+        }
+      } else if (
+        window.innerHeight - overlayBounding.top < -300 &&
+        overlayIsVisible[index]
+      ) {
+        overlayIsVisible[index] = false;
+        switch (index + 1) {
+          case 1:
+            hideImage(".firstRowGallary__overlay");
+            break;
+          case 2:
+            hideImage(".secondRowGallary__overlay");
+            break;
+          case 3:
+            hideImage(".thirdRowGallary__overlay");
+            break;
+          case 4:
+            hideImage(".fourthRowGallary__overlay");
+            break;
+          case 5:
+            hideImage(".fifthRowGallary__overlay");
+            break;
+
+          default:
+            console.log("An Error happend");
+            break;
+        }
+      }
+    });
+
+    // MAKE THE BURGER AND MOVE IT
     hamberMakrTlProgress =
       (window.innerHeight - bottomBread.getBoundingClientRect().top) /
       window.innerHeight;
@@ -1519,8 +1692,8 @@ window.addEventListener("scroll", function(e) {
       hamberMakrTl.progress(hamberMakrTlProgress / 3);
     }
 
+    // SHOW & HIDE BURGER TEXT
     let botBreadMargTop = Number(bottomBread.style.marginTop.replace("px", ""));
-
     if (botBreadMargTop <= -30 && hamburgerTextHidden) {
       showHamburgerText();
       hamburgerTextHidden = false;
@@ -1529,14 +1702,18 @@ window.addEventListener("scroll", function(e) {
       hamburgerTextHidden = true;
     }
     // BREAK THE BONE
-    let boneBound = document
-      .querySelector(".secondRow__bone")
-      .getBoundingClientRect();
+    let boneBound = boneImg.getBoundingClientRect();
     if (shouldBreakBone) {
       if (window.innerHeight - boneBound.top > 400) {
         breakBone();
         shouldBreakBone = false;
       }
+    }
+    // MOVE THE BONE
+    boneMoverProgress =
+      (window.innerHeight - boneBound.top) / window.innerHeight;
+    if (boneMoverProgress >= 0 && boneMoverProgress <= 1.3) {
+      boneMover.progress(boneMoverProgress / 3);
     }
   }
 });
@@ -1568,35 +1745,72 @@ function initMap() {
   });
 }
 // <----------------FINISH---------------->
-// restarting Image slider
+// SWITCH STYLES BETWEEN SMALL AND BIG SCREEN
 restartSlider = () => {
-  if (window.matchMedia("(min-width: 480px)").matches) {
-    if (window.innerWidth / window.innerHeight <= 1.24516) {
-      backGrounds.forEach(element => {
-        element.style.backgroundSize = "auto 130%";
-      });
-      if (timelineActive) {
-        timelineActive = false;
-        phoneTimelineActive = true;
-        tl.pause();
-        tlPhone.progress(tl.time() / tl.duration());
-        tlPhone.resume();
-      }
-    } else {
-      backGrounds.forEach(element => {
-        element.style.backgroundSize = "130% auto";
-      });
-      if (phoneTimelineActive) {
-        tlPhone.pause();
-        timelineActive = true;
-        phoneTimelineActive = false;
-        tl.progress(tlPhone.time() / tlPhone.duration());
-        tl.resume();
-      }
+  if (window.innerWidth / window.innerHeight <= 1.24516) {
+    backGrounds.forEach(element => {
+      element.style.backgroundSize = "auto 130%";
+    });
+    if (timelineActive) {
+      timelineActive = false;
+      phoneTimelineActive = true;
+      tl.pause();
+      tlPhone.progress(tl.time() / tl.duration());
+      tlPhone.resume();
     }
   } else {
-    tl.kill();
-    tlPhone.kill();
+    backGrounds.forEach(element => {
+      element.style.backgroundSize = "130% auto";
+    });
+    if (phoneTimelineActive) {
+      tlPhone.pause();
+      timelineActive = true;
+      phoneTimelineActive = false;
+      tl.progress(tlPhone.time() / tlPhone.duration());
+      tl.resume();
+    }
+  }
+  // MOBILE MODE STYLE
+  if (window.matchMedia("(max-width: 961px)").matches && desktopMode) {
+    desktopMode = false;
+    phoneMode = true;
+    hamburgerContainer.style.transform = "translate(0,0)";
+    boneImg.style.transform = "translate(0,0)";
+    hambergurItems.forEach(elem => {
+      elem.style.margin = "-31px 0";
+    });
+    tables.forEach((_, index) => {
+      showMenuAnimation(
+        `.tableAnimate${index + 1}`,
+        `.tableHeader__line${index + 1}`
+      );
+    });
+    animateParaText.forEach((_, index) => {
+      switch (index + 1) {
+        case 1:
+          showParaTextAnimation(
+            `.animateParaText--${index + 1}`,
+            ".firstRow__leaf"
+          );
+          break;
+        case 3:
+          showParaTextAnimation(
+            `.animateParaText--${index + 1}`,
+            ".thirdRow__leaf"
+          );
+          break;
+        case 4:
+          showParaTextAnimation(
+            `.animateParaText--${index + 1}`,
+            ".fifthRow__leaf"
+          );
+          break;
+
+        default:
+          showParaTextAnimation(`.animateParaText--${index + 1}`, "");
+          break;
+      }
+    });
   }
 };
 

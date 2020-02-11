@@ -23,6 +23,22 @@
   </head>
 
   <body>
+    <!-- SUBNAVIGATION -->
+    <div class="subnav">
+      <li
+        class="subnav__option subnav__option--evMenu"
+        onclick="menuScrollTo('.menuContainer', 1)"
+      >
+        DAY & EVENING MENU
+        <span class="subnav__border subnav__border--evMenu"></span>
+      </li>
+      <li
+        class="subnav__option subnav__option--drinks"
+        onclick="menuScrollTo('.tableAnimate4', 4)"
+      >
+        DRINKS <span class="subnav__border subnav__border--drinks"></span>
+      </li>
+    </div>
     <!-- SIDEBAR  -->
     <div class="sideBar">
       <div class="sideBar__logo">
@@ -609,18 +625,13 @@
     <div class="animationContainer">
       <div class="firstRow">
         <div class="firstRowGallary">
+          <div class="firstRowGallary__overlay overlay"></div>
           <img
             src="./images/firstRowImg1.jpg"
-            class="firstRowGallary__image1 lax"
-            data-lax-translate-y_large="-400 100, vh 0"
-            data-lax-anchor="self"
+            class="firstRowGallary__image1"
           />
         </div>
-        <div
-          class="firstRow__text lax"
-          data-lax-translate-y_large="-600 300, vh -50"
-          data-lax-anchor="self"
-        >
+        <div class="firstRow__text">
           <p class="animateParaText animateParaText--1">
             Whether you’re in the mood for a ‘small’ poutine or a ‘big’ salad,
             ‘just one’ beer or a double shot espresso, when it satisfies your
@@ -634,11 +645,7 @@
         </div>
       </div>
       <div class="secondRow">
-        <div
-          class="secondRow__bone lax"
-          data-lax-translate-y_large="-800 1100, elh 0"
-          data-lax-anchor="self"
-        >
+        <div class="secondRow__bone">
           <img class="boneImg" src="./images/bone.png" alt="Bone" />
           <p class="boneText">
             The best traditions bring good fortune, but also good times and good
@@ -647,11 +654,10 @@
         </div>
         <div class="secondRow__secondCol">
           <div class="secondRowGallary">
+            <div class="secondRowGallary__overlay overlay"></div>
             <img
               src="/images/secondRowImg1.jpg"
-              class="secondRowGallary__image1 lax"
-              data-lax-translate-y_large="-400 100, vh 0"
-              data-lax-anchor="self"
+              class="secondRowGallary__image1"
             />
           </div>
           <div class="secondRow__text">
@@ -665,11 +671,10 @@
         <div class="thirdRow">
           <div class="thirdRow__gallaryContainer">
             <div class="thirdRowGallary">
+              <div class="thirdRowGallary__overlay overlay"></div>
               <img
                 src="./images/thirdRowImg1.jpg"
-                class="thirdRowGallary__image1 lax"
-                data-lax-translate-y_large="-650 250, vh 0"
-                data-lax-anchor="self"
+                class="thirdRowGallary__image1"
               />
             </div>
             <div class="thirdRow__underGallaryContainer">
@@ -732,20 +737,15 @@
           <p class="hamburgerText">Great food. Great people. It all adds up.</p>
         </div>
         <div class="fourthRowGallary">
+          <div class="fourthRowGallary__overlay overlay"></div>
           <img
             src="./images/fourthRowImg1.jpg"
-            class="fourthRowGallary__image1 lax"
-            data-lax-translate-y_large="-650 -250, vh 0"
-            data-lax-anchor="self"
+            class="fourthRowGallary__image1"
           />
         </div>
         <div class="fifthRow">
           <div class="fifthRow__textContainer">
-            <div
-              class="fifthRow__text lax"
-              data-lax-translate-y_large="-700 -50, vh 300"
-              data-lax-anchor="self"
-            >
+            <div class="fifthRow__text">
               <p class="animateParaText animateParaText--4">
                 Just like its surroundings, Vallier has a French soul, but also
                 the warmth of a British pub and the vibrancy of Brooklyn.
@@ -762,11 +762,10 @@
           </div>
           <div class="fifthRow__secondCol">
             <div class="fifthRowGallary">
+              <div class="fifthRowGallary__overlay overlay"></div>
               <img
                 src="./images/fifthRowImg1.jpg"
-                class="fifthRowGallary__image1 lax"
-                data-lax-translate-y_large="-650 150, vh 0"
-                data-lax-anchor="self"
+                class="fifthRowGallary__image1"
               />
             </div>
           </div>
@@ -865,7 +864,7 @@
       defer
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/ScrollToPlugin.min.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
