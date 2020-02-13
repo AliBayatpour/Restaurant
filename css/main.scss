@@ -157,24 +157,23 @@ $merry: "Merriweather", serif;
       @include box(100%, null, null, null, null);
       @include flex(center, center, null);
       padding: 10px 0;
-      i {
+      a {
         margin: 0 10px;
+        text-decoration: none;
       }
     }
     &__address {
       @include box(100%, null, null, null, null);
       @include flex(center, center, column);
-      @include font($roboto, 13px, null, null, null);
+      @include font($roboto, 13px, null, null, #f1ebda);
       text-align: center;
       padding: 10px 15px;
       p {
         width: 80%;
         margin: 10px 0;
       }
-      :nth-child(1) {
-        color: #f1ebda;
-      }
-      :nth-child(2) {
+      a {
+        text-decoration: none;
         color: #c8a374;
       }
     }
@@ -184,6 +183,10 @@ $merry: "Merriweather", serif;
     @include box(100%, 100px, #f1ebda, null, null);
     @include flex(center, center, null);
     bottom: 0;
+    &__bookLink {
+      text-decoration: none;
+      @include font(null, null, null, null, #303030);
+    }
     &__text {
       @include flex(center, center, null);
       @include box(92.5%, 80%, #f1ebda, null, thin #bfbaae solid);
@@ -224,6 +227,7 @@ $merry: "Merriweather", serif;
     }
   }
 }
+
 // SUB NAVIGATION
 .subnav {
   position: fixed;
@@ -280,8 +284,9 @@ $merry: "Merriweather", serif;
   }
   &__text {
     @include box(null, null, null, null, null);
-    white-space: nowrap;
-    @include font($openSans, 50px, 800, null, #fff);
+    @include flex(null, null, row);
+    flex-wrap: nowrap;
+    @include font($roboto, 50px, 800, null, #fff);
     @include for-desktop-up() {
       @include font(null, 40px, null, null, null);
     }
@@ -291,14 +296,8 @@ $merry: "Merriweather", serif;
     @include for-tablet-small() {
       @include font(null, 30px, null, null, null);
     }
-    @include for-phone-only() {
-      @include font(null, 25px, null, null, null);
-    }
-    @include for-small-phone-only() {
-      @include font(null, 20px, null, null, null);
-    }
     @include for-extra-small-phone-only() {
-      @include font(null, 20px, null, null, null);
+      @include font(null, 28px, 500, null, null);
     }
     &--1 {
       background-color: rgba($color: #411524, $alpha: 0.6);
@@ -336,6 +335,7 @@ $merry: "Merriweather", serif;
     }
     @include for-extra-small-phone-only() {
       left: 5px;
+      top: 45%;
     }
   }
 
@@ -366,7 +366,6 @@ $merry: "Merriweather", serif;
     }
     &--img4 {
       background-image: url("../images/img4.jpg");
-      background-position: 50% 70%;
     }
     &--img5 {
       background-image: url("../images/img5.jpg");
@@ -400,6 +399,18 @@ $merry: "Merriweather", serif;
       @include box(6px, 6px, #fff, null, null);
       opacity: 0;
     }
+  }
+}
+// FIND US BOTTON
+.findUs {
+  display: none;
+  @include for-tablet-portrait-up() {
+    display: block;
+    @include box(100%, 50px, #e9dcb7, null, null);
+    @include flex(center, center, null);
+    @include font($roboto, 17px, thin, null, null);
+    letter-spacing: 1px;
+    z-index: 20;
   }
 }
 // MENU CONTAINER
@@ -535,13 +546,16 @@ $merry: "Merriweather", serif;
     }
     @include flex(null, null, null);
     position: relative;
-    .firstRowGallary {
+    &__secondCol {
       @include box(57%, auto, null, null, null);
-      overflow: hidden;
-      position: relative;
       @include for-tablet-portrait-up() {
         @include box(100%, auto, null, null, null);
       }
+    }
+    .firstRowGallary {
+      @include box(100%, auto, null, null, null);
+      overflow: hidden;
+      position: relative;
       &__image1 {
         @include box(100%, auto, null, null, null);
       }
@@ -762,7 +776,7 @@ $merry: "Merriweather", serif;
       margin: 100px 0 50px 0;
     }
     .fourthRowGallary {
-      @include box(40%, 630px, null, null, null);
+      @include box(40%, auto, null, null, null);
       margin: 300px 0 0 0;
       position: relative;
       overflow: hidden;
@@ -859,14 +873,15 @@ $merry: "Merriweather", serif;
     }
     &__secondCol {
       z-index: 7;
-      @include box(50%, null, null, null, null);
+      @include box(50%, auto, null, null, null);
       padding: 150px 0 0 0;
+      overflow: hidden;
       @include for-tablet-portrait-up() {
         @include box(100%, auto, null, null, null);
         padding: 35px 0 0 0;
       }
       .fifthRowGallary {
-        @include box(100%, 350px, null, null, null);
+        @include box(100%, auto, null, null, null);
         overflow: hidden;
         position: relative;
         @include for-tablet-portrait-up() {
@@ -1034,9 +1049,11 @@ $merry: "Merriweather", serif;
   position: relative;
   @include flex(center, center, null);
   cursor: pointer;
-  p {
+  a {
     @include font($roboto, 13px, 200, null, #333333);
+    text-decoration: none;
     letter-spacing: 2px;
+    padding: 8px;
   }
   img {
     position: absolute;
@@ -1164,13 +1181,98 @@ $merry: "Merriweather", serif;
     @include for-tablet-portrait-up() {
       padding: 15px 0;
     }
+    a {
+      text-decoration: none;
+    }
     i {
-      cursor: pointer;
       transition: all 0.7s;
-      color: #c8a378;
-      font-size: 25px;
       &:hover {
         color: #303030;
+      }
+    }
+  }
+}
+
+//PHONE NAVBAR
+.phoneNavbar {
+  display: none;
+  @include for-tablet-portrait-up() {
+    @include box(100%, 50px, #303030, null, null);
+    z-index: 30;
+    @include flex(center, center, null);
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    &__logo {
+      position: absolute;
+      top: 13px;
+      width: 120px;
+      height: auto;
+    }
+    &__ContentContainer {
+      @include box(100%, 100%, null, null, null);
+      margin: 50px 0 0 0;
+      @include flex(space-between, center, null);
+    }
+    &__menuContainer {
+      @include box(100%, null, null, null, null);
+      @include flex(center, center, null);
+      text-align: center;
+      ul {
+        li {
+          list-style: none;
+          @include font($roboto, 12px, null, null, rgb(227, 221, 205));
+          letter-spacing: 3px;
+          margin: 0 0 20px 0;
+        }
+      }
+    }
+    &__listOptions {
+      opacity: 0;
+    }
+    &__addContainer {
+      margin: 0 0 30px 0;
+      @include box(100%, null, null, null, null);
+      @include flex(center, center, column);
+      text-align: center;
+      i {
+        margin: 0 10px;
+      }
+    }
+    &__address {
+      @include font($roboto, 13px, null, null, #f1ebda);
+      margin: 10px 0;
+      p {
+        margin: 10px 0;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #c8a374;
+    }
+    .hamburgerBar {
+      position: absolute;
+      left: 15px;
+      top: 17px;
+      &__line {
+        @include box(30px, 0.8px, #fff, null, null);
+        margin: 0 0 8px 0;
+      }
+    }
+    .closeBar {
+      position: absolute;
+      left: 15px;
+      top: 0px;
+      opacity: 0;
+      &__line {
+        @include box(30px, 0.8px, #fff, null, null);
+        &--left {
+          transform: rotate(45deg);
+          margin-top: 0.8;
+        }
+        &--right {
+          transform: rotate(-45deg);
+        }
       }
     }
   }

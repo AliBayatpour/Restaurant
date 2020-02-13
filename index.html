@@ -23,6 +23,76 @@
   </head>
 
   <body>
+    <div class="phoneNavbar">
+      <div class="closeBar">
+        <div class="closeBar__line closeBar__line--left"></div>
+        <div class="closeBar__line closeBar__line--right"></div>
+      </div>
+      <div class="hamburgerBar" onclick="mobileMenuClicked()">
+        <div class="hamburgerBar__line"></div>
+        <div class="hamburgerBar__line"></div>
+        <div class="hamburgerBar__line"></div>
+      </div>
+      <img
+        class="phoneNavbar__logo"
+        src="./images/mobileNavbarLogo.png"
+        alt="vallier Logo"
+      />
+      <div class="phoneNavbar__ContentContainer">
+        <div class="phoneNavbar__menuContainer">
+          <ul>
+            <li class="phoneNavbar__listOptions" onclick="mobileScrollToMenu()">
+              MENUS
+            </li>
+            <li
+              class="phoneNavbar__listOptions"
+              onclick="scrollToFunc('.animationContainer')"
+            >
+              ABOUT US
+            </li>
+            <li
+              class="phoneNavbar__listOptions"
+              onclick="scrollToFunc('.secondRowGallary')"
+            >
+              GALLERY
+            </li>
+            <li
+              class="phoneNavbar__listOptions"
+              onclick="scrollToFunc('.addInfoContainer__address')"
+            >
+              CONTACT
+            </li>
+          </ul>
+        </div>
+        <div class="phoneNavbar__addContainer">
+          <div class="phoneNavbar__media">
+            <a
+              href="https://www.facebook.com/VallierBistro/"
+              target="_blank"
+              style="text-decoration: none;"
+              ><i
+                class="fab fa-facebook-f"
+                style="color: #C8A378; font-size: 25px;"
+              ></i
+            ></a>
+            <a
+              href="https://www.instagram.com/valliermtl/"
+              target="_blank"
+              style="text-decoration: none;"
+              ><i
+                class="fab fa-instagram"
+                style="color: #C8A378; font-size: 25px;"
+              ></i
+            ></a>
+          </div>
+          <div class="phoneNavbar__address">
+            <p>425, rue McGill, Vieux-Montréal,</p>
+            <p>Québec, H2Y 2H1</p>
+            <a href="tel:+5148422905">514.842.2905</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- SUBNAVIGATION -->
     <div class="subnav">
       <li
@@ -53,8 +123,10 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--menueBottomSide"
           ></span>
           <span
+            class="menuAnim"
             onmouseenter="menueBorderShow('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 58)"
             onmouseleave="menueBorderHide('.sideMenue__border--menueTopSide', '.sideMenue__border--menueBottomSide', 58)"
+            onclick="menuScrollTo('.menuContainer', 1)"
             >MENUS</span
           >
         </div>
@@ -66,8 +138,10 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--aboutBottomSide"
           ></span>
           <span
+            class="menuAnim"
             onmouseenter="menueBorderShow('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 83)"
             onmouseleave="menueBorderHide('.sideMenue__border--aboutTopSide', '.sideMenue__border--aboutBottomSide', 83)"
+            onclick="scrollToFunc('.animationContainer')"
             >ABOUT US</span
           >
         </div>
@@ -79,8 +153,10 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--gallaryBottomSide"
           ></span>
           <span
+            class="menuAnim"
             onmouseenter="menueBorderShow('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 75)"
             onmouseleave="menueBorderHide('.sideMenue__border--gallaryTopSide', '.sideMenue__border--gallaryBottomSide', 75)"
+            onclick="scrollToFunc('.secondRowGallary')"
             >GALLERY</span
           >
         </div>
@@ -92,26 +168,32 @@
             class="sideMenue__border sideMenue__border--bottomSide sideMenue__border--contactBottomSide"
           ></span>
           <span
+            class="menuAnim"
             onmouseenter="menueBorderShow('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 77)"
             onmouseleave="menueBorderHide('.sideMenue__border--contactTopSide', '.sideMenue__border--contactBottomSide', 77)"
+            onclick="scrollToFunc('.addInfoContainer__address')"
             >CONTACT</span
           >
         </div>
       </div>
-      <div class="sideAdd">
+      <div class="sideAdd menuAnim">
         <div class="sideAdd__media">
-          <i
-            class="fab fa-facebook-f"
-            style="color: #C8A378; font-size: 25px;"
-          ></i>
-          <i
-            class="fab fa-instagram"
-            style="color: #C8A378; font-size: 25px;"
-          ></i>
+          <a href="https://www.facebook.com/VallierBistro/" target="_blank"
+            ><i
+              class="fab fa-facebook-f"
+              style="color: #C8A378; font-size: 25px;"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/valliermtl/" target="_blank"
+            ><i
+              class="fab fa-instagram"
+              style="color: #C8A378; font-size: 25px;"
+            ></i
+          ></a>
         </div>
         <div class="sideAdd__address">
           <p>425, rue McGill, Vieux-Montréal, Québec, H2Y 2H1</p>
-          <p>514.842.2905</p>
+          <a href="tel:+5148422905">514.842.2905</a>
         </div>
       </div>
       <div class="sideBookBut">
@@ -120,7 +202,11 @@
           <span class="sideBookBut__border sideBookBut__border--top"></span>
           <span class="sideBookBut__border sideBookBut__border--right"></span>
           <span class="sideBookBut__border sideBookBut__border--bottom"></span>
-          <span>BOOK A TABLE</span>
+          <a
+            class="sideBookBut__bookLink"
+            href="https://www.bookenda.com/restaurant-booker?businessName=vallier-restaurant&idMerchant=859387&idClientApplication=973&Language=fr"
+            >BOOK A TABLE</a
+          >
         </div>
       </div>
     </div>
@@ -237,6 +323,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="findUs" onclick="scrollToFunc('.addContainer')">
+      FIND US
     </div>
     <!-- MENUE -->
     <div class="menuContainer">
@@ -624,12 +713,14 @@
     </div>
     <div class="animationContainer">
       <div class="firstRow">
-        <div class="firstRowGallary">
-          <div class="firstRowGallary__overlay overlay"></div>
-          <img
-            src="./images/firstRowImg1.jpg"
-            class="firstRowGallary__image1"
-          />
+        <div class="firstRow__secondCol">
+          <div class="firstRowGallary">
+            <div class="firstRowGallary__overlay overlay"></div>
+            <img
+              src="./images/firstRowImg1.jpg"
+              class="firstRowGallary__image1"
+            />
+          </div>
         </div>
         <div class="firstRow__text">
           <p class="animateParaText animateParaText--1">
@@ -784,7 +875,11 @@
             </p>
           </div>
           <div class="openInMap">
-            <p>OPEN IN GOOGLE MAP</p>
+            <a
+              href="https://www.google.ca/maps/place/425+Rue+McGill,+Montr%C3%A9al,+QC+H2Y+2H1/@45.500623,-73.5601367,17z/data=!3m1!4b1!4m5!3m4!1s0x4cc91a593dc14ed5:0x9cc8217a5d84248a!8m2!3d45.500623!4d-73.557948?q=425,+rue+McGill,+Vieux-Montr%C3%A9al,+Qu%C3%A9bec,+H2Y+2H1&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiG4JvI2K3PAhWh14MKHW3tDJAQ_AUICCgB"
+              target="_blank"
+              >OPEN IN GOOGLE MAP</a
+            >
             <img
               class="openInMap__blackLeaf"
               src="./images/blackLeaf.png"
@@ -829,11 +924,18 @@
         <div class="reservInfo animateParaText animateParaText--7">
           <h3 class="reservInfo__header">RESERVATIONS</h3>
           <p>
-            <a href="">514.842.2905</a> or
-            <a href=""> Book a table</a>
+            <a href="tel:+5148422905">514.842.2905</a> or
+            <a
+              href="https://www.bookenda.com/restaurant-booker?businessName=vallier-restaurant&idMerchant=859387&idClientApplication=973&Language=fr"
+              target="_blank"
+            >
+              Book a table</a
+            >
           </p>
           <span>For more information</span>
-          <a href="">info@vallierbistro.com</a>
+          <a href="mailto:aligl?Subject=Hello%20again"
+            >info@vallierbistro.com</a
+          >
         </div>
       </div>
       <div class="mapContainer">
@@ -852,8 +954,18 @@
         </div>
         <div class="footerContent__socialMediaIcons">
           <p>Follow us :</p>
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-instagram"></i>
+          <a href="https://www.facebook.com/VallierBistro/" target="_blank"
+            ><i
+              class="fab fa-facebook-f"
+              style="color: #C8A378; font-size: 25px;"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/valliermtl/" target="_blank"
+            ><i
+              class="fab fa-instagram"
+              style="color: #C8A378; font-size: 25px;"
+            ></i
+          ></a>
         </div>
         <p>Website by <a href="#">Ali Bayatpour</a></p>
       </div>

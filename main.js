@@ -1,5 +1,51 @@
 gsap.registerPlugin(ScrollToPlugin);
 
+// SMALL ANIMATIONS WHEN PAGE LOADS
+if (window.matchMedia("(min-width: 961px)").matches) {
+  gsap.fromTo(
+    ".sideBar",
+    2,
+    {
+      height: "0",
+      y: "-100%",
+      opacity: 0
+    },
+    {
+      height: "100%",
+      y: "0",
+      opacity: 1,
+      ease: "power1.inOut"
+    }
+  );
+  gsap.fromTo(
+    ".menuAnim",
+    1,
+    {
+      opacity:0,
+      y: -20
+    },
+    {
+      delay: 1,
+      opacity:1,
+      y: 0,
+      stagger: 0.1,
+      ease: "power1.inOut"
+    }
+  );
+  gsap.fromTo(
+    ".sideBookBut",
+    1,
+    {
+      width: "0%"
+    },
+    {
+      delay: 0.7,
+      width: "100%",
+      ease: "power1.inOut"
+    }
+  );
+}
+
 // IMAGE SLIDER ANIMATION
 let tl = gsap.timeline({ repeat: -1, paused: true });
 tl.fromTo(
@@ -17,15 +63,11 @@ tl.fromTo(
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -69,15 +111,11 @@ tl.fromTo(
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -121,15 +159,11 @@ tl.fromTo(
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -173,15 +207,11 @@ tl.fromTo(
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -225,15 +255,11 @@ tl.fromTo(
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -277,15 +303,11 @@ tl.fromTo(
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -345,15 +367,11 @@ tlPhone
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -397,15 +415,11 @@ tlPhone
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -449,15 +463,11 @@ tlPhone
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -501,15 +511,11 @@ tlPhone
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -553,15 +559,11 @@ tlPhone
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -605,15 +607,11 @@ tlPhone
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.8,
       ease: "expo.inOut"
     }
@@ -732,15 +730,11 @@ changeSlider = (index, image, option) => {
     3,
     {
       y: "-50px",
-      width: "0%",
-      height: "0%",
       opacity: 0
     },
     {
       y: "0px",
       opacity: 1,
-      width: "100%",
-      height: "100%",
       stagger: 0.5,
       ease: "expo.inOut"
     }
@@ -787,6 +781,36 @@ menuScrollTo = (scrollEl, showEl) => {
   });
 };
 
+// MOBILE SCROLL TO MENU
+mobileScrollToMenu = () => {
+  hideMobileMenu();
+  showMenu = false;
+  gsap.to(window, {
+    duration: 2,
+    scrollTo: { y: ".menuContainer", offsetY: 50 },
+    ease: "power3.inOut"
+  });
+  tables.forEach((_, index) => {
+    showMenuAnimation(
+      `.tableAnimate${index + 1}`,
+      `.tableHeader__line${index + 1}`
+    );
+  });
+};
+
+// GALLERY SCROLL TO
+scrollToFunc = scrollEl => {
+  if (window.matchMedia("(max-width: 961px)").matches) {
+    hideMobileMenu();
+    showMenu = false;
+  }
+  gsap.to(window, {
+    duration: 2,
+    scrollTo: { y: scrollEl, offsetY: 50 },
+    ease: "power3.inOut"
+  });
+};
+
 // SHOW BORDER ANIMATION
 menueBorderShow = (top, bottom, borderWidth) => {
   topName = top;
@@ -822,6 +846,112 @@ menueBorderShow = (top, bottom, borderWidth) => {
   );
 };
 // <----------------FINISH---------------->
+
+// SHOW MOBILE MENUE
+showMobileMenu = () => {
+  gsap.to(".phoneNavbar", 2, {
+    height: "100vh",
+    ease: "power2.inOut"
+  });
+  gsap.to(".hamburgerBar__line", 0.7, {
+    y: 10,
+    opacity: 0,
+    stagger: 0.25
+  });
+  gsap.to(".hamburgerBar", 1, {
+    y: 10,
+    opacity: 0
+  });
+  gsap.to(".closeBar", 1, {
+    y: 25,
+    opacity: 1
+  });
+  gsap.fromTo(
+    ".phoneNavbar__listOptions",
+    0.75,
+    {
+      opacity: 0,
+      y: -20
+    },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      delay: 1
+    }
+  );
+  gsap.fromTo(
+    ".phoneNavbar__addContainer",
+    1,
+    {
+      opacity: 0,
+      y: -30
+    },
+    {
+      opacity: 1,
+      y: 0,
+      delay: 1.5
+    }
+  );
+};
+
+// HIDE MOBILE MENUE
+hideMobileMenu = () => {
+  gsap.to(".hamburgerBar", 1, {
+    y: 0,
+    opacity: 1
+  });
+  gsap.to(".closeBar", 1, {
+    y: 0,
+    opacity: 0
+  });
+  gsap.fromTo(
+    ".phoneNavbar__addContainer",
+    1,
+    {
+      opacity: 1,
+      y: 0
+    },
+    {
+      opacity: 0,
+      y: -30
+    }
+  );
+  gsap.fromTo(
+    ".phoneNavbar__listOptions",
+    0.7,
+    {
+      opacity: 1,
+      y: 0
+    },
+    {
+      y: -10,
+      opacity: 0,
+      stagger: 0.25
+    }
+  );
+  gsap.to(".phoneNavbar", 2, {
+    height: "50px",
+    ease: "power2.inOut"
+  });
+  gsap.to(".hamburgerBar__line", 1, {
+    y: 0,
+    opacity: 1,
+    stagger: 0.25
+  });
+};
+
+// WHEN MOBILE MENU CLICKED
+let showMenu = false;
+mobileMenuClicked = () => {
+  if (showMenu) {
+    showMenu = false;
+    hideMobileMenu();
+  } else {
+    showMenu = true;
+    showMobileMenu();
+  }
+};
 
 //HIDE BORDER ANIMATION
 menueBorderHide = (top, bottom, borderWidth) => {
@@ -1363,11 +1493,16 @@ subnavShow = () => {
 
 // SHOW IMAGE BY REMOVING THE OVERLAY
 showImage = overlayClass => {
-  gsap.fromTo(overlayClass, 1, { y: "-100%" }, { y: "0%" });
+  gsap.fromTo(
+    overlayClass,
+    1,
+    { y: "-100%" },
+    { y: "0%", ease: "power3.inOut" }
+  );
 };
 // HIDE IMAGES BY AN OVERLAY
 hideImage = overlayClass => {
-  gsap.fromTo(overlayClass, 1, { y: "0%" }, { y: "-100%" });
+  gsap.fromTo(overlayClass, 0.1, { y: "0%" }, { y: "-100%" });
 };
 
 // DEFINING SOME VARIABLES AND INITIALIZATION
@@ -1413,9 +1548,6 @@ let mainBorders = [
 ];
 
 // HAMBURGER & TEXT FLAG
-let hamburgerItems = document.querySelectorAll(
-  ".fourthRowGallary__hamburgerItem"
-);
 let hamberMakrTlProgress;
 let boneImg = document.querySelector(".secondRow__bone");
 let boneMoverProgress;
@@ -1424,6 +1556,7 @@ let bottomBread = document.querySelector(".fourthRowGallary__breadBottom");
 let itemMargin = 0;
 let hamburgerTextHidden = true;
 let triggerPoint = 0;
+let findUs = document.querySelector(".findUs");
 animateParaText.forEach((_, index) => {
   animateParaTextIsVisible[index] = false;
 });
@@ -1495,8 +1628,21 @@ if (window.matchMedia("(min-width: 961px)").matches) {
 }
 // <----------------FINISH---------------->
 
+//INSTAGRAM OR FACE BOOK LINKS CLICK
+openNewTab = link => {
+  window.open(link, "_blank");
+};
+
 // SCROLL TRIGGER ANIMATIONS
 window.addEventListener("scroll", function(e) {
+  if (window.matchMedia("(max-width: 961px)").matches) {
+    if (window.pageYOffset > 50) {
+      findUs.style.position = "fixed";
+      findUs.style.bottom = "0";
+    } else {
+      findUs.style.position = null;
+    }
+  }
   // SHOW AND HIDING MENU FOODS
   if (window.matchMedia("(min-width: 961px)").matches) {
     desktopMode = true;
@@ -1630,7 +1776,7 @@ window.addEventListener("scroll", function(e) {
     overlay.forEach((element, index) => {
       let overlayBounding = element.getBoundingClientRect();
       if (
-        window.innerHeight - overlayBounding.top > -100 &&
+        window.innerHeight - overlayBounding.top > 200 &&
         !overlayIsVisible[index]
       ) {
         overlayIsVisible[index] = true;
@@ -1656,7 +1802,7 @@ window.addEventListener("scroll", function(e) {
             break;
         }
       } else if (
-        window.innerHeight - overlayBounding.top < -300 &&
+        window.innerHeight - overlayBounding.top < -600 &&
         overlayIsVisible[index]
       ) {
         overlayIsVisible[index] = false;
@@ -1808,6 +1954,30 @@ restartSlider = () => {
 
         default:
           showParaTextAnimation(`.animateParaText--${index + 1}`, "");
+          break;
+      }
+    });
+    // SHOWING AND HIDING IMAGES
+    overlay.forEach((_, index) => {
+      switch (index + 1) {
+        case 1:
+          showImage(".firstRowGallary__overlay");
+          break;
+        case 2:
+          showImage(".secondRowGallary__overlay");
+          break;
+        case 3:
+          showImage(".thirdRowGallary__overlay");
+          break;
+        case 4:
+          showImage(".fourthRowGallary__overlay");
+          break;
+        case 5:
+          showImage(".fifthRowGallary__overlay");
+          break;
+
+        default:
+          console.log("An Error happend");
           break;
       }
     });
