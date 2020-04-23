@@ -1,5 +1,6 @@
 gsap.registerPlugin(ScrollToPlugin);
 
+
 // SMALL ANIMATIONS WHEN PAGE LOADS
 if (window.matchMedia("(min-width: 961px)").matches) {
   gsap.fromTo(
