@@ -381,10 +381,10 @@ tlPhone
     ".imageSlider__image--img1",
     6,
     {
-      backgroundSize: "auto 130vw"
+      backgroundSize: "auto 130vh"
     },
     {
-      backgroundSize: "auto 120vw",
+      backgroundSize: "auto 120vh",
       ease: "sine.out"
     }
   )
@@ -429,10 +429,10 @@ tlPhone
     ".imageSlider__image--img2",
     6,
     {
-      backgroundSize: "auto 130vw"
+      backgroundSize: "auto 130vh"
     },
     {
-      backgroundSize: "auto 120vw",
+      backgroundSize: "auto 120vh",
       ease: "sine.out"
     }
   )
@@ -477,10 +477,10 @@ tlPhone
     ".imageSlider__image--img3",
     6,
     {
-      backgroundSize: "auto 130vw"
+      backgroundSize: "auto 130vh"
     },
     {
-      backgroundSize: "auto 120vw",
+      backgroundSize: "auto 120vh",
       ease: "sine.out"
     }
   )
@@ -525,10 +525,10 @@ tlPhone
     ".imageSlider__image--img4",
     6,
     {
-      backgroundSize: "auto 130vw"
+      backgroundSize: "auto 130vh"
     },
     {
-      backgroundSize: "auto 120vw",
+      backgroundSize: "auto 120vh",
       ease: "sine.out"
     }
   )
@@ -573,10 +573,10 @@ tlPhone
     ".imageSlider__image--img5",
     6,
     {
-      backgroundSize: "auto 130vw"
+      backgroundSize: "auto 130vh"
     },
     {
-      backgroundSize: "auto 120vw",
+      backgroundSize: "auto 120vh",
       ease: "sine.out"
     }
   )
@@ -621,10 +621,10 @@ tlPhone
     ".imageSlider__image--img6",
     6,
     {
-      backgroundSize: "auto 130vw"
+      backgroundSize: "auto 130vh"
     },
     {
-      backgroundSize: "auto 120vw",
+      backgroundSize: "auto 120vh",
       ease: "sine.out"
     }
   )
@@ -661,7 +661,7 @@ let backGrounds = document.querySelectorAll(".imageSlider__image");
 if (window.innerWidth / window.innerHeight <= 1.24516) {
   phoneTimelineActive = true;
   backGrounds.forEach(element => {
-    element.style.backgroundSize = "auto 130vw";
+    element.style.backgroundSize = "auto 130vh";
   });
   tl.pause();
   tlPhone.resume();
@@ -682,8 +682,8 @@ let slideCntlrFrom;
 let slideCntrlTo;
 changeSlider = (index, image, option) => {
   if (window.innerWidth / window.innerHeight <= 1.24516) {
-    slideCntlrFrom = "auto 130vw";
-    slideCntrlTo = "auto 120vw";
+    slideCntlrFrom = "auto 130vh";
+    slideCntrlTo = "auto 120vh";
   } else {
     slideCntlrFrom = "130vw auto";
     slideCntrlTo = "120vw auto";
@@ -1896,7 +1896,7 @@ function initMap() {
 restartSlider = () => {
   if (window.innerWidth / window.innerHeight <= 1.24516) {
     backGrounds.forEach(element => {
-      element.style.backgroundSize = "auto 130vw";
+      element.style.backgroundSize = "auto 130vh";
     });
     if (timelineActive) {
       timelineActive = false;
