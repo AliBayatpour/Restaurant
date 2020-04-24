@@ -356,7 +356,7 @@ body {
 }
 
 .imageSlider {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   border:;
   position: relative;
@@ -487,24 +487,24 @@ body {
 
 .imageSlider__image {
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   border:;
   min-width: 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 130% auto;
-  -o-background-size: 130% auto;
-  -moz-background-size: 130% auto;
-  -webkit-background-size: 130% auto;
+  background-size: 130vw auto;
+  -o-background-size: 130vw auto;
+  -moz-background-size: 130vw auto;
+  -webkit-background-size: 130vw auto;
   position: relative;
 }
 
 @media (max-aspect-ratio: 31129 / 25000) {
   .imageSlider__image {
     background-position: 50% 50%;
-    background-size: "auto 130%";
+    background-size: "auto 130vw";
   }
 }
 

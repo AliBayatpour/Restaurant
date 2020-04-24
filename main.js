@@ -77,10 +77,10 @@ tl.fromTo(
     ".imageSlider__image--img1",
     6,
     {
-      backgroundSize: "130% auto"
+      backgroundSize: "130vw auto"
     },
     {
-      backgroundSize: "120% auto",
+      backgroundSize: "120vw auto",
       ease: "sine.out"
     }
   )
@@ -125,10 +125,10 @@ tl.fromTo(
     ".imageSlider__image--img2",
     6,
     {
-      backgroundSize: "130% auto"
+      backgroundSize: "130vw auto"
     },
     {
-      backgroundSize: "120% auto",
+      backgroundSize: "120vw auto",
       ease: "sine.out"
     }
   )
@@ -173,10 +173,10 @@ tl.fromTo(
     ".imageSlider__image--img3",
     6,
     {
-      backgroundSize: "130% auto"
+      backgroundSize: "130vw auto"
     },
     {
-      backgroundSize: "120% auto",
+      backgroundSize: "120vw auto",
       ease: "sine.out"
     }
   )
@@ -221,10 +221,10 @@ tl.fromTo(
     ".imageSlider__image--img4",
     6,
     {
-      backgroundSize: "130% auto"
+      backgroundSize: "130vw auto"
     },
     {
-      backgroundSize: "120% auto",
+      backgroundSize: "120vw auto",
       ease: "sine.out"
     }
   )
@@ -269,10 +269,10 @@ tl.fromTo(
     ".imageSlider__image--img5",
     6,
     {
-      backgroundSize: "130% auto"
+      backgroundSize: "130vw auto"
     },
     {
-      backgroundSize: "120% auto",
+      backgroundSize: "120vw auto",
       ease: "sine.out"
     }
   )
@@ -317,10 +317,10 @@ tl.fromTo(
     ".imageSlider__image--img6",
     6,
     {
-      backgroundSize: "130% auto"
+      backgroundSize: "130vw auto"
     },
     {
-      backgroundSize: "120% auto",
+      backgroundSize: "120vw auto",
       ease: "sine.out"
     }
   )
@@ -381,10 +381,10 @@ tlPhone
     ".imageSlider__image--img1",
     6,
     {
-      backgroundSize: "auto 130%"
+      backgroundSize: "auto 130vw"
     },
     {
-      backgroundSize: "auto 120%",
+      backgroundSize: "auto 120vw",
       ease: "sine.out"
     }
   )
@@ -429,10 +429,10 @@ tlPhone
     ".imageSlider__image--img2",
     6,
     {
-      backgroundSize: "auto 130%"
+      backgroundSize: "auto 130vw"
     },
     {
-      backgroundSize: "auto 120%",
+      backgroundSize: "auto 120vw",
       ease: "sine.out"
     }
   )
@@ -477,10 +477,10 @@ tlPhone
     ".imageSlider__image--img3",
     6,
     {
-      backgroundSize: "auto 130%"
+      backgroundSize: "auto 130vw"
     },
     {
-      backgroundSize: "auto 120%",
+      backgroundSize: "auto 120vw",
       ease: "sine.out"
     }
   )
@@ -525,10 +525,10 @@ tlPhone
     ".imageSlider__image--img4",
     6,
     {
-      backgroundSize: "auto 130%"
+      backgroundSize: "auto 130vw"
     },
     {
-      backgroundSize: "auto 120%",
+      backgroundSize: "auto 120vw",
       ease: "sine.out"
     }
   )
@@ -573,10 +573,10 @@ tlPhone
     ".imageSlider__image--img5",
     6,
     {
-      backgroundSize: "auto 130%"
+      backgroundSize: "auto 130vw"
     },
     {
-      backgroundSize: "auto 120%",
+      backgroundSize: "auto 120vw",
       ease: "sine.out"
     }
   )
@@ -621,10 +621,10 @@ tlPhone
     ".imageSlider__image--img6",
     6,
     {
-      backgroundSize: "auto 130%"
+      backgroundSize: "auto 130vw"
     },
     {
-      backgroundSize: "auto 120%",
+      backgroundSize: "auto 120vw",
       ease: "sine.out"
     }
   )
@@ -661,14 +661,14 @@ let backGrounds = document.querySelectorAll(".imageSlider__image");
 if (window.innerWidth / window.innerHeight <= 1.24516) {
   phoneTimelineActive = true;
   backGrounds.forEach(element => {
-    element.style.backgroundSize = "auto 130%";
+    element.style.backgroundSize = "auto 130vw";
   });
   tl.pause();
   tlPhone.resume();
 } else {
   timelineActive = true;
   backGrounds.forEach(element => {
-    element.style.backgroundSize = "130% auto";
+    element.style.backgroundSize = "130vw auto";
   });
   tlPhone.pause();
   tl.resume();
@@ -682,11 +682,11 @@ let slideCntlrFrom;
 let slideCntrlTo;
 changeSlider = (index, image, option) => {
   if (window.innerWidth / window.innerHeight <= 1.24516) {
-    slideCntlrFrom = "auto 130%";
-    slideCntrlTo = "auto 120%";
+    slideCntlrFrom = "auto 130vw";
+    slideCntrlTo = "auto 120vw";
   } else {
-    slideCntlrFrom = "130% auto";
-    slideCntrlTo = "120% auto";
+    slideCntlrFrom = "130vw auto";
+    slideCntrlTo = "120vw auto";
   }
   let leftDistance =
     Math.round(-1 * Number(imageContainer.style.left.replace("%", "") / 100)) *
@@ -1896,7 +1896,7 @@ function initMap() {
 restartSlider = () => {
   if (window.innerWidth / window.innerHeight <= 1.24516) {
     backGrounds.forEach(element => {
-      element.style.backgroundSize = "auto 130%";
+      element.style.backgroundSize = "auto 130vw";
     });
     if (timelineActive) {
       timelineActive = false;
@@ -1907,7 +1907,7 @@ restartSlider = () => {
     }
   } else {
     backGrounds.forEach(element => {
-      element.style.backgroundSize = "130% auto";
+      element.style.backgroundSize = "130vw auto";
     });
     if (phoneTimelineActive) {
       tlPhone.pause();
