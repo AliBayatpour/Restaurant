@@ -495,9 +495,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 130vw auto;
-  -o-background-size: 130vw auto;
-  -moz-background-size: 130vw auto;
-  -webkit-background-size: 130vw auto;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   position: relative;
 }
 
