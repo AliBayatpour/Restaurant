@@ -73,17 +73,17 @@ tl.fromTo(
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img1",
-  //   6,
-  //   {
-  //     backgroundSize: "130vw auto"
-  //   },
-  //   {
-  //     backgroundSize: "120vw auto",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img1",
+    6,
+    {
+      backgroundSize: "130vw auto"
+    },
+    {
+      backgroundSize: "120vw auto",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--1",
     1,
@@ -121,17 +121,17 @@ tl.fromTo(
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img2",
-  //   6,
-  //   {
-  //     backgroundSize: "130vw auto"
-  //   },
-  //   {
-  //     backgroundSize: "120vw auto",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img2",
+    6,
+    {
+      backgroundSize: "130vw auto"
+    },
+    {
+      backgroundSize: "120vw auto",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--2",
     1,
@@ -169,17 +169,17 @@ tl.fromTo(
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img3",
-  //   6,
-  //   {
-  //     backgroundSize: "130vw auto"
-  //   },
-  //   {
-  //     backgroundSize: "120vw auto",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img3",
+    6,
+    {
+      backgroundSize: "130vw auto"
+    },
+    {
+      backgroundSize: "120vw auto",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--3",
     1,
@@ -217,17 +217,17 @@ tl.fromTo(
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img4",
-  //   6,
-  //   {
-  //     backgroundSize: "130vw auto"
-  //   },
-  //   {
-  //     backgroundSize: "120vw auto",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img4",
+    6,
+    {
+      backgroundSize: "130vw auto"
+    },
+    {
+      backgroundSize: "120vw auto",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--4",
     1,
@@ -265,17 +265,17 @@ tl.fromTo(
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img5",
-  //   6,
-  //   {
-  //     backgroundSize: "130vw auto"
-  //   },
-  //   {
-  //     backgroundSize: "120vw auto",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img5",
+    6,
+    {
+      backgroundSize: "130vw auto"
+    },
+    {
+      backgroundSize: "120vw auto",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--5",
     1,
@@ -313,17 +313,17 @@ tl.fromTo(
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img6",
-  //   6,
-  //   {
-  //     backgroundSize: "130vw auto"
-  //   },
-  //   {
-  //     backgroundSize: "120vw auto",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img6",
+    6,
+    {
+      backgroundSize: "130vw auto"
+    },
+    {
+      backgroundSize: "120vw auto",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--6",
     1,
@@ -377,17 +377,17 @@ tlPhone
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img1",
-  //   6,
-  //   {
-  //     backgroundSize: "auto 130vh"
-  //   },
-  //   {
-  //     backgroundSize: "auto 120vh",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img1",
+    6,
+    {
+      backgroundSize: "auto 130vh"
+    },
+    {
+      backgroundSize: "auto 120vh",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--1",
     1,
@@ -425,17 +425,17 @@ tlPhone
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img2",
-  //   6,
-  //   {
-  //     backgroundSize: "auto 130vh"
-  //   },
-  //   {
-  //     backgroundSize: "auto 120vh",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img2",
+    6,
+    {
+      backgroundSize: "auto 130vh"
+    },
+    {
+      backgroundSize: "auto 120vh",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--2",
     1,
@@ -473,17 +473,17 @@ tlPhone
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img3",
-  //   6,
-  //   {
-  //     backgroundSize: "auto 130vh"
-  //   },
-  //   {
-  //     backgroundSize: "auto 120vh",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img3",
+    6,
+    {
+      backgroundSize: "auto 130vh"
+    },
+    {
+      backgroundSize: "auto 120vh",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--3",
     1,
@@ -521,17 +521,17 @@ tlPhone
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img4",
-  //   6,
-  //   {
-  //     backgroundSize: "auto 130vh"
-  //   },
-  //   {
-  //     backgroundSize: "auto 120vh",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img4",
+    6,
+    {
+      backgroundSize: "auto 130vh"
+    },
+    {
+      backgroundSize: "auto 120vh",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--4",
     1,
@@ -569,17 +569,17 @@ tlPhone
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img5",
-  //   6,
-  //   {
-  //     backgroundSize: "auto 130vh"
-  //   },
-  //   {
-  //     backgroundSize: "auto 120vh",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img5",
+    6,
+    {
+      backgroundSize: "auto 130vh"
+    },
+    {
+      backgroundSize: "auto 120vh",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--5",
     1,
@@ -617,17 +617,17 @@ tlPhone
       ease: "expo.inOut"
     }
   )
-  // .fromTo(
-  //   ".imageSlider__image--img6",
-  //   6,
-  //   {
-  //     backgroundSize: "auto 130vh"
-  //   },
-  //   {
-  //     backgroundSize: "auto 120vh",
-  //     ease: "sine.out"
-  //   }
-  // )
+  .fromTo(
+    ".imageSlider__image--img6",
+    6,
+    {
+      backgroundSize: "auto 130vh"
+    },
+    {
+      backgroundSize: "auto 120vh",
+      ease: "sine.out"
+    }
+  )
   .to(
     ".sliderController__option--6",
     1,
@@ -660,16 +660,16 @@ timelineActive = false;
 let backGrounds = document.querySelectorAll(".imageSlider__image");
 if (window.innerWidth / window.innerHeight <= 1.24516) {
   phoneTimelineActive = true;
-  // backGrounds.forEach(element => {
-  //   element.style.backgroundSize = "auto 130vh";
-  // });
+  backGrounds.forEach(element => {
+    element.style.backgroundSize = "auto 130vh";
+  });
   tl.pause();
   tlPhone.resume();
 } else {
   timelineActive = true;
-  // backGrounds.forEach(element => {
-  //   element.style.backgroundSize = "130vw auto";
-  // });
+  backGrounds.forEach(element => {
+    element.style.backgroundSize = "130vw auto";
+  });
   tlPhone.pause();
   tl.resume();
 }
@@ -681,13 +681,13 @@ let firstRun = true;
 let slideCntlrFrom;
 let slideCntrlTo;
 changeSlider = (index, image, option) => {
-  // if (window.innerWidth / window.innerHeight <= 1.24516) {
-  //   slideCntlrFrom = "auto 130vh";
-  //   slideCntrlTo = "auto 120vh";
-  // } else {
-  //   slideCntlrFrom = "130vw auto";
-  //   slideCntrlTo = "120vw auto";
-  // }
+  if (window.innerWidth / window.innerHeight <= 1.24516) {
+    slideCntlrFrom = "auto 130vh";
+    slideCntrlTo = "auto 120vh";
+  } else {
+    slideCntlrFrom = "130vw auto";
+    slideCntrlTo = "120vw auto";
+  }
   let leftDistance =
     Math.round(-1 * Number(imageContainer.style.left.replace("%", "") / 100)) *
     100;
@@ -1895,9 +1895,9 @@ function initMap() {
 // SWITCH STYLES BETWEEN SMALL AND BIG SCREEN
 restartSlider = () => {
   if (window.innerWidth / window.innerHeight <= 1.24516) {
-    // backGrounds.forEach(element => {
-    //   element.style.backgroundSize = "auto 130vh";
-    // });
+    backGrounds.forEach(element => {
+      element.style.backgroundSize = "auto 130vh";
+    });
     if (timelineActive) {
       timelineActive = false;
       phoneTimelineActive = true;
@@ -1906,9 +1906,9 @@ restartSlider = () => {
       tlPhone.resume();
     }
   } else {
-    // backGrounds.forEach(element => {
-    //   element.style.backgroundSize = "130vw auto";
-    // });
+    backGrounds.forEach(element => {
+      element.style.backgroundSize = "130vw auto";
+    });
     if (phoneTimelineActive) {
       tlPhone.pause();
       timelineActive = true;

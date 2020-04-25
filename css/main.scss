@@ -345,19 +345,18 @@ $merry: "Merriweather", serif;
     min-width: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
+    background-size: 130vw auto;
+    -o-background-size: 130vw auto;
+    -moz-background-size: 130vw auto;
+    -webkit-background-size: 130vw auto;
     position: relative;
     @media (max-aspect-ratio: 31129/25000) {
       background-position: 50% 50%;
-      // background-size: "auto 130vw";
+      background-size: "auto 130vw";
     }
 
     &--img1 {
-      background-image: url("https://i.postimg.cc/Mp7Pnh9b/img1.jpg");
+      background-image: url("../images/img1.jpg");
     }
     &--img2 {
       background-image: url("../images/img2.jpg");
