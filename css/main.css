@@ -494,7 +494,7 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 130vw auto;
+  background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -504,7 +504,6 @@ body {
 @media (max-aspect-ratio: 31129 / 25000) {
   .imageSlider__image {
     background-position: 50% 50%;
-    background-size: "auto 130vw";
   }
 }
 

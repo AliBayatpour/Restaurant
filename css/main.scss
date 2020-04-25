@@ -346,14 +346,14 @@ $merry: "Merriweather", serif;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 130vw auto;
+    background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     position: relative;
     @media (max-aspect-ratio: 31129/25000) {
       background-position: 50% 50%;
-      background-size: "auto 130vw";
+      // background-size: "auto 130vw";
     }
 
     &--img1 {
